@@ -1,21 +1,20 @@
+import functions as f
+
+
+
+
 ''' Space Commander '''
 
-def rules_text():
-    # function shows the rules text for the game
-    print("These are the rules!")
-    print('')
-    print("Press 'enter' to continue.")
-    print('')
-    input()
 
-feul = 100
-Food = 100
-power = 100
-hull = 100
-crew = 100
+
+fuel = 30
+food = 50
+power = 5
+hull = 5
+crew = 5
 morale = 100
-
-def hud(fuel,food,power,hull,crew,morale):
+distance = 20
+# def hud(fuel,food,power,hull,crew,morale):
     
 
 # Display Title
@@ -48,7 +47,7 @@ while menu == True:
 
     # if 1 show rules and continue loop
     if selection == '1': 
-        rules_text()
+        f.rules_text()
     
     # if 3 skip to end
     elif selection == '3':
@@ -75,7 +74,8 @@ while running == True:
     # repeating tasks
     # ending
 
-    print("The game is now running!")
+    f.hud(fuel, food, power, hull, crew, morale, distance)
+
     input()
 
     running = False
