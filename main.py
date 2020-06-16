@@ -1,20 +1,15 @@
-import functions as f
-
-
-
-
 ''' Space Commander '''
 
+import functions as f
 
-
-fuel = 30
+fuel = 100000
 food = 50
 power = 5
 hull = 5
 crew = 5
 morale = 100
 distance = 20
-# def hud(fuel,food,power,hull,crew,morale):
+
     
 
 # Display Title
@@ -64,21 +59,35 @@ while menu == True:
         print("Command is invalid please enter 1, 2, or 3.")
 
 day = 1
+
 # begin game loop
 while running == True:
 
     if day == 1:
         print("opening")
 
-    # setup
-    # repeating tasks
-    # ending
+    # Display HUD
+    f.hud(fuel, food, power, hull, crew, morale, distance, day)
 
-    f.hud(fuel, food, power, hull, crew, morale, distance)
+    # Manage fuel use
+    fuel, distance = f.fuel(fuel, distance)
+    
+    # Check for loss conditions
+    f.loss(fuel, food, hull, crew, morale)
 
-    input()
+    # Event 
 
-    running = False
+    # Check for loss conditions
+    f.loss(fuel, food, hull, crew, morale)
+
+    # Check for win conditions
+    f.win(distance)
+
+    # Update Day
+    day += 1
+
+
+    
 
 print("you have exited the game. Thanks for playing!")
 
