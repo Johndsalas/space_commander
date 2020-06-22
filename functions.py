@@ -14,10 +14,10 @@ def hud(fuel, food, power, hull, crew, moral, distance,day):
     '''
     Heads up display for game stats
     '''
-    print(" ______")
+    print(" _____")
     print("|{:^5}|".format("Day"))
     print("|{:^5}|".format(day))
-    print(" ------")
+    print(" -----")
     print(" ____________________________________________")
     print("|{:^6}|{:^6}|{:^7}|{:^6}|{:^6}|{:^8}|".format("Fuel", "Food", "Power", "Hull", "Crew", "Morale"))
     print("|{:^6}|{:^6}|{:^7}|{:^6}|{:^6}|{:^8}|".format(fuel, food, power, hull, crew, moral))
@@ -29,6 +29,12 @@ def hud(fuel, food, power, hull, crew, moral, distance,day):
     print(" --------------------")
     print("")
 
+def gen(fuel, food, power, hull, crew, morale, distance):
+
+    print("This is the generation phase. The phase reasorces are genreated!!!")
+    input()
+
+    return fuel, food, power, hull, crew, morale, distance
 
 def fuel(fuel, distance):
     '''
@@ -84,7 +90,14 @@ def fuel(fuel, distance):
 
     return fuel, distance
 
-def loss(fuel, food, hull, crew, morale):
+def event(fuel, food, power, hull, crew, morale, distance):
+
+    print("This is the event phase. Events happen in this phase")
+    input()
+
+    return fuel, food, power, hull, crew, morale, distance
+
+def loss(fuel, food, hull, crew, morale, running):
 
     if fuel < 1:
         print("You have lost due to running out of fuel!")
@@ -106,10 +119,16 @@ def loss(fuel, food, hull, crew, morale):
         print("You have lost due to running out of morale!")
         running = False
         return running
+    else:
+        running = True
+        return running
 
-def win(distance):
+def win(distance, running):
 
     if distance < 1:
         print("You have won the game!!!")
         running = False
+        return running
+    else:
+        running = True
         return running

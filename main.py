@@ -59,6 +59,7 @@ while menu == True:
         print("Command is invalid please enter 1, 2, or 3.")
 
 day = 1
+running = True
 
 # begin game loop
 while running == True:
@@ -69,19 +70,23 @@ while running == True:
     # Display HUD
     f.hud(fuel, food, power, hull, crew, morale, distance, day)
 
+    # Generate Resources
+    fuel, food, power, hull, crew, morale, distance = f.gen(fuel, food, power, hull, crew, morale, distance)
+
     # Manage fuel use
     fuel, distance = f.fuel(fuel, distance)
     
     # Check for loss conditions
-    f.loss(fuel, food, hull, crew, morale)
+    running = f.loss(fuel, food, hull, crew, morale, running)
 
-    # Event 
+    # Event
+    fuel, food, power, hull, crew, morale, distance = f.event(fuel, food, power, hull, crew, morale, distance)
 
     # Check for loss conditions
-    f.loss(fuel, food, hull, crew, morale)
+    running = f.loss(fuel, food, hull, crew, morale, running)
 
     # Check for win conditions
-    f.win(distance)
+    running = f.win(distance, running)
 
     # Update Day
     day += 1
