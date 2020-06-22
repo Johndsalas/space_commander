@@ -31,8 +31,43 @@ def hud(fuel, food, power, hull, crew, moral, distance,day):
 
 def gen(fuel, food, power, hull, crew, morale, distance):
 
-    print("This is the generation phase. The phase reasorces are genreated!!!")
-    input()
+    # fuel_crew = 0
+    # food_crew = 0
+    # power_crew = 0
+    # hull_crew = 0
+    # morale_crew = 0
+
+    # print("This is the generation phase. In this phase you will assign crew members to generate resorces (fuel, food, power, hull, crew, morale).")
+    # print('')
+    # print(f"Your total crew is {crew}.")
+    # print('')
+
+    # while gathering == True:
+
+    #     print("How many crew members will you assign to fuel.")
+    #     fuel_crew = input()
+
+    #     print("How many crew members will you assign to food.")
+    #     food_crew = input()
+
+    #     print("How many crew members will you assign to power.")
+    #     power_crew = input()
+
+    #     print("How many crew members will you assign to hull.")
+    #     hull_crew = input()
+
+    #     print("How many crew members will you assign to morale.")
+    #     morale_crew = input()
+
+    #     if fuel_crew + food_crew + power_crew + hull_crew + morale_crew = crew:
+            
+    #         print(f"You have assigned {fuel_crew} crew to fuel.") 
+    #         print(f"You have assigned {food_crew} crew to food.")
+    #         print(f"You have assigned {power_crew} crew to power.")
+    #         print(f"You have assigned {hull_crew} crew to hull.")
+    #         print(f"You have assigned {morale_crew} crew to fuel.")
+
+    
 
     return fuel, food, power, hull, crew, morale, distance
 

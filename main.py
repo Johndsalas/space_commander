@@ -59,7 +59,7 @@ while menu == True:
         print("Command is invalid please enter 1, 2, or 3.")
 
 day = 1
-running = True
+
 
 # begin game loop
 while running == True:
