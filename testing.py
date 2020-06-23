@@ -1,6 +1,9 @@
+import random
+
 # Variables passed to function
 crew = 10
-morale = 100
+morale = 50
+fuel = 10
 
 # number of crew assigned to each resource
 fuel_crew = 0
@@ -17,10 +20,10 @@ hull_pen = 0
 morale_pen = 0
 
 # chance to produce each reasorce 
-fuel_chance = (morale-fuel_pen)/100
-food_chance = (morale-fuel_pen)/100
-power_chance = (morale-fuel_pen)/100
-hull_chance = (morale-fuel_pen)/100
+fuel_chance = (morale-fuel_pen)
+food_chance = (morale-fuel_pen)
+power_chance = (morale-fuel_pen)
+hull_chance = (morale-fuel_pen)
 morale_chance = 1
 
 # number of resorces produced on success
@@ -56,9 +59,9 @@ while gathering == True:
 
     if fuel_crew.isdigit() == True and food_crew.isdigit() == True and power_crew.isdigit() == True and hull_crew.isdigit() == True and morale_crew.isdigit() == True:
 
-        assigned = fuel_crew + food_crew + power_crew + hull_crew + morale_crew
+        assigned = int(fuel_crew) + int(food_crew) + int(power_crew) + int(hull_crew) + int(morale_crew)
 
-        if assigned == crew:
+        if assigned <= crew:
 
             crew_check = True
             
@@ -70,7 +73,13 @@ while gathering == True:
                 print(f"You have assigned {hull_crew} crew to hull.")
                 print(f"You have assigned {morale_crew} crew to fuel.")
                 print('')
-                print("Is this correct? (y/n)")
+
+                if assigned < crew:
+
+                    print("You have not assigned all of your crew members!!!")
+
+
+                print("Proceed with the current assignment? (y/n)")
                 acknowledge = input()
 
                 if acknowledge in ('y','n'):
@@ -86,14 +95,41 @@ while gathering == True:
 
                 print("calculating resorces")
 
+                fuel_gen = 0
+                food_gen = 0
+                power_gen = 0
+                hull_gen = 0
+                morale_gen = 0
+                
+                for r in range(0, int(fuel_crew)):
+
+                    if int(random.randrange(1,101)) <= fuel_chance:
+
+                        fuel_gen += fuel_prod
+                        
+                        print("Fueling successful!!!")
+                        print('')
+
+                    else:
+
+                        print("Fueling Unsuccessfull!!!")
+                        print('')
+
+                fuel += fuel_gen
+
+                break
+
             elif acknowledge == 'n':
 
                 print("Reasign your crew.")
 
         elif assigned > crew:
 
-            print("Number of crew member's assigned exceeds total number of crew. you may only assign a total of {crew} crew")
+            print(f"Number of crew member's assigned exceeds total number of crew. you may only assign a total of {crew} crew")
 
     else:
 
         print("Invalid Command please input only numbers during this phase.")
+
+print(f"Fuel: {fuel} ")
+print("End Demo")
