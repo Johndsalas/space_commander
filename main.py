@@ -1,15 +1,19 @@
 ''' Space Commander '''
 
 import functions as f
+import resources as r
+import random
 
-fuel = 100000
+# Beginning Values
+
+fuel = 30
 food = 50
 power = 5
 hull = 5
-crew = 5
+crew = 10
 morale = 100
 distance = 20
-
+day = 1
     
 
 # Display Title
@@ -36,6 +40,7 @@ while menu == True:
     print("1) See Rules. (suggested for first time players)")
     print("2) Play Game!!!")
     print("3) Exit Game")
+    print("")
 
     # store user input
     selection = input()
@@ -57,21 +62,23 @@ while menu == True:
     # if other give invalad command prompt and continue loop
     else: 
         print("Command is invalid please enter 1, 2, or 3.")
-
-day = 1
-
+        print('')
 
 # begin game loop
 while running == True:
 
     if day == 1:
         print("opening")
+        print('')
 
     # Display HUD
     f.hud(fuel, food, power, hull, crew, morale, distance, day)
 
     # Generate Resources
-    fuel, food, power, hull, crew, morale, distance = f.gen(fuel, food, power, hull, crew, morale, distance)
+    fuel, food, power, hull, crew, morale = r.gen(fuel, food, power, hull, crew, morale)
+
+    # Display HUD
+    f.hud(fuel, food, power, hull, crew, morale, distance, day)
 
     # Manage fuel use
     fuel, distance = f.fuel(fuel, distance)
@@ -80,7 +87,7 @@ while running == True:
     running = f.loss(fuel, food, hull, crew, morale, running)
 
     # Event
-    fuel, food, power, hull, crew, morale, distance = f.event(fuel, food, power, hull, crew, morale, distance)
+    #fuel, food, power, hull, crew, morale, distance = f.event(fuel, food, power, hull, crew, morale, distance)
 
     # Check for loss conditions
     running = f.loss(fuel, food, hull, crew, morale, running)
