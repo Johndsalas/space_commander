@@ -87,7 +87,7 @@ while running == True:
     running = f.loss(fuel, food, hull, crew, morale, running)
 
     # Event
-    #fuel, food, power, hull, crew, morale, distance = f.event(fuel, food, power, hull, crew, morale, distance)
+    fuel, food, power, hull, crew, morale, distance = f.event(fuel, food, power, hull, crew, morale, distance)
 
     # Check for loss conditions
     running = f.loss(fuel, food, hull, crew, morale, running)
