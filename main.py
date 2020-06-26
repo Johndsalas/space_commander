@@ -1,7 +1,12 @@
 ''' Space Commander '''
 
-import functions as f
-import resources as r
+# imports
+import menu as m
+import hud as h
+import generate as g
+import spend as s
+import event as e
+import end as end
 import random
 
 # Beginning Values
@@ -16,53 +21,8 @@ distance = 20
 day = 1
     
 
-# Display Title
-print("Welcome to space commander.")
-print("press 'enter' to continue.")
-
-input()
-
-
-# Main Menu
-# options are Play, Rules, Quit
-# Rules: display rules Text
-# Quit: Exit game
-# Play: Begin Game
-
-menu = True
-
-# begin loop for menu
-while menu == True:
-
-    # display choices
-    print("What would you like to do?")
-    print('')
-    print("1) See Rules. (suggested for first time players)")
-    print("2) Play Game!!!")
-    print("3) Exit Game")
-    print("")
-
-    # store user input
-    selection = input()
-
-    # if 1 show rules and continue loop
-    if selection == '1': 
-        f.rules_text()
-    
-    # if 3 skip to end
-    elif selection == '3':
-        running = False
-        menu = False
-
-    # if 2 stop menu loop and begin game loop
-    elif selection == '2':
-        running = True
-        menu = False
-    
-    # if other give invalad command prompt and continue loop
-    else: 
-        print("Command is invalid please enter 1, 2, or 3.")
-        print('')
+# Display Menu
+running = m.menu()
 
 # begin game loop
 while running == True:
@@ -72,28 +32,28 @@ while running == True:
         print('')
 
     # Display HUD
-    f.hud(fuel, food, power, hull, crew, morale, distance, day)
+    h.hud(fuel, food, power, hull, crew, morale, distance, day)
 
     # Generate Resources
-    fuel, food, power, hull, crew, morale = r.gen(fuel, food, power, hull, crew, morale)
+    fuel, food, power, hull, crew, morale = g.gen(fuel, food, power, hull, crew, morale)
 
     # Display HUD
-    f.hud(fuel, food, power, hull, crew, morale, distance, day)
+    h.hud(fuel, food, power, hull, crew, morale, distance, day)
 
-    # Manage fuel use
-    fuel, distance = f.fuel(fuel, distance)
+    # spend resources
+    fuel, food, power, hull, crew, morale, distance = s.spend(fuel, food, power, hull, crew, morale, distance)
     
     # Check for loss conditions
-    running = f.loss(fuel, food, hull, crew, morale, running)
+    running = end.loss(fuel, food, hull, crew, morale, running)
 
     # Event
-    fuel, food, power, hull, crew, morale, distance = f.event(fuel, food, power, hull, crew, morale, distance)
+    fuel, food, power, hull, crew, morale, distance = e.event(fuel, food, power, hull, crew, morale, distance)
 
     # Check for loss conditions
-    running = f.loss(fuel, food, hull, crew, morale, running)
+    running = end.loss(fuel, food, hull, crew, morale, running)
 
     # Check for win conditions
-    running = f.win(distance, running)
+    running = end.win(distance, running)
 
     # Update Day
     day += 1

@@ -1,8 +1,9 @@
 import random
 
-
-
 def gen(fuel, food, power, hull, crew, morale):
+    '''
+    Generate resources once during each turn 
+    '''
 
     # number of crew assigned to each resource
     fuel_crew = 0
