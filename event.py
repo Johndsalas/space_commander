@@ -1,16 +1,9 @@
 import random
 
-# values imported to function
-fuel = 30
-food = 50
-power = 5
-hull = 5
-crew = 10
-morale = 100
-distance = 20
-day = 1
-
-def event(fuel, food, power, hull, crew, morale, distance):
+def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
+    '''
+    generate a random event for each day
+    '''
 
     event_list = ["one","two","three","four","five"]
 
@@ -38,9 +31,4 @@ def event(fuel, food, power, hull, crew, morale, distance):
 
         print("This is event five")
 
-    return fuel, food, power, hull, crew, morale, distance
-
-
-for r in range(9):
-
-    event(fuel, food, power, hull, crew, morale, distance)
+    return fuel, food, power, hull, crew, burn_rate, morale, distance

@@ -10,17 +10,16 @@ import end as end
 import random
 
 # Beginning Values
-
 fuel = 30
 food = 50
 power = 5
 hull = 5
 crew = 10
+burn_rate = 10
 morale = 100
 distance = 20
 day = 1
     
-
 # Display Menu
 running = m.menu()
 
@@ -37,20 +36,17 @@ while running == True:
     # Generate Resources
     fuel, food, power, hull, crew, morale = g.gen(fuel, food, power, hull, crew, morale)
 
-    # Display HUD
-    h.hud(fuel, food, power, hull, crew, morale, distance, day)
-
     # spend resources
-    fuel, food, power, hull, crew, morale, distance = s.spend(fuel, food, power, hull, crew, morale, distance)
+    fuel, food, power, hull, crew, burn_rate, morale, distance = s.spend(fuel, food, power, hull, crew, burn_rate, morale, distance)
     
     # Check for loss conditions
-    running = end.loss(fuel, food, hull, crew, morale, running)
+    running = end.loss(hull, crew, power, morale)
 
     # Event
-    fuel, food, power, hull, crew, morale, distance = e.event(fuel, food, power, hull, crew, morale, distance)
+    fuel, food, power, hull, crew, burn_rate, morale, distance = e.event(fuel, food, power, hull, crew, burn_rate, morale, distance)
 
     # Check for loss conditions
-    running = end.loss(fuel, food, hull, crew, morale, running)
+    running = end.loss(hull, crew, power, morale)
 
     # Check for win conditions
     running = end.win(distance, running)
