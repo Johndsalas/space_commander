@@ -27,11 +27,11 @@ def gen(fuel, food, power, hull, crew, morale):
     morale_chance = (morale - morale_pen)
 
     # number of resorces produced on success
-    fuel_prod = 10
-    food_prod = 10
-    power_prod = 10
-    hull_prod = 10
-    morale_prod = 10 
+    fuel_prod = 1
+    food_prod = 3
+    power_prod = 1
+    hull_prod = 1
+    morale_prod = 5
 
     print("This is the generation phase.")
     print("In this phase you will assign crew members to generate resorces.")

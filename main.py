@@ -16,7 +16,7 @@ power = 5
 hull = 5
 crew = 10
 burn_rate = 10
-morale = 100
+morale = 70
 distance = 20
 day = 1
     
