@@ -33,16 +33,18 @@ def gen(fuel, food, power, hull, crew, morale):
     hull_prod = 1
     morale_prod = 5
 
-    print("This is the generation phase.")
-    print("In this phase you will assign crew members to generate resorces.")
-    print("(fuel, food, power, hull, crew, morale).")
+    print("Beginning Production Phase!!!")
     print('')
     print(f"Your total crew is {crew}.")
+    print(f"Each crew assigned to fuel has a {fuel_chance}% chance to produce {fuel_prod} fuel.")
+    print(f"Each crew assigned to power has a {power_chance}% chance to produce {power_prod} power crystals.")
+    print(f"Each crew assigned to hull has a {hull_chance}% chance to repair {hull_prod} damage to the hull.")
+    print(f"Each crew assigned to morale has a {morale_chance}% chance to improve the crew's morale by {morale_prod}%.")
     print('')
 
     while 1>0:
 
-        print("How many crew members will you assign to fuel.")
+        print("How many crew members will you assign to fuel.") 
         fuel_crew = input()
 
         print("How many crew members will you assign to food.")
@@ -55,8 +57,9 @@ def gen(fuel, food, power, hull, crew, morale):
         hull_crew = input()
 
         print("How many crew members will you assign to morale.")
-        print("")
         morale_crew = input()
+
+        print('')
 
         if fuel_crew.isdigit() == True and food_crew.isdigit() == True and power_crew.isdigit() == True and hull_crew.isdigit() == True and morale_crew.isdigit() == True:
 
@@ -79,7 +82,6 @@ def gen(fuel, food, power, hull, crew, morale):
 
                         print("You have not assigned all of your crew members!!!")
                         print('')
-
 
                     print("Proceed with the current assignment? (y/n)")
                     print('')

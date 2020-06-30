@@ -14,9 +14,9 @@ def rules_text():
     print("If DISTANCE is reduced to 0 and you make it to the Home Phase of the game you win!!!")
     print('')
     print("If CREW, POWER, HULL or MORALE are ever reduced to 0 you lose the game!!!")
-
-    print("Losing")
-
+    print('')
+    input("Press any key to continue.")
+    
     print("Resources")
     print("---------")
     print('')
@@ -55,6 +55,7 @@ def rules_text():
     print("Production Phase")
     print("Allocation Phase")
     print("Event Phase")
+    print("Home Phase")
     print('')
     input("Press any key to continue.")
 
@@ -132,21 +133,27 @@ def rules_text():
     print("Most events will requier you to chose between two or more unplesant options, such as sacrificing some amount of resources or another.")
     print("Once you have made your choice (assuming there is one) the event will adjust your supply as needed to fulfill the event.")
     print("When this is done the Event phase is over and play proceeds to the Home Phase.")
+    print('')
+    input("Press any key to continue.")
 
     print("Home Phase")
     print("----------")
     print("During this phase the game checks to see if you have reduced distance to 0 or less.")
     print("If you have the game is over and you have won!")
     print("If you have not the game proceeds back to the HUD phase and a new day begins.")
+    print('')
+    input("Press any key to continue.")
 
-    print("Days will continue indefinantly looping through each phase until you have won or lost the game.")
-
+    print("The number of Days the game takes place over will vary depending on youy choices.")
+    print("Play Will continue looping through each phase until you have won or lost the game.")
+    print('')
+    input("Press any key to continue.")
     
 
 def menu():
 
     print("Welcome to space commander.")
-    print("press 'enter' to continue.")
+    print("Press any key to continue.")
 
     input()
 
