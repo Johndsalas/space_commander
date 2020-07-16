@@ -8,3 +8,5 @@ dept.csv
 source.csv
 *.csv
 AllCards.json
+*.docx
+*.xisx
