@@ -2,6 +2,7 @@
 
 # imports
 import menu as m
+import intro as i
 import hud as h
 import generate as g
 import spend as s
@@ -16,9 +17,9 @@ power = 5
 hull = 5
 crew = 10
 burn_rate = 10
-morale = 70
+morale = 100
 distance = 20
-day = 1
+day = 10
     
 # Display Menu
 running = m.menu()
@@ -26,10 +27,11 @@ running = m.menu()
 # begin game loop
 while running == True:
 
-    if day == 1:
-        print("opening")
-        print('')
-
+    # introduction 
+    if day == 10:
+       
+       fuel, food, power, hull, crew, morale = i.intro(fuel, food, power, hull, crew, morale) 
+        
     # Display HUD
     h.hud(fuel, food, power, hull, crew, morale, distance, day)
 
@@ -52,11 +54,8 @@ while running == True:
     running = end.win(distance, running)
 
     # Update Day
-    day += 1
+    day -= 1
 
-
-    
-
-print("you have exited the game. Thanks for playing!")
+print("You have exited the game. Thank you for playing!")
 
 
