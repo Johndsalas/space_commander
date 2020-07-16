@@ -10,3 +10,5 @@ source.csv
 AllCards.json
 *.docx
 *.xlsx
+.gitignore
+_pycache_
