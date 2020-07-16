@@ -10,7 +10,7 @@ morale = 70
 distance = 20
 day = 1
 
-import random
+import random as r
 
 def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
     '''
@@ -30,7 +30,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
     # get rndome event
     event_list = ["gravitational_force","restock","contamination","navigational_malfunction","lifeform","magnetic_field","ambush","confined","deterioration","astroid_field","mixed","feast","recreation","overworked","relations","syphon","hording","stealing","taking_fire","decenters","boarded"]
 
-    event = random.choice(event_list)
+    event = r.choice(event_list)
 
     # print event name
     print(f"{event}")
@@ -59,22 +59,22 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Restock supplies and loose 1-10 fuel.")
-            print("b) conserve fuel and lose 1-20 food.")
+            print("a) Restock supplies: loose 1-10 fuel.")
+            print("b) Continue without restocking: lose 1-20 food.")
             choice = input()
             print("")
 
             if choice == "a":
 
-                fuel_loss += r.randint(1,10)
-                print(f"You have lost {fuel_loss} units of fuel.")
+                lost_food += r.randint(1,10)
+                print(f"You have lost {lost_fuel} units of fuel.")
                 print("")
                 break
 
             elif choice == "b":
 
-                food_loss += randint(1,20)
-                print(f"You have lost {food_lost} units of food.")
+                lost_food += r.randint(1,20)
+                print(f"You have lost {lost_food} units of food.")
                 print("")
                 break
 
@@ -86,11 +86,53 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
     elif event == "contamination":
         
+        print("A strange mold, poisons to humans, has been found growing on some of the ship's food.")
+        print("Some of the ship's food had to be destroyed to keep the mold from spreading.")
+        print("")
+
+        lost_food += r.randint(1,20)
+
+        print(f"You have lost {lost_food} units of food.")
         print("")
 
     elif event == "navigational_malfunction":
 
+        print("The ship’s navigational systems seem to be malfunctioning.")
+        print("The system is recommending a longer travel route than is necessary.")
+        print("Feeding additional power to the navigation system would allow it to reboot ")
+        print("and correct the navigational error, at the cost of power crystals.")
+        print("Alternatively, spending additional fuel would keep the ship on schedule")
+        print("in spite of the longer route, allowing the navigation system normally ")
+        print("scheduled daily bootup.")
         print("")
+
+        while resolving_event:
+
+            print("What are your orders?")
+            print("a) Feed the navigation system additional power: loose 1-4 power crystals")
+            print("b) Spend additional fuel to account for the longer route: loose 1-10 fuel")
+            choice = input()
+            print("")
+
+            if choice == "a":
+
+                lost_power += r.randint(1,4)
+                print(f"You have lost {lost_power} power crystals.")
+                print("")
+                break
+
+            elif choice == "b":
+
+                lost_fuel += r.randint(1,10)
+                print(f"You have lost {lost_fuel} units of fuel.")
+                print("")
+                break
+
+            else:
+
+                print("Please enter a of b.")
+                print("")
+                continue
 
     elif event == "lifeform":
 
