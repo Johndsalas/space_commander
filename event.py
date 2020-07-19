@@ -136,10 +136,49 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
     elif event == "lifeform":
 
+        print("Strange alien life forms have begun attaching themselves to your ship.")
+        print("They seem to be in search of food, and you are hoping against hope that you and your crew will not become snacks.")
+        print("The crew suggests luring the creatures away by jettisoning enough food to get their attention.")
+        print("Alternatively, you could use some of your power crystals to create a power surge strong enough to forcibly remove the creatures.")
         print("")
+
+        while resolving_event:
+            
+            print("What are your orders?")
+            print("a) lure creatures away: lose 1-20 food")
+            print("b) create power surge: lose 1-5 power crystals")
+            choice = input()
+
+            if choice == "a":
+
+                lost_food += r.randint(1,20)
+                print(f"You have lost {lost_food} units of food.")
+                print("")
+                break
+
+            elif choice == "b":
+
+                lost_power += r.randint(1,5)
+                print(f"You have lost {lost_power} power crystals.")
+                print("")
+                break
+
+            else:
+
+                print("Please enter a of b.")
+                print("")
+                continue
 
     elif event == "magnetic_field":
 
+        print("Your ship has encountered a peculiar time-space anomaly.")
+        print("While your crew and ship seem largely undisturbed,")
+        print("The anomaly is causing your power crystals to burn out at an accelerated rate.")
+        print("")
+
+        lost_power += r.randint(1,5)
+
+        print(f"You lose {lost_power} power crystals")
         print("")
 
     elif event == "ambush":
