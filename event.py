@@ -28,7 +28,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
     lost_morale = 0
 
     # get rndome event
-    event_list = ["gravitational_force","restock","contamination","navigational_malfunction","lifeform","magnetic_field","ambush","confined","deterioration","astroid_field","mixed","feast","recreation","overworked","relations","syphon","hording","stealing","taking_fire","decenters","boarded"]
+    event_list = ["gravitational_force","restock","contamination","navigational_malfunction","lifeform","magnetic_field","ambush","confined","deterioration","astroid_field","mixed","feast","recreation","spacewalk","relations","syphon","hording","stealing","taking_fire","decenters","boarded"]
 
     event = r.choice(event_list)
 
@@ -80,7 +80,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
             else:
 
-                print("Please enter a of b.")
+                print("Please enter a or b.")
                 print("")
                 continue
 
@@ -130,7 +130,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
             else:
 
-                print("Please enter a of b.")
+                print("Please enter a or b.")
                 print("")
                 continue
 
@@ -166,7 +166,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
             else:
 
-                print("Please enter a of b.")
+                print("Please enter a or b.")
                 print("")
                 continue
 
@@ -215,7 +215,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
             else:
 
-                print("Please enter a of b.")
+                print("Please enter a or b.")
                 print("")
                 continue
            
@@ -253,7 +253,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
             else:
 
-                print("Please enter a of b.")
+                print("Please enter a or b.")
                 print("")
                 continue
 
@@ -275,7 +275,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
             if choice == "a":
 
-                lost_power += r.randint(0,3)
+                lost_power += r.randint(1,5)
 
                 print(f"You have lost {lost_power} power crystals.")
                 print("")
@@ -291,7 +291,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
             else:
 
-                print("Please enter a of b.")
+                print("Please enter a or b.")
                 print("")
                 continue
 
@@ -328,7 +328,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
                 lost_fuel += r.randint(1,10)
 
-                print(f"You have lost {lost_fuel} fuel units.")
+                print(f"You have lost {lost_fuel} units of fuel.")
                 print("")
                 break
 
@@ -336,13 +336,13 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
                 lost_morale += r.randint(1,20)
 
-                print(f"You have sustained {lost_morale} damage to the hull.")
+                print(f"You have lost {lost_morale} morale.")
                 print("")
                 break
 
             else:
 
-                print("Please enter a of b.")
+                print("Please enter a or b.")
                 print("")
                 continue
 
@@ -354,31 +354,169 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
         print("Your second in command suggests holding a small social event to raise their spirits.")
         print("However, this would require dipping into the food reserves.")
         print("")
-        choice = input()
 
         while resolving_event:
 
-            print("what are your orders?")
-            print("a) Hold the event: lose 1-20 food")
-            print("b) Conserve supplies: lose 1-20 morale ")
+            print("What are your orders?")
+            print(f"a) Hold the event: lose {crew} food")
+            print("b) Conserve supplies: lose 1-20 morale")
             print("")
-            print("")
+            choice = input()
+
+
+            if choice == "a":
+
+                lost_food += crew
+
+                print(f"You have lost {lost_food} units of food.")
+                print("")
+                break
+
+            elif choice == "b":
+
+                lost_morale += r.randint(1,20)
+
+                print(f"You have lost {lost_morale} morale.")
+                print("")
+                break
+
+            else:
+
+                print("Please enter a or b.")
+                print("")
+                continue
 
     elif event == "recreation":
 
+        print("The crew is becoming restless and tempers are flaring as a result.")
+        print("Many have begun to request access to the ship’s recreational facilities.")
+        print("These facilities require extra power to run ")
+        print("and have been left non-operational to conserve power.")
+        print("However, the crew’s current mood demands that you reconsider")
+        print("opening these areas.")
+        print("")
+        
+
+        while resolving_event:
+
+            print("What are your orders?")
+            print("a) Let the crew have their fun: lose 1-5 power crystals")
+            print("b) Conserve power: lose 1-20 morale")
+            choice = input()
+
+
+            if choice == "a":
+
+                lost_power += r.randint(1,5)
+
+                print(f"You have lost {lost_power} power crystals.")
+                print("")
+                break
+
+            elif choice == "b":
+
+                lost_morale += r.randint(1,20)
+
+                print(f"You have lost {lost_morale} morale.")
+                print("")
+                break
+
+            else:
+
+                print("Please enter a or b.")
+                print("")
+                continue
+
+    elif event == "spacewalk":
+
+        print("A thorough diagnostic of the ship has revealed that much of the damage, sustained in the initial ")
+        print("Garquackien attack, that was thought to be superficial, may turn into significant damage in the ")
+        print("future it left unrepaired. Repairing the damage would require some of the crew to do a ")
+        print("spacewalk drawing the crew’s attention to just how dire their situation is.")
         print("")
 
-    elif event == "overworked":
+        while resolving_event:
 
-        print("")
+            print("What are your orders?")
+            print("a) It’ll hold together: lose 0-3 hull")
+            print("b) Repair the ship: lose 1-20 morale")
+            print("")
+            choice = input()
+
+            if choice == "a":
+
+                lost_hull += r.randint(0,3)
+
+                print(f"You sustained {lost_hull} damage to your hull.")
+                print("")
+                break
+
+            elif choice == "b":
+
+                lost_morale += r.randint(1,20)
+
+                print(f"You have lost {lost_morale} morale.")
+                print("")
+                break
+
+            else:
+
+                print("Please enter a or b.")
+                print("")
+                continue
+
 
     elif event == "relations":
 
+        print("‘Relations’ between two senior staff members have soured, resulting in open hostility, and the")
+        print("subornment crew being forced to choose sides. You have done your best to address the")
+        print("situation however there still lingers a noticeable air of disharmony and resentment among the")
+        print("staff.")
+        print("")
+
+        lost_morale += r.randint(1,20)
+
+        print(f"You have lost {lost_morale} morale.")
         print("")
 
     elif event == "syphon":
 
+        print("An unidentified alien vessel has attached itself to your ship and has begun syphoning fuel out of ")
+        print("your reserves. The vessel looks small and on a good day, you do not believe it could carry your ")
+        print("ships entire fuel supply. However, this is not a good day and your fuel reserves are not near ")
+        print("what they should be. You’ve considered using force to remove the alien. However, your ships ")
+        print("remaining guns must be operated manually and at great risk to crewmembers assigned to operate them.")
         print("")
+
+        while resolving_event:
+
+            print("What are your orders?")
+            print("a) Remove the aliens by force: lose 0-3 crew")
+            print("b) We have plenty of fuel: lose 1-10 fuel")
+            print("")
+            choice = input()
+
+            if choice == "a":
+
+                lost_crew += r.randint(0,3)
+
+                print(f"You have lost {lost_crew} crew.")
+                print("")
+                break
+
+            elif choice == "b":
+
+                lost_fuel += r.randint(1,20)
+
+                print(f"You have lost {lost_fuel} units of fuel.")
+                print("")
+                break
+
+            else:
+
+                print("Please enter a or b.")
+                print("")
+                continue
 
     elif event == "hording":
 
