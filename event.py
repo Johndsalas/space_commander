@@ -507,7 +507,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
             elif choice == "b":
 
-                lost_fuel += r.randint(1,20)
+                lost_fuel += r.randint(1,10)
 
                 print(f"You have lost {lost_fuel} units of fuel.")
                 print("")
@@ -519,7 +519,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
                 print("")
                 continue
 
-    elif event == "hording":
+    elif event == "stealing":
 
         print("You have discovered several power crystals are missing from the ships supply. It is likely, but ")
         print("not certain, that some of the crew have been stealing them for personal use. You could order a ")
@@ -528,9 +528,73 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
         print("the journey.")
         print("")
 
-    elif event == "stealing":
+        while resolving_event:
 
-        print("")
+            print("What are your orders?")
+            print("a) Search the ship: lose 0-3 crew")
+            print("b) turn a blind eye for now: lose 1-5 power crystals")
+            print("")
+            choice = input()
+
+            if choice == "a":
+
+                lost_crew += r.randint(0,3)
+
+                print(f"You have lost {lost_crew} crew.")
+                print("")
+                break
+
+            elif choice == "b":
+
+                lost_power += r.randint(1,5)
+
+                print(f"You have lost {lost_power} power crystals.")
+                print("")
+                break
+
+            else:
+
+                print("Please enter a or b.")
+                print("")
+                continue
+
+    elif event == "hording":
+
+        print("Persistent rumors of food shortages have prompted some of the crew to begin hording food. ")
+        print("You could choose to make an example of the hoarders by searching the ship and throwing ")
+        print("anyone caught with extra rations in the brig. This would put a stop to the hording but would ")
+        print("deny you the services of any crew member found guilty. Who knows…? Maybe it was rats…?")
+        print("Space Rats!")
+
+        while resolving_event:
+
+            print("What are your orders?")
+            print("a) Search the ship: lose 0-3 crew")
+            print("b) Turn a blind eye for now: lose 1-20 food")
+            print("")
+            choice = input()
+
+            if choice == "a":
+
+                lost_crew += r.randint(0,3)
+
+                print(f"You have lost {lost_crew} crew.")
+                print("")
+                break
+
+            elif choice == "b":
+
+                lost_food += r.randint(1,20)
+
+                print(f"You have lost {lost_food} units of food.")
+                print("")
+                break
+
+            else:
+
+                print("Please enter a or b.")
+                print("")
+                continue
 
     elif event == "taking_fire":
 
