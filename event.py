@@ -34,6 +34,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
     # print event name
     print(f"{event}")
+    print("")
 
     # carryout chosen event (display text, give choice if applocable, modify lost variables, display result text)
     if event == "gravitational_force":
@@ -50,8 +51,8 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
     elif event == "restock":
 
-        print("You discover that your food reserves have been stocked to regulation.")
-        print("There is a habitable planet not too far from you,")
+        print("You discover that your food reserves have not been stocked to regulation.")
+        print("Luckely, there is a habitable planet not too far from you,")
         print("that you could use to replenish the missing supply.")
         print("However, that would mean spending fuel on the supply run.")
         print("")
@@ -520,6 +521,11 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
     elif event == "hording":
 
+        print("You have discovered several power crystals are missing from the ships supply. It is likely, but ")
+        print("not certain, that some of the crew have been stealing them for personal use. You could order a ")
+        print("search and send the guilty crew members to the brig. Doing so would recover the lost crystals ")
+        print("but would deprive the ship of their services of any guilty crew members for the remainder of ")
+        print("the journey.")
         print("")
 
     elif event == "stealing":
