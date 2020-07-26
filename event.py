@@ -40,9 +40,9 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
         # carryout chosen event (display text, give choice if applocable, modify lost variables, display result text)
         if event == "gravitational_force":
 
-            print("Your ship passes by a large star and is nearly caught in its gravity well. ")
-            print("Through clever piloting you manage to escape the star’s pull,")
-            print("but not without burning through some of your fuel reserves.")
+            print("Your ship is passing by a large star and is nearly caught in its gravity well. Through clever ")
+            print("piloting you manage to escape the star’s pull, but not without burning through some of your ")
+            print("fuel reserves. ")
             print("")
 
             lost_fuel += r.randint(1,10)
@@ -52,17 +52,16 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
         elif event == "restock":
 
-            print("You discover that your food reserves have not been stocked to regulation.")
-            print("Luckely, there is a habitable planet not too far from you.")
-            print("You could land there and replenish the missing food supply.")
-            print("However, that would mean spending fuel on the supply run.")
+            print("You discover that your food reserves have not been stocked to regulation. Luckily, your ")
+            print("scanners have located a habitable planet. You could be use some of your fuel reserves to make ")
+            print("a detour to the planet to restock your missing food, or you could maintain your current course. ")
             print("")
 
             while resolving_event:
 
                 print("What are your orders?")
-                print("a) Restock supplies: loose 1-10 fuel.")
-                print("b) Continue without restocking: lose 1-20 food.")
+                print("a) Detour to planet: loose 1-10 fuel.")
+                print("b) Stay the course: lose 1-20 food.")
                 print("")
                 choice = input()
 
