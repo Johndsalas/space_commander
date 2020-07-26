@@ -28,7 +28,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
     lost_morale = 0
 
     # get rndome event
-    event_list = ["gravitational_force","restock","contamination","navigational_malfunction","lifeform","territory_dispute","ambush","confined","deterioration","asteroid_field","mixed","feast","recreation","spacewalk","relations","syphon","hording","stealing","blockade","decenters","boarded"]
+    event_list = ["gravitational_force","restock","contamination","navigational_malfunction","lifeform","territory_dispute","ambush","confined","deterioration","asteroid_field","mixed","feast","recreation","worse","relations","syphon","hording","stealing","blockade","decenters","boarded"]
 
 
     for event in event_list:
@@ -257,10 +257,9 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
         elif event == "deterioration":
 
-            print("The hull of your old ship is beginning to buckle under the strain of the journey. You aren’t sure ")
-            print("how extensive the damage is, but it will start to show itself soon. You could use some of your ")
-            print("power crystals to power some repair bots long enough to patch the damage till you get home.")
-            print("Alternatively, you could save your crystals and hope the damage isn’t as bad as it could be.")
+            print("The maintenance system that keeps the hull in good repair has malfunctioned resulting in ")
+            print("damage to the hull. You could choose to fix the damage by using some of the ship’s repair bots. ")
+            print("However, you would need to power the bots using some of the ship’s power crystals.")
             print("")
             
             while resolving_event:
@@ -422,35 +421,36 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
                     print("")
                     continue
 
-        elif event == "spacewalk":
+        elif event == "worse":
 
-            print("A thorough diagnostic of the ship has revealed that much of the damage, sustained in the initial ")
-            print("Garquackien attack, that was thought to be superficial, may turn into significant damage in the ")
-            print("future it left unrepaired. Repairing the damage would require some of the crew to do a ")
-            print("spacewalk drawing the crew’s attention to just how dire their situation is.")
-            print("")
+            print("After running a diagnostic on the hull of your ship, you discover that much of the damage")
+            print("sustained in the attack on Star Gazer 1, is worse than it appears. You could choose to build")
+            print("physical fortifications in the ship to prevent the damage from worsening. However, the")
+            print("fortifications are bulky and would make an already cramped ship feel even more so. Morale")
+            print("could suffer as a result.")
 
             while resolving_event:
 
                 print("What are your orders?")
-                print("a) It’ll hold together: lose 0-3 hull")
-                print("b) Repair the ship: lose 1-20 morale")
+                print("a) Repair the ship: lose 1-20 morale")
+                print("b) It’ll hold together: lose 1-3 hull")
                 print("")
                 choice = input()
 
                 if choice == "a":
 
-                    lost_hull += r.randint(0,3)
-
-                    print(f"You sustained {lost_hull} damage to your hull.")
-                    print("")
-                    break
-
-                elif choice == "b":
-
                     lost_morale += r.randint(1,20)
 
                     print(f"You have lost {lost_morale} morale.")
+                    print("")
+                    break
+                   
+
+                elif choice == "b":
+
+                    lost_hull += r.randint(0,3)
+
+                    print(f"You sustained {lost_hull} damage to your hull.")
                     print("")
                     break
 
@@ -464,9 +464,8 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
         elif event == "relations":
 
             print("‘Relations’ between two senior staff members have soured, resulting in open hostility, and the")
-            print("subornment crew being forced to choose sides. You have done your best to address the")
-            print("situation however there still lingers a noticeable air of disharmony and resentment among the")
-            print("staff.")
+            print("subornment crew are being forced to choose sides. You have done what you can to address the")
+            print("situation. However, there is still a lingering air of disharmony and resentment among the staff.")
             print("")
 
             lost_morale += r.randint(1,20)
@@ -476,11 +475,9 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
         elif event == "syphon":
 
-            print("An unidentified alien vessel has attached itself to your ship and has begun syphoning fuel out of ")
-            print("your reserves. The vessel looks small and on a good day, you do not believe it could carry your ")
-            print("ships entire fuel supply. However, this is not a good day and your fuel reserves are not near ")
-            print("what they should be. You’ve considered using force to remove the alien. However, your ships ")
-            print("remaining guns must be operated manually and at great risk to crewmembers assigned to operate them.")
+            print("An Eminore pirate vessel has attaches itself to your ship and is beginning to steal its fuel. You")
+            print("could use force to overcome the smaller vessel and prevent the theft. However, doing so would ")
+            print("put the lives of your crewmembers at risk.")
             print("")
 
             while resolving_event:
