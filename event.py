@@ -386,7 +386,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
         elif event == "recreation":
 
             print("Being confined to a small ship is making the crew restless and ill-tempered. As a result, overall ")
-            print("morale has begun to drop. You consider opening the ship’s recreational facilities in the hopes ")
+            print("morale has begun to drop. You consider opening the ship’s recreation facilities in the hopes ")
             print("that the illusion of open space will do something to combat the crew’s feeling of confinement.")
             print("opening these facilities will require spending some of the ship’s power crystal supply.")
             print("")
@@ -395,7 +395,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
             while resolving_event:
 
                 print("What are your orders?")
-                print("a) Open the recreational facilities: lose 1-5 power crystals")
+                print("a) Open the recreation facilities: lose 1-5 power crystals")
                 print("b) Conserve power: lose 1-20 morale")
                 choice = input()
 
