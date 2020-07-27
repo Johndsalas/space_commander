@@ -512,18 +512,18 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
         elif event == "stealing":
 
-            print("You have discovered several power crystals are missing from the ships supply. It is likely, but ")
-            print("not certain, that some of the crew have been stealing them for personal use. You could order a ")
-            print("search and send the guilty crew members to the brig. Doing so would recover the lost crystals ")
-            print("but would deprive the ship of their services of any guilty crew members for the remainder of ")
-            print("the journey.")
+            print("You have discovered that several power crystals are missing from the ships supply. It is likely,")
+            print("that some of the crew have been ‘appropriating’ them for personal use. You could order a ship ")
+            print("wide search to recover the missing crystals. However, any crewmembers who are caught ")
+            print("stealing in a time of crisis would need to be made swift example of, potentially reducing the ")
+            print("number of remaining crewmembers. ")
             print("")
 
             while resolving_event:
 
                 print("What are your orders?")
                 print("a) Search the ship: lose 0-3 crew")
-                print("b) turn a blind eye for now: lose 1-5 power crystals")
+                print("b) Ignore the missing crystals: lose 1-5 power crystals")
                 print("")
                 choice = input()
 
@@ -551,17 +551,17 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
         elif event == "hording":
 
-            print("Persistent rumors of food shortages have prompted some of the crew to begin hording food. ")
-            print("You could choose to make an example of the hoarders by searching the ship and throwing ")
-            print("anyone caught with extra rations in the brig. This would put a stop to the hording but would ")
-            print("deny you the services of any crew member found guilty. Who knows…? Maybe it was rats…?")
-            print("Space Rats!")
+            print("Persistent rumors of food shortages have prompted some of the crew to begin hording food")
+            print("You could order a ship wide search to recover the missing food. However, any crewmembers")
+            print("who are caught stealing in a time of crisis would need to be made swift example of, potentially")
+            print("reducing the number of remaining crewmembers.")
+            
 
             while resolving_event:
 
                 print("What are your orders?")
                 print("a) Search the ship: lose 0-3 crew")
-                print("b) Turn a blind eye for now: lose 1-20 food")
+                print("b) Ignore the missing food: lose 1-20 food")
                 print("")
                 choice = input()
 
@@ -589,10 +589,10 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
         elif event == "blockade":
 
-            print("Some of the Garquackiens have gotten ahead of you and set up a blockade. With no way to ")
-            print("navigate around, you are forced to confront the blockade head on. You could send fighters to ")
-            print("clear out the blockade, risking the lives of some of your crew, or ram through the blockade ")
-            print("causing damage to the hull of your ship.  ")
+            print("Some of the Garquackiens have gotten ahead of you and set up a blockade. With no way to")
+            print("navigate around it, you are forced to confront the blockade head on. You could send fighters to")
+            print("clear out the blockade, risking the lives of some of your crew, or ram through the blockade")
+            print("causing damage to the hull of your ship.")
             print("")
 
             while resolving_event:
@@ -627,18 +627,18 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
         elif event == "decenters":
 
-            print("Fear among the crew has turned into whispers of mutiny. The crew unpersuaded, and you ")
-            print("remain confident that they will not betray you. However, such whispering is having a negative ")
-            print("effect on the crew’s morale. You could round up the whisperers and send them to the brig this ")
-            print("would put a stop to their whispering and restore morale, however this would deny you the ")
-            print("services of any of the whispering crew member.")
+            print("Fear and despair among the crew has turned into whispers of mutiny. The crew unpersuaded,")
+            print("and you remain confident that they will not betray you. However, such whispering is having a")
+            print("negative effect on the crew’s morale. You could conduct a search to round up the whisperers")
+            print("and make an example of them. This would put a stop to their whispering and restore morale.")
+            print("However, this will potentially reduce the number of remaining crewmembers.")
             print("")
 
             while resolving_event:
 
                 print("What are your orders?")
-                print("a) Send the whisperers to the brig: lose 0-3 crew")
-                print("b) Confront the whisperers privately: lose 1-20 morale")
+                print("a) Make an example: lose crew")
+                print("b) Confront the whisperers privately: lose morale")
                 print("")
                 choice = input()
 
@@ -666,7 +666,7 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
 
         elif event == "boarded":
 
-            print("Without warning, several Garquackien soldiers beame aboard your ship in an attempt to ")
+            print("Without warning, several Garquackien soldiers beam aboard your ship in an attempt to")
             print("commandeer it. Your crew manages to dispatch the invaders, but not without a fight.")
             
             lost_crew += r.randint(0,3)
