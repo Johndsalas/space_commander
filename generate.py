@@ -1,8 +1,200 @@
 import random
 
+def assign_crew():
+
+    # get input for crew assigned to fuel
+    print("How many crew members will you assign to fuel.")
+    fuel_crew = input()
+
+    # get imput for crew assigned to food
+    print("How many crew members will you assign to food.")
+    food_crew = input()
+
+    # get imput for crew assigned to power
+    print("How many crew members will you assign to power.")
+    power_crew = input()
+
+    # get imput for crew assigned to hull
+    print("How many crew members will you assign to hull.")
+    hull_crew = input()
+
+    # get imput for crew assigned to morale
+    print("How many crew members will you assign to morale.")
+    morale_crew = input()
+
+    # print space between next block of text
+    print('')
+
+    return fuel_crew, food_crew, power_crew, hull_crew, morale_crew
+
+
+def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew):
+
+    # Check for non-numeric input
+    if not (fuel_crew.isdigit() and food_crew.isdigit() and power_crew.isdigit() and hull_crew.isdigit() and morale_crew.isdigit()):
+
+        # if non-numeric input is found propt user and return false
+        print("Input is incorrect. Please input only numbers")
+        print("")
+        return False
+
+    else:
+
+        # get total of assigned crew
+        assigned = int(fuel_crew) + int(food_crew) + int(power_crew) + int(hull_crew) + int(morale_crew)
+
+        # if assigned crew > crew prompt user and return false
+        if assigned > crew:
+
+            print("You assigned too many crew members.")
+            print("")
+            return False
+
+        # if assigned crew <= crew 
+        else:
+
+            # display crew assignments
+            print(f"You have assigned {fuel_crew} crew to fuel.") 
+            print(f"You have assigned {food_crew} crew to food.")
+            print(f"You have assigned {power_crew} crew to power.")
+            print(f"You have assigned {hull_crew} crew to hull.")
+            print(f"You have assigned {morale_crew} crew to fuel.")
+            print('')
+
+            # if assigned crew < crew display warning
+            if assigned < crew:
+
+                print("You have not assigned all of your crew members!!!")
+                print('')
+
+            # create loop to ask if user wishes to proceed with the current selection
+            crew_check = True
+
+            while crew_check:
+
+                # prompt user for verification and get imput
+                print("Proceed with the current assignment? (y/n)")
+                print('')
+                acknowledge = input()
+
+                # if input is not valid restart the loop
+                if acknowledge not in('y', 'n'):
+
+                    print("Invalid command please type 'y' or 'n")
+                    print('')
+                    continue
+
+                # if y return True
+                if acknowledge == 'y':
+
+                    return True
+
+                # if n return False
+                elif acknowledge == 'n':
+
+                    return False
+
+def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel, food, power, hull, morale):
+
+    # define resources generated 
+    fuel_gen = 0
+    food_gen = 0
+    power_gen = 0
+    hull_gen = 0
+    morale_gen = 0
+
+    # pelalty to production chance for each reasorce
+    fuel_pen = 15
+    food_pen = 5
+    power_pen = 15
+    hull_pen = 30
+    morale_pen = 5
+
+    # chance to produce each reasorce
+    fuel_chance = (morale - fuel_pen)
+    food_chance = (morale - food_pen)
+    power_chance = (morale - power_pen)
+    hull_chance = (morale - hull_pen)
+    morale_chance = (morale - morale_pen)
+
+    # number of resorces produced on success
+    fuel_prod = 3
+    food_prod = 5
+    power_prod = 2
+    hull_prod = 1
+    morale_prod = 5
+
+    # calculate resorces generated this turn
+    # for each crew assigned to a resource roll a 100 sided die
+    # if that die rolls at or below resource_chance add resource_prod to resorce_gen
+
+    # Fuel
+    for r in range(0, int(fuel_crew)):
+
+        if int(random.randrange(1,101)) <= fuel_chance:
+
+            fuel_gen += fuel_prod
+
+    # Food
+    for r in range(0, int(food_crew)):
+
+        if int(random.randrange(1,101)) <= food_chance:
+
+            food_gen += food_prod
+            
+    # Power
+    for r in range(0, int(power_crew)):
+
+        if int(random.randrange(1,101)) <= power_chance:
+
+            power_gen += power_prod
+            
+    # Hull
+    for r in range(0, int(hull_crew)):
+
+        if int(random.randrange(1,101)) <= hull_chance:
+
+            hull_gen += hull_prod
+            
+    # Morale
+    for r in range(0, int(morale_crew)):
+
+        if int(random.randrange(1,101)) <= morale_chance:
+
+            morale_gen += morale_prod
+
+    # add generated resources to total resource
+    fuel += fuel_gen
+    food += food_gen
+    power += power_gen
+    hull += hull_gen
+    morale += morale_gen
+
+    # check for capped resources
+    hull, morale = is_capped(hull, morale)
+
+    return fuel, food, power, hull, morale
+
+def is_capped(hull, morale):
+
+     # Check for resource caps
+
+    if hull > 5:
+
+        print("Hull cannot exceed 5")
+        print('')
+        hull = 5
+
+    if morale > 100:
+
+        print("morale cannot exceed 100")
+        morale = 100
+
+
+
 def gen(fuel, food, power, hull, crew, morale):
     '''
-    Generate resources once during each turn 
+    Generate resources
     '''
 
     # number of crew assigned to each resource
@@ -12,172 +204,38 @@ def gen(fuel, food, power, hull, crew, morale):
     hull_crew = 0
     morale_crew = 0
 
-    # pelalty to production chance for each reasorce
-    fuel_pen = 0
-    food_pen = 0
-    power_pen = 0
-    hull_pen = 0
-    morale_pen = 0
 
-    # chance to produce each reasorce 
-    fuel_chance = (morale - fuel_pen)
-    food_chance = (morale - food_pen)
-    power_chance = (morale - power_pen)
-    hull_chance = (morale - hull_pen)
-    morale_chance = (morale - morale_pen)
-
-    # number of resorces produced on success
-    fuel_prod = 1
-    food_prod = 3
-    power_prod = 1
-    hull_prod = 1
-    morale_prod = 5
-
+    # display information for the beginning of the production phase
     print("Beginning Production Phase!!!")
     print('')
-    print(f"Your total crew is {crew}.")
+    print(f"You mas assign {crew} crew members to produce resources")
     print(f"Each crew assigned to fuel has a {fuel_chance}% chance to produce {fuel_prod} fuel.")
     print(f"Each crew assigned to power has a {power_chance}% chance to produce {power_prod} power crystals.")
     print(f"Each crew assigned to hull has a {hull_chance}% chance to repair {hull_prod} damage to the hull.")
     print(f"Each crew assigned to morale has a {morale_chance}% chance to improve the crew's morale by {morale_prod}%.")
     print('')
 
-    while 1>0:
+    # create loop for assigning crew
+    giving_orders = True
 
-        print("How many crew members will you assign to fuel.") 
-        fuel_crew = input()
+    while giving_orders:
 
-        print("How many crew members will you assign to food.")
-        food_crew = input()
+        # assign crew to resources
+        fuel_crew, food_crew, power_crew, hull_crew, morale_crew = assign_crew()
 
-        print("How many crew members will you assign to power.")
-        power_crew = input()
-
-        print("How many crew members will you assign to hull.")
-        hull_crew = input()
-
-        print("How many crew members will you assign to morale.")
-        morale_crew = input()
-
-        print('')
-
-        if fuel_crew.isdigit() == True and food_crew.isdigit() == True and power_crew.isdigit() == True and hull_crew.isdigit() == True and morale_crew.isdigit() == True:
-
-            assigned = int(fuel_crew) + int(food_crew) + int(power_crew) + int(hull_crew) + int(morale_crew)
-
-            if assigned <= crew:
-
-                crew_check = True
-                
-                while crew_check:
-            
-                    print(f"You have assigned {fuel_crew} crew to fuel.") 
-                    print(f"You have assigned {food_crew} crew to food.")
-                    print(f"You have assigned {power_crew} crew to power.")
-                    print(f"You have assigned {hull_crew} crew to hull.")
-                    print(f"You have assigned {morale_crew} crew to fuel.")
-                    print('')
-
-                    if assigned < crew:
-
-                        print("You have not assigned all of your crew members!!!")
-                        print('')
-
-                    print("Proceed with the current assignment? (y/n)")
-                    print('')
-                    acknowledge = input()
-
-                    if acknowledge in ('y','n'):
-                        break
-
-                    else:
-                        
-                        print("Invalid command please type 'y' or 'n")
-                        print('')
-                
-                if acknowledge == 'y':
-
-                    # define resources generated 
-                    fuel_gen = 0
-                    food_gen = 0
-                    power_gen = 0
-                    hull_gen = 0
-                    morale_gen = 0
+        # Check for valid input and user validation
+        if check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew):
+            break
+    
+    # generate resources and add them to totals
+    fuel, food, power, hull, morale = generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew)        
+    
+    # check hull and moralse for resource caps
+    hull, morale = is_capped(hull, morale)
                     
-                    # calculate resorces generated this turn
-                    # for each crew assigned to a resorce roll a 100 sided die
-                    # if that die rolls at or below resource_chance add resource_prod to resorce_gen
+                   
 
-                    # Fuel
-                    for r in range(0, int(fuel_crew)):
-
-                        if int(random.randrange(1,101)) <= fuel_chance:
-
-                            fuel_gen += fuel_prod
-                
-                    # Food
-                    for r in range(0, int(food_crew)):
-
-                        if int(random.randrange(1,101)) <= food_chance:
-
-                            food_gen += food_prod
-                            
-                    # Power
-                    for r in range(0, int(power_crew)):
-
-                        if int(random.randrange(1,101)) <= power_chance:
-
-                            power_gen += power_prod
-                            
-                    # Hull
-                    for r in range(0, int(hull_crew)):
-
-                        if int(random.randrange(1,101)) <= hull_chance:
-
-                            hull_gen += hull_prod
-                            
-                    # Morale
-                    for r in range(0, int(morale_crew)):
-
-                        if int(random.randrange(1,101)) <= morale_chance:
-
-                            morale_gen += morale_prod
-
-                    # add generated resources to total resource
-                    fuel += fuel_gen
-                    food += food_gen
-                    power += power_gen
-                    hull += hull_gen
-                    morale += morale_gen
-
-                    # Check for resource caps
-
-                    if hull > 5:
-
-                        print("Hull cannot exceed 5")
-                        print('')
-                        hull = 5
-
-                    if morale > 100:
-
-                        print("morale cannot exceed 100")
-                        morale = 100
-
-                    # end loop
-                    break
-
-                elif acknowledge == 'n':
-
-                    print("Reasign your crew.")
-
-            elif assigned > crew:
-
-                print(f"Number of crew member's assigned exceeds total number of crew. you may only assign a total of {crew} crew")
-
-        else:
-
-            print("Invalid Command please input only numbers during this phase.")
-
+                   
     # display resoures generated this turn
     print('')
     print(f"Fuel generated this turn: {fuel_gen} ")
