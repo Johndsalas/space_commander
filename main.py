@@ -30,7 +30,7 @@ while running == True:
     # introduction 
     if day == 10:
        
-       fuel, food, power, hull, crew, morale = i.intro(fuel, food, power, hull, crew, morale) 
+        fuel, food, power, hull, crew, morale = i.intro(fuel, food, power, hull, crew, morale) 
         
     # Display HUD
     h.hud(fuel, food, power, hull, crew, morale, distance, day)
