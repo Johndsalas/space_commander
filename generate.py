@@ -96,7 +96,7 @@ def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_cr
 
 def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel, food, power, hull, morale):
 
-    # define resources generated 
+    # define resources generated
     fuel_gen = 0
     food_gen = 0
     power_gen = 0
@@ -170,6 +170,15 @@ def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel, foo
     hull += hull_gen
     morale += morale_gen
 
+    # display generated resources
+    print('')
+    print(f"Fuel generated this turn: {fuel_gen} ")
+    print(f"Food generated this turn: {food_gen}")
+    print(f"Power generated this turn: {power_gen}")
+    print(f"Hull generated this turn: {hull_gen}")
+    print(f"Morale generated this turn: {morale_gen}")
+    print('')
+
     # check for capped resources
     hull, morale = is_capped(hull, morale)
 
@@ -204,7 +213,6 @@ def gen(fuel, food, power, hull, crew, morale):
     hull_crew = 0
     morale_crew = 0
 
-
     # display information for the beginning of the production phase
     print("Beginning Production Phase!!!")
     print('')
@@ -227,22 +235,7 @@ def gen(fuel, food, power, hull, crew, morale):
         if check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew):
             break
     
-    # generate resources and add them to totals
+    # get generated resources, display them and add them to resource totals
     fuel, food, power, hull, morale = generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew)        
-    
-    # check hull and moralse for resource caps
-    hull, morale = is_capped(hull, morale)
-                    
-                   
-
-                   
-    # display resoures generated this turn
-    print('')
-    print(f"Fuel generated this turn: {fuel_gen} ")
-    print(f"Food generated this turn: {food_gen}")
-    print(f"Power generated this turn: {power_gen}")
-    print(f"Hull generated this turn: {hull_gen}")
-    print(f"Morale generated this turn: {morale_gen}")
-    print('')
-
+                 
     return fuel, food, power, hull, crew, morale
