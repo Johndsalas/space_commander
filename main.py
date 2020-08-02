@@ -32,14 +32,23 @@ while running == True:
 
         fuel, food, power, hull, crew, morale = i.intro(fuel, food, power, hull, crew, morale) 
 
+    # Display Distance
+    h.travel(distance, day)
+
     # Display HUD
-    h.hud(fuel, food, power, hull, crew, morale, distance, day)
+    h.hud(fuel, food, power, hull, crew, morale)
 
     # Generate Resources
     fuel, food, power, hull, crew, morale = g.gen(fuel, food, power, hull, crew, morale)
 
+    # Display HUD
+    h.hud(fuel, food, power, hull, crew, morale)
+
     # spend resources
     fuel, food, power, hull, crew, burn_rate, morale, distance = s.spend(fuel, food, power, hull, crew, burn_rate, morale, distance)
+
+    # Display HUD
+    h.hud(fuel, food, power, hull, crew, morale)
 
     # Check for loss conditions
     running = ed.loss(hull, crew, power, morale)
