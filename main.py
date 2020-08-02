@@ -39,7 +39,7 @@ while running == True:
     h.hud(fuel, food, power, hull, crew, morale)
 
     # Generate Resources
-    fuel, food, power, hull, crew, morale = g.gen(fuel, food, power, hull, crew, morale)
+    fuel, food, power, hull, crew, morale = g.production_phase(fuel, food, power, hull, crew, morale)
 
     # Display HUD
     h.hud(fuel, food, power, hull, crew, morale)

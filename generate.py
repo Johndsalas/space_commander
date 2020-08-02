@@ -28,7 +28,7 @@ def assign_crew():
     return fuel_crew, food_crew, power_crew, hull_crew, morale_crew
 
 
-def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew):
+def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, crew):
 
     # Check for non-numeric input
     if not (fuel_crew.isdigit() and food_crew.isdigit() and power_crew.isdigit() and hull_crew.isdigit() and morale_crew.isdigit()):
@@ -94,7 +94,7 @@ def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_cr
 
                     return False
 
-def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel, food, power, hull, morale):
+def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel_chance, food_chance, power_chance, hull_chance, morale_chance, fuel_prod, food_prod, power_prod, hull_prod, morale_prod):
 
     # define resources generated
     fuel_gen = 0
@@ -102,27 +102,6 @@ def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel, foo
     power_gen = 0
     hull_gen = 0
     morale_gen = 0
-
-    # pelalty to production chance for each reasorce
-    fuel_pen = 15
-    food_pen = 5
-    power_pen = 15
-    hull_pen = 30
-    morale_pen = 5
-
-    # chance to produce each reasorce
-    fuel_chance = (morale - fuel_pen)
-    food_chance = (morale - food_pen)
-    power_chance = (morale - power_pen)
-    hull_chance = (morale - hull_pen)
-    morale_chance = (morale - morale_pen)
-
-    # number of resorces produced on success
-    fuel_prod = 3
-    food_prod = 5
-    power_prod = 2
-    hull_prod = 1
-    morale_prod = 5
 
     # calculate resorces generated this turn
     # for each crew assigned to a resource roll a 100 sided die
@@ -163,26 +142,19 @@ def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel, foo
 
             morale_gen += morale_prod
 
-    # add generated resources to total resource
-    fuel += fuel_gen
-    food += food_gen
-    power += power_gen
-    hull += hull_gen
-    morale += morale_gen
-
     # display generated resources
     print('')
-    print(f"Fuel generated this turn: {fuel_gen} ")
-    print(f"Food generated this turn: {food_gen}")
-    print(f"Power generated this turn: {power_gen}")
-    print(f"Hull generated this turn: {hull_gen}")
-    print(f"Morale generated this turn: {morale_gen}")
+    print(f"Fuel generated: {fuel_gen} ")
+    print(f"Food generated: {food_gen}")
+    print(f"Power Crystals generated: {power_gen}")
+    print(f"Hull repaired: {hull_gen}")
+    print(f"Morale generated: {morale_gen}")
     print('')
 
-    # check for capped resources
-    hull, morale = is_capped(hull, morale)
 
-    return fuel, food, power, hull, morale
+
+    return fuel_gen, food_gen, power_gen, hull_gen, morale_gen
+
 
 def is_capped(hull, morale):
 
@@ -199,9 +171,10 @@ def is_capped(hull, morale):
         print("morale cannot exceed 100")
         morale = 100
 
+    return hull, morale
 
 
-def gen(fuel, food, power, hull, crew, morale):
+def production_phase(fuel, food, power, hull, crew, morale):
     '''
     Generate resources
     '''
@@ -213,11 +186,34 @@ def gen(fuel, food, power, hull, crew, morale):
     hull_crew = 0
     morale_crew = 0
 
+    # set additional amount subtracted from morale to produce each resource
+    fuel_pen = 15
+    food_pen = 5
+    power_pen = 15
+    hull_pen = 25
+    morale_pen = 5
+
+    # chance to produce each reasorce
+    fuel_chance = (morale - fuel_pen)
+    food_chance = (morale - food_pen)
+    power_chance = (morale - power_pen)
+    hull_chance = (morale - hull_pen)
+    morale_chance = (morale - morale_pen)
+
+    # number of resorces produced on success
+    fuel_prod = 3
+    food_prod = 5
+    power_prod = 2
+    hull_prod = 1
+    morale_prod = 5
+
     # display information for the beginning of the production phase
     print("Beginning Production Phase!!!")
     print('')
     print(f"You mas assign {crew} crew members to produce resources")
+    print('')
     print(f"Each crew assigned to fuel has a {fuel_chance}% chance to produce {fuel_prod} fuel.")
+    print(f"Each crew assigned to fuel has a {food_chance}% chance to produce {food_prod} fuel.")
     print(f"Each crew assigned to power has a {power_chance}% chance to produce {power_prod} power crystals.")
     print(f"Each crew assigned to hull has a {hull_chance}% chance to repair {hull_prod} damage to the hull.")
     print(f"Each crew assigned to morale has a {morale_chance}% chance to improve the crew's morale by {morale_prod}%.")
@@ -232,10 +228,20 @@ def gen(fuel, food, power, hull, crew, morale):
         fuel_crew, food_crew, power_crew, hull_crew, morale_crew = assign_crew()
 
         # Check for valid input and user validation
-        if check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew):
+        if check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, crew):
             break
     
-    # get generated resources, display them and add them to resource totals
-    fuel, food, power, hull, morale = generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew)        
-                 
+    # get generated resources and display them
+    fuel_gen, food_gen, power_gen, hull_gen, morale_gen = generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel_chance, food_chance, power_chance, hull_chance, morale_chance, fuel_prod, food_prod, power_prod, hull_prod, morale_prod)        
+    
+    # add generated resources to total resource
+    fuel += fuel_gen
+    food += food_gen
+    power += power_gen
+    hull += hull_gen
+    morale += morale_gen
+
+    # check for capped resources
+    hull, morale = is_capped(hull, morale)
+
     return fuel, food, power, hull, crew, morale

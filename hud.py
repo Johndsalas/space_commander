@@ -1,6 +1,6 @@
 
 
-def hud(fuel, food, power, hull, crew, morale, distance, day):
+def hud(fuel, food, power, hull, crew, morale):
     '''
     Heads up display for game stats
     '''
@@ -9,6 +9,7 @@ def hud(fuel, food, power, hull, crew, morale, distance, day):
     print("|{:^6}|{:^6}|{:^16}|{:^6}|{:^6}|{:^8}|".format("Fuel", "Food", "Power Crystals", "Hull", "Crew", "Morale"))
     print("|{:^6}|{:^6}|{:^16}|{:^6}|{:^6}|{:^8}|".format(fuel, food, power, str(hull)+'/5', crew, str(morale)+'%'))
     print(" -----------------------------------------------------")
+    print("")
 
 def travel(distance, day):
 
