@@ -1,84 +1,117 @@
 import random
 
-def spend_food(food, crew, morale):
-    '''
-    Spend food
-    '''
+# def spend_food(food, crew, morale):
+#     '''
+#     Spend food
+#     '''
 
-    cooking = True
+#     cooking = True
 
-    # begin food spending loop
-    while cooking == True:
+#     # begin food spending loop
+#     while cooking == True:
 
-        print(f"You have {food} total food")
-        print('')
-        print("How will you ration you food?")
-        print('')
-        print("a) Abundantly  - spend 2X crew food. (Morale + 10)")
-        print("b) Sufficiently - spend 1X crew food.")
-        print("c) Megerly - spend .5X crew food. (Morale - 10)")
-        print("d) Sparingly - spend 0 food. (-1 crew, and -20 morale)")
-        print('')
+#         print(f"You have {food} total food")
+#         print('')
+#         print("How will you ration you food?")
+#         print('')
+#         print("a) Abundantly  - spend 2X crew food. (Morale + 10)")
+#         print("b) Sufficiently - spend 1X crew food.")
+#         print("c) Megerly - spend .5X crew food. (Morale - 10)")
+#         print("d) Sparingly - spend 0 food. (-1 crew, and -20 morale)")
+#         print('')
 
-        catering = input()
+#         catering = input()
 
-        # assign food_consumed ammount based on selection
-        # if selection is invalid restart loop
-        if catering == 'a':
+#         # assign food_consumed ammount based on selection
+#         # if selection is invalid restart loop
+#         if catering == 'a':
 
-            food_consumed = int(crew) * 2
-            morale_change = 10
-            crew_change = 0
+#             food_consumed = int(crew) * 2
+#             morale_change = 10
+#             crew_change = 0
 
-        elif catering == 'b':
+#         elif catering == 'b':
 
-            food_consumed = int(crew)
-            morale_change = 0
-            crew_change = 0
+#             food_consumed = int(crew)
+#             morale_change = 0
+#             crew_change = 0
 
-        elif catering == 'c':
+#         elif catering == 'c':
 
-            food_consumed = round(int(crew)/2)
-            morale_change = -10
-            crew_change = 0
+#             food_consumed = round(int(crew)/2)
+#             morale_change = -10
+#             crew_change = 0
 
-        elif catering == 'd':
+#         elif catering == 'd':
 
-            food_consumed = 0
-            morale_change = -20
-            crew_change = 1
+#             food_consumed = 0
+#             morale_change = -20
+#             crew_change = 1
 
-        else:
+#         else:
         
-            print("Invalid entry. Please enter a, b, c, d.")
-            continue
+#             print("Invalid entry. Please enter a, b, c, d.")
+#             continue
 
-        # check if food is grater or equal to food_consumed
-        # if it is adjust totals, print results, and break loop
-        # if not display error and restart loop
+#         # check if food is grater or equal to food_consumed
+#         # if it is adjust totals, print results, and break loop
+#         # if not display error and restart loop
 
-        if food >= food_consumed:
+#         if food >= food_consumed:
 
-            food -= food_consumed
-            morale += morale_change
-            crew -= crew_change
+#             food -= food_consumed
+#             morale += morale_change
+#             crew -= crew_change
 
-            print(f"You have spent {food_consumed} food.")
-            print(f"Morale has changed by {morale_change}.")
-            print('')
+#             print(f"You have spent {food_consumed} food.")
+#             print(f"Morale has changed by {morale_change}.")
+#             print('')
             
-            if crew_change > 0:
+#             if crew_change > 0:
 
-                print("You have lost 1 crew!!!")
-                print('')
+#                 print("You have lost 1 crew!!!")
+#                 print('')
 
-            cooking = False
+#             cooking = False
      
-        else:
+#         else:
 
-            continue
+#             continue
 
-    return food, crew, morale
+#     return food, crew, morale
+
+def feed_crew(crew, food):
+    '''
+    Feed crew is possible if not remove starved crew members
+    '''
+
+    # set food_consumed equal to number of crew
+    food_consumed = crew
+
+    # if there is enough food to feed the crew, remove the food consumed from the supply and display results
+    if food_consumed <= food:
+
+        food -= food_consumed
+
+        print(f"Your crew consumes {food_consumed} units of food.")
+        print(f'You have {food} units of food remaining.')
+        print("")
+
+    # if there is not enough food to feed the crew, remove all food from the supply and remove starved crew and dislpay results
+    elif food_consumed > food:
+
+        crew_starved = crew - food
+
+        crew -= crew_starved
+
+        print(f"You only had enough food to feed {food} of your crew.")
+        print(f"{crew_starved} of your crew have starved.")
+        print("")
+
+        food = 0
+
+    return crew, food
+
 
 def crystal_burn(power,burn_rate):
     '''
@@ -188,11 +221,11 @@ def spend(fuel, food, power, hull, crew, burn_rate, morale, distance):
     print("Spend fuel to move the ship closer to home")
     print('')
 
-    # check for crystal burnout
-    power, burn_rate = crystal_burn(power, burn_rate)
-
     # spend food
     food, crew, morale = spend_food(food, crew, morale)
+
+    # check for crystal burnout
+    power, burn_rate = crystal_burn(power, burn_rate)
 
     # spend fuel
     fuel, distance = spend_fuel(fuel, distance)
