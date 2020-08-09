@@ -38,13 +38,13 @@ while running == True:
     # Display HUD
     h.hud(fuel, food, power, hull, crew, morale)
 
-    # Generate Resources
+    # Phase 1: Production Phase
     fuel, food, power, hull, crew, morale = g.production_phase(fuel, food, power, hull, crew, morale)
 
     # Display HUD
     h.hud(fuel, food, power, hull, crew, morale)
 
-    # spend resources
+    # Phase 2: Spend Phase
     fuel, food, power, hull, crew, burn_rate, morale, distance = s.spend(fuel, food, power, hull, crew, burn_rate, morale, distance)
 
     # Display HUD
@@ -53,8 +53,8 @@ while running == True:
     # Check for loss conditions
     running = ed.loss(hull, crew, power, morale)
 
-    # Event
-    fuel, food, power, hull, crew, burn_rate, morale, distance = e.event(fuel, food, power, hull, crew, burn_rate, morale, distance)
+    # Phase 3: Event Phase
+    fuel, food, power, hull, crew, morale, distance = e.event(fuel, food, power, hull, crew, morale, distance)
 
     # Check for loss conditions
     running = ed.loss(hull, crew, power, morale)

@@ -82,7 +82,7 @@ import random
 
 def feed_crew(crew, food):
     '''
-    Feed crew is possible if not remove starved crew members
+    Feed crew if possible. If not remove starved crew members
     '''
 
     # set food_consumed equal to number of crew
@@ -162,10 +162,10 @@ def spend_fuel(fuel, distance):
         print("How much fuel do you want to spend?")
         print('')
       
-        print("a) Spend 1 fuel move 1 distance.")
-        print("b) Spent 3 fuel move 2 distance.")
-        print("c) Spend 6 fuel move 3 distance.")
-        print("d) Spent 10 fuel move 4 distance.")
+        print("a) Spend 1 fuel to move 1 distance.")
+        print("b) Spent 3 fuel to move 2 distance.")
+        print("c) Spend 6 fuel to move 3 distance.")
+        print("d) Spent 10 fuel to move 4 distance.")
         print('')
 
         amount = input()
@@ -222,7 +222,7 @@ def spend(fuel, food, power, hull, crew, burn_rate, morale, distance):
     print('')
 
     # spend food
-    food, crew, morale = spend_food(food, crew, morale)
+    food, crew = feed_crew(food, crew)
 
     # check for crystal burnout
     power, burn_rate = crystal_burn(power, burn_rate)

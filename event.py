@@ -1,7 +1,7 @@
 
 import random as r
 
-def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
+def event(fuel, food, power, hull, crew, morale, distance):
     '''
     generate a random event for each day
     '''
@@ -662,6 +662,6 @@ def event(fuel, food, power, hull, crew, burn_rate, morale, distance):
         print(f"You lost {lost_crew} crew in during the battle.")
         print("") 
 
-    return fuel, food, power, hull, crew, burn_rate, morale, distance
+    return fuel, food, power, hull, crew, morale, distance
 
 # event(fuel, food, power, hull, crew, burn_rate, morale, distance)

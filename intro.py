@@ -47,11 +47,12 @@ def intro(fuel, food, power, hull, crew, morale):
     print("")
     print("press ENTER to continue")
     input()
+    print("")
     print("You narrowly escape the clutches of the Garquackien kill squad, and have managed avoid ")
     print("detection for the moment. During this respite, your mind turns to the status of your ship and its ")
     print("crew. Your last mission had been successful (for what that was worth) but also taxing. Your ")
     print("resources, crew and even the ship itself, have been under considerable strain already. You can ")
-    print("only hope that the ship will hold together until you make it back to earth. With a heavy head ")
+    print("only hope that the ship will hold together until you make it back to earth. With a heavy heart")
     print("you raise your eyes to the HUD and examine what remains of your resources.")
 
     # print("After escaping the Garquackien ships you recive rhe following status report")
