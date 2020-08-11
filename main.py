@@ -4,7 +4,7 @@
 import menu as m
 import intro as i
 import hud as h
-import generate as g
+import production as p
 import spend as s
 import event as e
 import end as ed
@@ -35,20 +35,11 @@ while running == True:
     # Display Distance
     h.travel(distance, day)
 
-    # Display HUD
-    h.hud(fuel, food, power, hull, crew, morale)
-
     # Phase 1: Production Phase
-    fuel, food, power, hull, crew, morale = g.production_phase(fuel, food, power, hull, crew, morale)
-
-    # Display HUD
-    h.hud(fuel, food, power, hull, crew, morale)
+    fuel, food, power, hull, crew, morale = p.production_phase(fuel, food, power, hull, crew, morale)
 
     # Phase 2: Spend Phase
     fuel, food, power, hull, crew, burn_rate, morale, distance = s.spend(fuel, food, power, hull, crew, burn_rate, morale, distance)
-
-    # Display HUD
-    h.hud(fuel, food, power, hull, crew, morale)
 
     # Check for loss conditions
     running = ed.loss(hull, crew, power, morale)
@@ -58,6 +49,8 @@ while running == True:
 
     # Check for loss conditions
     running = ed.loss(hull, crew, power, morale)
+
+    # phase 4: Travel Phase
 
     # Check for win conditions
     running = ed.win(distance, running)
