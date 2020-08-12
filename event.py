@@ -1,10 +1,30 @@
 
 import random as r
+import hud as h
+
+# Beginning Values
+fuel = 30
+food = 50
+power = 10
+hull = 5
+crew = 10
+burn_rate = 10
+morale = 100
+distance = 20
+day = 10
+
 
 def event(fuel, food, power, hull, crew, morale, distance):
     '''
     generate a random event for each day
     '''
+
+    print("Begin Event Phase!")
+    print("")
+
+    h.hud(fuel, food, power, hull, crew, morale)
+
+
     # set resolving event to true
     resolving_event = True
 
@@ -664,4 +684,4 @@ def event(fuel, food, power, hull, crew, morale, distance):
 
     return fuel, food, power, hull, crew, morale, distance
 
-# event(fuel, food, power, hull, crew, burn_rate, morale, distance)
+event(fuel, food, power, hull, crew, morale, distance)

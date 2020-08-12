@@ -1,4 +1,17 @@
 import random
+import hud as h
+
+# Beginning Values
+fuel = 30
+food = 50
+power = 10
+hull = 5
+crew = 10
+burn_rate = 10
+morale = 100
+distance = 20
+day = 10
+
 
 # def spend_food(food, crew, morale):
 #     '''
@@ -80,7 +93,7 @@ import random
 
 #     return food, crew, morale
 
-def feed_crew(crew, food):
+def feed_crew(food, crew):
     '''
     Feed crew if possible. If not remove starved crew members
     '''
@@ -156,7 +169,7 @@ def spend_fuel(fuel, distance):
     fueling = True
 
     # begin fueling loop
-    while fueling == True:
+    while fueling:
 
         # get user input
         print("How much fuel do you want to spend?")
@@ -174,36 +187,37 @@ def spend_fuel(fuel, distance):
         # if not print error message and restart loop
         if amount == "a":
             fuel_spent = 1
-            distance_traveled = 1       
+            distance_traveled = 1    
+            break
 
         elif amount == "b":
             fuel_spent = 3
             distance_traveled = 2 
-            fueling = False
+            break
        
         elif amount == "c":
             fuel_spent = 6
             distance_traveled = 3    
-            fueling = False
+            break
 
         elif amount == "d":
             fuel_spent = 10
             distance_traveled = 4  
-            fueling = False
+            break
 
         else:
             print("command is invalid please input a, b, c, or d.")
             print("")
-            continue  
+            continue
 
     # adjust fule and distance totals
     fuel -= fuel_spent
     distance -= distance_traveled
 
      # print user's choice
-    print(f"You have spent {fuel_spent} fuel and traveled {distance_traveled} this turn.")  
-    print(f"You have {fuel} fuel and {distance} distance remaining.")
-    print('')
+    print(f"You have spent {fuel_spent} fuel.")
+    Print(f"You will traveled {distance_traveled} during the travel phase.")  
+    print("")
 
     return fuel, distance
 
@@ -214,12 +228,10 @@ def spend(fuel, food, power, hull, crew, burn_rate, morale, distance):
     '''
 
     # phase intro message 
-    print("This is the spend phase.")
-    print("During this phase you will:")
-    print("determine if any of your power crystals have burnt out")
-    print("Spend food to keep crew alive")
-    print("Spend fuel to move the ship closer to home")
-    print('')
+    print("Begin Production phase!")
+    print("")
+
+    h.hud(fuel, food, power, hull, crew, morale)
 
     # spend food
     food, crew = feed_crew(food, crew)
@@ -231,3 +243,5 @@ def spend(fuel, food, power, hull, crew, burn_rate, morale, distance):
     fuel, distance = spend_fuel(fuel, distance)
 
     return fuel, food, power, hull, crew, burn_rate, morale, distance
+
+spend(fuel, food, power, hull, crew, burn_rate, morale, distance)
