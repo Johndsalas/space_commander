@@ -11,7 +11,7 @@ def hud(fuel, food, power, hull, crew, morale):
     print(" -----------------------------------------------------")
     print("")
 
-def travel(distance, day):
+def status(distance, day):
 
     print('')
     print(" _____________________________________")

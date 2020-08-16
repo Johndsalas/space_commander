@@ -7,7 +7,6 @@ food = 50
 power = 10
 hull = 5
 crew = 10
-burn_rate = 10
 morale = 100
 distance = 20
 day = 10
@@ -126,13 +125,15 @@ def feed_crew(food, crew):
     return crew, food
 
 
-def crystal_burn(power,burn_rate):
+def crystal_burn(power):
     '''
     Check for crystal burnout
     '''
 
     good = 0
     burned = 0
+
+    burn_rate = 20
 
     # for each power crystal roll d100 
     # if result is equal or less than burn_rate add +1 burned
@@ -157,12 +158,10 @@ def crystal_burn(power,burn_rate):
     print(f"You have {str(power)} crystals remaning.")
     print('')
 
-    return power, burn_rate
+    return power
 
 
-
-
-def spend_fuel(fuel, distance):
+def spend_fuel(fuel):
     '''
     Spend fuel and move ship
     '''
@@ -212,17 +211,17 @@ def spend_fuel(fuel, distance):
 
     # adjust fule and distance totals
     fuel -= fuel_spent
-    distance -= distance_traveled
+    
 
      # print user's choice
     print(f"You have spent {fuel_spent} fuel.")
     Print(f"You will traveled {distance_traveled} during the travel phase.")  
     print("")
 
-    return fuel, distance
+    return fuel, distance_traveled
 
 
-def spend(fuel, food, power, hull, crew, burn_rate, morale, distance):
+def spend(fuel, food, power, hull, crew, morale):
     '''
     Spends resources during the spend phase
     '''
@@ -237,11 +236,11 @@ def spend(fuel, food, power, hull, crew, burn_rate, morale, distance):
     food, crew = feed_crew(food, crew)
 
     # check for crystal burnout
-    power, burn_rate = crystal_burn(power, burn_rate)
+    power = crystal_burn(power)
 
     # spend fuel
-    fuel, distance = spend_fuel(fuel, distance)
+    fuel, distance_traveled = spend_fuel(fuel)
 
-    return fuel, food, power, hull, crew, burn_rate, morale, distance
+    return fuel, food, power, hull, crew, morale, distance_traveled
 
 spend(fuel, food, power, hull, crew, burn_rate, morale, distance)
