@@ -2,8 +2,8 @@ import random
 import hud as h
 
 # Beginning Values
-fuel = 30
-food = 50
+fuel = 10
+food = 10
 power = 10
 hull = 5
 crew = 10
@@ -171,13 +171,16 @@ def spend_fuel(fuel):
     while fueling:
 
         # get user input
-        print("How much fuel do you want to spend?")
+        print(f"You may spend up to {fuel} units of fuel to travel.")
+        print("This will detrmine how far your ship moves during the travel phase.")
         print('')
       
-        print("a) Spend 1 fuel to move 1 distance.")
-        print("b) Spent 3 fuel to move 2 distance.")
-        print("c) Spend 6 fuel to move 3 distance.")
-        print("d) Spent 10 fuel to move 4 distance.")
+        print("a) Spend 0 fuel and do not move.")
+        print("b) Spend 1 fuel to move 1 distance.")
+        print("c) Spent 3 fuel to move 2 distance.")
+        print("d) Spend 6 fuel to move 3 distance.")
+        print("e) Spent 10 fuel to move 4 distance.")
+        print("f) Spend 15 fuel to move 5 distance.")
         print('')
 
         amount = input()
@@ -185,37 +188,57 @@ def spend_fuel(fuel):
         # if user input is valid set fule_spent and distance_traveled amounts and end loop
         # if not print error message and restart loop
         if amount == "a":
-            fuel_spent = 1
-            distance_traveled = 1    
-            break
+            fuel_spent = 0
+            distance_traveled = 0   
+            
 
         elif amount == "b":
-            fuel_spent = 3
-            distance_traveled = 2 
-            break
+            fuel_spent = 1
+            distance_traveled = 1
+            
        
         elif amount == "c":
-            fuel_spent = 6
-            distance_traveled = 3    
-            break
+            fuel_spent = 3
+            distance_traveled = 2
+            
 
         elif amount == "d":
+            fuel_spent = 9
+            distance_traveled = 4
+            
+
+        elif amount == "e":
             fuel_spent = 10
-            distance_traveled = 4  
-            break
+            distance_traveled = 5
+            
+
+        elif amount == "f":
+            fuel_spent = 15
+            distance_traveled = 6
+            
 
         else:
             print("command is invalid please input a, b, c, or d.")
             print("")
             continue
 
+
+        if fuel_spent > fuel:
+
+            print("You do not have that much fuel.")
+            print('')
+            continue
+
+        else:
+
+            break
     # adjust fule and distance totals
     fuel -= fuel_spent
     
 
      # print user's choice
     print(f"You have spent {fuel_spent} fuel.")
-    Print(f"You will traveled {distance_traveled} during the travel phase.")  
+    print(f"You will travele {distance_traveled} during the travel phase.")  
     print("")
 
     return fuel, distance_traveled
@@ -243,4 +266,4 @@ def spend(fuel, food, power, hull, crew, morale):
 
     return fuel, food, power, hull, crew, morale, distance_traveled
 
-spend(fuel, food, power, hull, crew, burn_rate, morale, distance)
+spend(fuel, food, power, hull, crew, morale)
