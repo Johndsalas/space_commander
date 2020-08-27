@@ -3,6 +3,13 @@
 
 In this text-based, resource management game, you will take on the role of a starship commander in the United Earth Federation. During the game you will make decisions, regarding the production and expenditure of your ship’s limited resources, that will ultimately lead to the success or failure of your mission. Will you lead your crew to victory and mission success, or failure and annihilation? 
 
+# What you Need to Play
+
+You will need a python environment with access to the random library to play this game.
+To begin clone repository and run main.py in your python environment.
+
+(Don’t do this just yet. This game is still actively being worked on and may not run in its current state.)
+
 ## The Story so Far...
 
 The year is 202020, and Earth Force Captain, *Chough-Chough* (That’s you!) is returning to base after another successful mission. Star Gazer 1, An earth outpost, had been the captain’s home away from home for some time now. The Garquackien threat necessitated round the clock vigil, and Earth Force Captain *Chough-Chough* had been tasked with maintaining that vigil throughout the neutral space separating The United Earth Force from the Garquackien empire and its quest for galactic domination. As the ship approached the Captain was looking forward to some well-deserved R&R when studently…
@@ -15,9 +22,22 @@ Your mission is to reach Earth before the Garquackien invasion and warn Space Fo
 
 # Game Terms
 
-Distance: How far your ship is from Earth.
+DISTANCE: How far your ship is from Earth.
           If distance ever reaches 0, you have reached earth and have won the game.
    
-Weeks Until the Garquackien Invasion: The number of weeks until the Garquackien invasion reaches 
-                                      earth. This number will count down by one each game round. If it reaches zero before you make it to earth, earth will be destroyed, and you will lose the game
+WEEKS UNTILL THE GARQUACKIEN INVASION: The number of weeks until the Garquackien invasion reaches 
+                                      earth. This number will count down by one each game round. If it reaches zero before you make it to earth, earth will be destroyed, and you will lose the game.
+
+CREW: Members of the ship that are under your command. During the production phase you will assign each of your crew to produce different resources for your ship.
+    
+FOOD: Each week, during the spend phase, you will spend food to feed your crew. Each of your crew will consume 1 food. Crew that cannot be feed will starve.
+          
+POWER: Your ship is powered my power crystals that supply a large amount of energy but are unstable. Each power crystal in your supply has a small chance of burning out each day. If the number of power crystals in your reserve falls to 0 your ship will lose all power and you will lose the game.
+    
+FUEL: Each week during the spend phase you will decide on the amount of fuel you will spend on traveling that week. The more fuel you spend the greater distance you will travel during the travel phase and the closer you will be to earth. Be warned the faster the ship moves the worse its fuel efficiency is. Lastly, if you do not spend at least one unit of fuel to travel each week, the Garquackien ships that are hunting you will swarm you destroying the ship and you will lose the game. 
+    
+HULL: Represents the physical integrity of the ship. If the ship’s hull ever falls to zero the ship will be destroyed and you will lose the game.
+    
+MORALE: Represents the crew’s resolve and effects how likely they are to produce resources during the production phase. Morale cannot be raised above 100% If morale ever falls to 0 the crew succumbs to despair or mutinies, and you lose the game.
+
 
