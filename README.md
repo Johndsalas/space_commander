@@ -24,7 +24,7 @@ Your mission is to reach Earth before the Garquackien invasion and warn Space Fo
 
 In space commander, your goal is to travel to Earth and warn Earth Force about the impending garquackien attack. During the game, you will see how far you still need to travel displayed as distance from Earth. If this distance ever reaches 0, your ship had made it to earth and you have won!
 
-To do this you must carefully manage your ship’s resources. 
+To do this you must carefully manage your ship’s resources. To do this you must carefully manage your ship’s resources. If your Crew, Power, hull, or morale ever fall to zero you will lose the game.
 
 ### Game Terms
 
