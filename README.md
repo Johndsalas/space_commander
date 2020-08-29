@@ -22,19 +22,27 @@ Your mission is to reach Earth before the Garquackien invasion and warn Space Fo
 
 ### Winning and Losing
 
-In space commander, your goal is to travel to Earth and warn Earth Force about the impending garquackien attack. During the game, you will see how far you still need to travel displayed as distance from Earth. If this distance ever reaches 0, your ship had made it to earth and you have won!
+In space commander, your goal is to travel to Earth and warn Earth Force about the impending Garquackien attack. During the game, you will see how far you still need to travel displayed as distance from Earth. If this distance ever reaches 0, your ship had made it to earth and you have won!
 
-To do this you must carefully manage your ship’s resources. To do this you must carefully manage your ship’s resources. If your Crew, Power, hull, or morale ever fall to zero you will lose the game.
+You will also see how far (in weeks) the Garquackians are from earth. If the Garquackiens reach earth before you do, they will begin their attack before Earth force has a chance to ready its defenses. If this is allowed to happen Earth will be destroyed and you will lose the game.
+
+The Garquackiens are still tracking you from your escape at Star Gazer 1. If you fail to spend at least one unit of fuel during the spend phase to move your ship each week, the Garquackiens will attack your ship in mass, destroying it, and you will lose the game.
+
+You must also carefully manage your ship’s resources. If your Crew, Power, Hull, or Morale ever fall to zero you will lose the game.
+
+### Game Phases
+
+Space Commander takes place over four phases, which repeat, in order, until the game is either won or lost.
+
 
 ### Game Terms
 
-DISTANCE FROM EARTH: How far your ship is from Earth.
-                     If distance ever reaches 0, you have reached earth and have won the game.
+DISTANCE FROM EARTH: How far your ship is from Earth. If distance ever reaches 0, you have reached earth and have won the game.
    
 WEEKS UNTILL THE GARQUACKIEN INVASION: The number of weeks until the Garquackien invasion reaches 
-                                      earth. This number will count down by one each game round. If it reaches zero before you make it to earth, earth will be destroyed, and you will lose the game.
+earth. This number will count down by one each game round. If it reaches zero before you make it to earth, earth will be destroyed, and you will lose the game.
 
-CREW: Members of the ship that are under your command. During the production phase you will assign each of your crew to produce different resources for your ship.
+CREW: Members of the ship that are under your command. During the production phase you will assign each  of your crew to produce different resources for your ship.
     
 FOOD: Each week, during the spend phase, you will spend food to feed your crew. Each of your crew will consume 1 food. Crew that cannot be feed will starve.
           
