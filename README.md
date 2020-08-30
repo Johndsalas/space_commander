@@ -12,9 +12,9 @@ To begin clone repository and run main.py in your python environment.
 
 # The Story so Far...
 
-The year is 202020, and Earth Force Captain, *Chough-Chough* (That’s you!) is returning to base after another successful mission. Star Gazer 1, An earth outpost, had been the captain’s home away from home for some time now. The Garquackien threat necessitated round the clock vigil, and Earth Force Captain *Chough-Chough* had been tasked with maintaining that vigil throughout the neutral space separating The United Earth Force from the Garquackien empire and its quest for galactic domination. As the ship approached the Captain was looking forward to some well-deserved R&R when studently…
+The year is 202020, and Space Force Captain, *Chough-Chough* (That’s you!) is returning to base after another successful mission. Star Gazer 1, An earth outpost, had been the captain’s home away from home for some time now. The Garquackien threat necessitated round the clock vigil, and Space Force Captain *Chough-Chough* had been tasked with maintaining that vigil throughout the neutral space separating The United Earth Force from the Garquackien empire and its quest for galactic domination. As the ship approached the Captain was looking forward to some well-deserved R&R when studently…
 
-Several Garquackien attack ships appear out of nowhere. To make matters worse the there is no sign of Star gazer 1 but dust and debris. The Garquackiens would have had to muster an enormous armada to mount this kind of attack, and the captain knew that an armada that size could only have one target…Earth. The Garquackiens had come to make good on their plans for galaxy wide dominion and will likely succeed if the Earth Force is not warned in time. Your crew, and resources have already been taxed from the previous mission, and yet a new mission has already begun.
+Several Garquackien attack ships appear out of nowhere. To make matters worse the there is no sign of Star gazer 1 but dust and debris. The Garquackiens would have had to muster an enormous armada to mount this kind of attack, and the captain knew that an armada that size could only have one target…Earth. The Garquackiens had come to make good on their plans for galactic dominion and will likely succeed if the United Earth Force is not warned in time. Your crew, and resources have already been taxed from the previous mission, and yet a new mission has already begun.
 
 Your mission is to reach Earth before the Garquackien invasion and warn Space Force about the impending attack. Should you fail, it is likely that Earth will suffer the same fate as Star Gazer 1.
 
@@ -22,7 +22,7 @@ Your mission is to reach Earth before the Garquackien invasion and warn Space Fo
 
 ### Winning and Losing
 
-In space commander, your goal is to travel to Earth and warn Earth Force about the impending Garquackien attack. During the game, you will see how far you still need to travel displayed as distance from Earth. If this distance ever reaches 0, your ship had made it to earth and you have won!
+In space commander, your goal is to travel to Earth and warn Space Force about the impending Garquackien attack. During the game, you will see how far you still need to travel displayed as distance from Earth. If this distance ever reaches 0, your ship had made it to earth and you have won!
 
 You will also see how far (in weeks) the Garquackians are from earth. If the Garquackiens reach earth before you do, they will begin their attack before Earth force has a chance to ready its defenses. If this is allowed to happen Earth will be destroyed and you will lose the game.
 
@@ -32,8 +32,15 @@ You must also carefully manage your ship’s resources. If your Crew, Power, Hul
 
 ### Game Phases
 
-Space Commander takes place over four phases, which repeat, in order, until the game is either won or lost.
+Space Commander takes place over four phases which repeat in order until the game is either won or lost.
 
+PRODUCTION PHASE: During the production phase you will assign your crew to produce the resources the ship needs to continue the mission. Each assigned crewmember will have a chance to produce resources equal to the crew’s morale minus the difficulty of producing that particular resource. If successful, the amount of a given resource that is produced will vary by resource. (See in game information for details during the production phase.) 
+
+SPEND PHASE: The spend phase takes place over three steps. First you will spend food to feed each member of your crew. Each member of your crew will consume one food reducing the number of food from your supply by the number of crew on your ship. If you do not have enough food to feed all of your crew, the ones that are not fed will starve and die, reducing the number of crew in your ship by the number of unfed crew. Second you will check to see if any of you power crystals burned out during the previous week. Each crystal has a small chance of burning out each week. If all of your power crystals burn out at once your ship will be left without power and you will lose the game. Third you will decide on the amount of fuel you will spend on traveling that week. The more fuel you spend the greater distance you will travel during the travel phase and the closer you will be to earth. Be warned the faster the ship moves the worse its fuel efficiency is. Lastly, if you do not spend at least one unit of fuel to travel each week, the Garquackien ships that are hunting you will swarm you destroying the ship and you will lose the game.
+
+EVENT PHASE: The hazards of space travel are many and varied. During the event phase you will encounter a number of events that will tax your resources. The resources taxed will depend on the decisions you make during those events.
+
+TRAVEL PHASE: During the travel phase your ship will move closer to earth and a you will be closer to winning the game. The amount you move is determined by the amount of fuel you spent during the spend phase for movement. If your distance from Earth reaches zero you have arrived at Earth and have won the game.
 
 ### Game Terms
 
@@ -55,5 +62,5 @@ HULL: Represents the physical integrity of the ship. If the ship’s hull ever f
 MORALE: Represents the crew’s resolve and effects how likely they are to produce resources during the production phase. Morale cannot be raised above 100% If morale ever falls to 0 the crew succumbs to despair or mutinies, and you lose the game.
 
 DISTANCE: Shows the total remaining distance your ship must traveled in order to reach Earth.
-          If distance reaches 0 you arrive on Earth and win the game.
+If distance reaches 0 you arrive on Earth and win the game.
 
