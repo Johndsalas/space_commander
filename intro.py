@@ -12,7 +12,7 @@ def intro(fuel, food, power, hull, crew, morale):
     fuel -= lost_fuel
     food -= lost_food
     power -= lost_power
-    hull -= lost_power
+    hull -= lost_hull
     crew -= lost_crew
     morale -= lost_morale  
     

@@ -1,15 +1,5 @@
-import random
 import hud as h
-
-fuel = 30
-food = 50
-power = 10
-hull = 5
-crew = 10
-burn_rate = 10
-morale = 100
-distance = 20
-day = 10
+import random as r
 
 def assign_crew():
 
@@ -119,37 +109,37 @@ def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel_chan
     # if that die rolls at or below resource_chance add resource_prod to resorce_gen
 
     # Fuel
-    for r in range(0, int(fuel_crew)):
+    for c in range(0, int(fuel_crew)):
 
-        if int(random.randrange(1,101)) <= fuel_chance:
+        if r.randint(1,100) <= fuel_chance:
 
             fuel_gen += fuel_prod
 
     # Food
-    for r in range(0, int(food_crew)):
+    for c in range(0, int(food_crew)):
 
-        if int(random.randrange(1,101)) <= food_chance:
+        if r.randint(1,100) <= food_chance:
 
             food_gen += food_prod
             
     # Power
-    for r in range(0, int(power_crew)):
+    for c in range(0, int(power_crew)):
 
-        if int(random.randrange(1,101)) <= power_chance:
+        if r.randint(1,100) <= power_chance:
 
             power_gen += power_prod
             
     # Hull
-    for r in range(0, int(hull_crew)):
+    for c in range(0, int(hull_crew)):
 
-        if int(random.randrange(1,101)) <= hull_chance:
+        if r.randint(1,100) <= hull_chance:
 
             hull_gen += hull_prod
             
     # Morale
-    for r in range(0, int(morale_crew)):
+    for c in range(0, int(morale_crew)):
 
-        if int(random.randrange(1,101)) <= morale_chance:
+        if r.randint(1,100) <= morale_chance:
 
             morale_gen += morale_prod
 
@@ -161,8 +151,6 @@ def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel_chan
     print(f"Hull repaired: {hull_gen}")
     print(f"Morale generated: {morale_gen}")
     print('')
-
-
 
     return fuel_gen, food_gen, power_gen, hull_gen, morale_gen
 
@@ -259,5 +247,3 @@ def production_phase(fuel, food, power, hull, crew, morale):
     hull, morale = is_capped(hull, morale)
 
     return fuel, food, power, hull, crew, morale
-
-production_phase(fuel, food, power, hull, crew, morale)

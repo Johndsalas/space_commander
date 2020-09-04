@@ -11,7 +11,6 @@ import travel as t
 import end as ed
 import random
 
-
 def game_loop():
 
     # Beginning Values
@@ -83,16 +82,10 @@ def game_loop():
 
             print("invalid input. Please enter y or n.")
 
+# Display menu and run game loop
+if m.start():
+    
+    game_loop()
 
-
-
-# Display Menu
-m.menu()
-
-game_loop()
-
-
-
-
-
+# Print exit message
 print("You have exited the game. Thank you for playing!")
