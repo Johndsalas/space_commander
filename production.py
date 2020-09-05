@@ -144,7 +144,6 @@ def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel_chan
             morale_gen += morale_prod
 
     # display generated resources
-    print('')
     print(f"Fuel generated: {fuel_gen} ")
     print(f"Food generated: {food_gen}")
     print(f"Power Crystals generated: {power_gen}")

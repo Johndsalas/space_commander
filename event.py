@@ -1,4 +1,7 @@
 
+import hud as h
+import random as r
+
 def event(fuel, food, power, hull, crew, morale, distance):
     '''
     generate a random event for each day
@@ -668,4 +671,3 @@ def event(fuel, food, power, hull, crew, morale, distance):
         print("") 
 
     return fuel, food, power, hull, crew, morale, distance
-    

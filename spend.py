@@ -1,4 +1,7 @@
 
+import hud as h
+import random as r
+
 def feed_crew(food, crew):
     '''
     Feed crew if possible. If not remove starved crew members
@@ -29,7 +32,7 @@ def feed_crew(food, crew):
 
         food = 0
 
-    return crew, food
+    return food, crew
 
 
 def crystal_burn(power):
@@ -45,9 +48,9 @@ def crystal_burn(power):
     # for each power crystal roll d100 
     # if result is equal or less than burn_rate add +1 burned
     # if not add +1 good
-    for r in range(0,int(power)):
+    for b in range(0,int(power)):
 
-        roll = random.randint(1,100)
+        roll = r.randint(1,100)
 
         if roll <= burn_rate:
 
@@ -96,39 +99,32 @@ def spend_fuel(fuel):
         # if not print error message and restart loop
         if amount == "a":
             fuel_spent = 0
-            distance_traveled = 0   
-            
+            distance_traveled = 0
 
         elif amount == "b":
             fuel_spent = 1
             distance_traveled = 1
-            
-       
+
         elif amount == "c":
             fuel_spent = 3
             distance_traveled = 2
-            
 
         elif amount == "d":
             fuel_spent = 9
-            distance_traveled = 4
-            
+            distance_traveled = 4      
 
         elif amount == "e":
             fuel_spent = 10
             distance_traveled = 5
-            
 
         elif amount == "f":
             fuel_spent = 15
             distance_traveled = 6
-            
 
         else:
             print("command is invalid please input a, b, c, or d.")
             print("")
             continue
-
 
         if fuel_spent > fuel:
 
@@ -156,7 +152,7 @@ def spend(fuel, food, power, hull, crew, morale):
     Spends resources during the spend phase
     '''
 
-    # phase intro message 
+    # phase intro message
     print("Begin Production phase!")
     print("")
 
@@ -172,4 +168,3 @@ def spend(fuel, food, power, hull, crew, morale):
     fuel, distance_traveled = spend_fuel(fuel)
 
     return fuel, food, power, hull, crew, morale, distance_traveled
-

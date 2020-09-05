@@ -11,6 +11,27 @@ import travel as t
 import end as ed
 import random
 
+def play_again():
+
+    play_again = True
+    while play_again:
+    
+        print("Would you like to play again? y/n")
+        print("")
+        again = input()
+
+        if again == "y":
+
+            return True
+
+        elif again == "n":
+
+            return False
+
+        else:
+
+            print("invalid input. Please enter y or n.")
+
 def game_loop():
 
     # Beginning Values
@@ -40,47 +61,51 @@ def game_loop():
         fuel, food, power, hull, crew, morale = p.production_phase(fuel, food, power, hull, crew, morale)
 
         # Phase 2: Spend Phase
-        fuel, food, power, hull, crew, burn_rate, morale = s.spend(fuel, food, power, hull, crew, burn_rate, morale, distance)
+        fuel, food, power, hull, crew, morale, distance_traveled = s.spend(fuel, food, power, hull, crew, morale)
 
         # Check for loss conditions
         if ed.lose(hull, crew, power, morale):
-            break
+        
+            if play_again():
+
+                game_loop()
+
+            else:
+
+                break
 
         # Phase 3: Event Phase
         fuel, food, power, hull, crew, morale, distance = e.event(fuel, food, power, hull, crew, morale, distance)
 
         # Check for loss conditions
         if ed.lose(hull, crew, power, morale):
-            break
+            
+            if play_again():
+
+                game_loop()
+
+            else:
+
+                break
 
         # phase 4: Travel Phase
         distance = t.travel(distance, distance_traveled)
 
         # Check for win conditions
         if ed.win(distance, running):
-            break
+            
+            if play_again():
+
+                game_loop()
+
+            else:
+
+                break
 
         # Update Day
         day -= 1
 
-    replay = True
-    while replay:
-    
-        print("Would you like to play again? y/n")
-        print("")
-        again = input()
 
-        if again == "y":
-
-            game_loop()
-
-        elif again == "n":
-
-            break
-
-        else:
-
-            print("invalid input. Please enter y or n.")
 
 # Display menu and run game loop
 if m.start():
