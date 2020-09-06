@@ -1,16 +1,4 @@
 
-fuel = 30
-food = 50
-power = 10
-hull = 5
-crew = 10
-burn_rate = 10
-morale = 100
-distance = 20
-day = 10
-
-
-
 def lose(hull, crew, power, morale):
     '''
     check for loss conditions
@@ -44,19 +32,16 @@ def lose(hull, crew, power, morale):
 
     return lose
 
-def win(distance, running):
+def win(distance):
     '''
     check for win conditions
     '''
 
-    win = False
+    won = False
 
     # if distance < 1
     if distance <= 0:
         print("You have won the game!!!")
-        win = True 
-        
+        won = True
 
-    else:
-        running = True
-        return running
+    return won

@@ -13,8 +13,8 @@ import random
 
 def play_again():
 
-    play_again = True
-    while play_again:
+    try_again = True
+    while try_again:
     
         print("Would you like to play again? y/n")
         print("")
@@ -31,6 +31,7 @@ def play_again():
         else:
 
             print("invalid input. Please enter y or n.")
+            print('')
 
 def game_loop():
 
@@ -92,7 +93,7 @@ def game_loop():
         distance = t.travel(distance, distance_traveled)
 
         # Check for win conditions
-        if ed.win(distance, running):
+        if ed.win(distance):
             
             if play_again():
 

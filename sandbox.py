@@ -1,14 +1,29 @@
 
-a = True
-b = True
-c = False
-d = True
-e = True
 
-if not (a and b and d):
+def is_true():
 
-    print("True")
+    return True
 
-else:
+def is_false():
 
-    print("False")
+    return False
+
+loop = True
+
+while loop == True:
+
+    print("start loop")
+
+    if is_true():
+
+        print("is true")
+
+        if is_false():
+
+            print("this should not print")
+
+        else:
+            
+            print("shold stop loop")
+            break
+
