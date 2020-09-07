@@ -36,7 +36,7 @@ def play_again():
 def game_loop():
 
     # Beginning Values
-    fuel = 30
+    fuel = 0
     food = 50
     power = 10
     hull = 5
@@ -65,7 +65,7 @@ def game_loop():
         fuel, food, power, hull, crew, morale, distance_traveled = s.spend(fuel, food, power, hull, crew, morale)
 
         # Check for loss conditions
-        if ed.lose(hull, crew, power, morale):
+        if ed.lose(hull, crew, power, morale, distance_traveled):
         
             if play_again():
 
@@ -79,7 +79,7 @@ def game_loop():
         fuel, food, power, hull, crew, morale, distance = e.event(fuel, food, power, hull, crew, morale, distance)
 
         # Check for loss conditions
-        if ed.lose(hull, crew, power, morale):
+        if ed.lose(hull, crew, power, morale, distance_traveled):
             
             if play_again():
 
