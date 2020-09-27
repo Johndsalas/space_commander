@@ -41,4 +41,3 @@ def start():
             print('')
 
     return running
-    

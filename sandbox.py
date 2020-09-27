@@ -1,29 +1,28 @@
+import random as r
 
+# list of events
+event_list = ["gravitational_force","restock","contamination","navigational_malfunction","lifeform","territory_dispute","ambush","confined","deterioration","asteroid_field","mixed","feast","recreation","worse","relations","syphon","hording","stealing","blockade","decenters","boarded"]
 
-def is_true():
+event_number = 2
 
-    return True
+getting_events = True
 
-def is_false():
+for n in range(1,31):
+    # get a number of unique events
 
-    return False
+    this_weeks_events = []
 
-loop = True
+    while getting_events:
 
-while loop == True:
+        this_weeks_events.append(r.choice(event_list))
 
-    print("start loop")
+        if len(set(this_weeks_events)) == event_number:
 
-    if is_true():
-
-        print("is true")
-
-        if is_false():
-
-            print("this should not print")
+            break
 
         else:
-            
-            print("shold stop loop")
-            break
+
+            continue
+
+    print(list(set(this_weeks_events)))
 

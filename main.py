@@ -36,12 +36,11 @@ def play_again():
 def game_loop():
 
     # Beginning Values
-    fuel = 0
-    food = 50
-    power = 10
-    hull = 5
+    fuel = 100
+    food = 100
+    power = 100
+    hull = 500
     crew = 10
-    burn_rate = 10
     morale = 100
     distance = 20
     day = 10
@@ -76,7 +75,7 @@ def game_loop():
                 break
 
         # Phase 3: Event Phase
-        fuel, food, power, hull, crew, morale, distance = e.event(fuel, food, power, hull, crew, morale, distance)
+        fuel, food, power, hull, crew, morale, distance = e.events(fuel, food, power, hull, crew, morale, distance)
 
         # Check for loss conditions
         if ed.lose(hull, crew, power, morale, distance_traveled):
