@@ -3,7 +3,7 @@
 def start():
 
     print("Welcome to space commander.")
-    print("Press any key to continue.")
+    print("Press ENTER to continue.")
     print('')
 
     input()

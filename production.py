@@ -1,18 +1,28 @@
 import hud as h
 import random as r
 
-def assign_crew():
+def assign_crew(crew):
+
+    idel_crew = crew
+
+    print("You may assign {idel_crew} crew to produce resources.")
+    print('')
 
     # get input for crew assigned to fuel
     print("How many crew members will you assign to fuel.")
+    print('')
     fuel_crew = input()
+    idel_crew -= fuel_crew
+
+    print("You have {idel_crew} crew remaining")
+    print('')
 
     # get imput for crew assigned to food
     print("How many crew members will you assign to food.")
     food_crew = input()
 
     # get imput for crew assigned to power
-    print("How many crew members will you assign to power.")
+    print("How many crew members will you assign to power crystals.")
     power_crew = input()
 
     # get imput for crew assigned to hull
@@ -226,7 +236,7 @@ def production_phase(fuel, food, power, hull, crew, morale):
     while giving_orders:
 
         # assign crew to resources
-        fuel_crew, food_crew, power_crew, hull_crew, morale_crew = assign_crew()
+        fuel_crew, food_crew, power_crew, hull_crew, morale_crew = assign_crew(crew)
 
         # Check for valid input and user validation
         if check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, crew):
