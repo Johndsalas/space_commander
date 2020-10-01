@@ -1,71 +1,32 @@
 import hud as h
 import random as r
 
-def assign_crew(crew):
-
-    idel_crew = crew
-
-    print(f"You may assign {idel_crew} crew to produce resources.")
-    print('')
+def assign_crew():
 
     # get input for crew assigned to fuel
-    fueling = True
-    while fuling:
-
-        print("How many crew members will you assign to fuel?")
-        print('')
-        fuel_crew = input()
-
-        if fuel_crew.isdigit():
-        
-            fuel_crew = int(fuel_crew)
-            idel_crew -= fuel_crew
-            break
-
-        else:
-
-            print("Please enter a number.")
-
-
-    print(f"You have {idel_crew} crew remaining")
-    print('')
+    print("How many crew members will you assign to fuel?")
     
+    fuel_crew = input()
 
     # get imput for crew assigned to food
     print("How many crew members will you assign to food?")
-    print('')
+    
     food_crew = input()
-    idel_crew -= food_crew
-
-    print(f"You have {idel_crew} crew remaining")
-    print('')
 
     # get imput for crew assigned to power
     print("How many crew members will you assign to power crystals?")
-    print('')
+    
     power_crew = input()
-    idel_crew -= power_crew
-
-    print(f"You have {idel_crew} crew remaining")
-    print('')
 
     # get imput for crew assigned to hull
     print("How many crew members will you assign to hull?")
-    print('')
-    hull_crew = input()
-    idel_crew -= hull_crew
 
-    print(f"You have {idel_crew} crew remaining")
-    print('')
+    hull_crew = input()
 
     # get imput for crew assigned to morale
     print("How many crew members will you assign to morale?")
-    print('')
+    
     morale_crew = input()
-    idel_crew -= morale_crew
-
-    print(f"You have {idel_crew} crew remaining")
-    print('')
 
     # print space between next block of text
     print('')
@@ -73,7 +34,7 @@ def assign_crew(crew):
     return fuel_crew, food_crew, power_crew, hull_crew, morale_crew
 
 
-def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, crew, idel_crew):
+def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, crew):
 
     # Check for non-numeric input
     if not (fuel_crew.isdigit() and food_crew.isdigit() and power_crew.isdigit() and hull_crew.isdigit() and morale_crew.isdigit()):
@@ -211,6 +172,7 @@ def is_capped(hull, morale):
     if morale > 100:
 
         print("morale cannot exceed 100")
+        print('')
         morale = 100
 
     return hull, morale
@@ -270,7 +232,7 @@ def production_phase(fuel, food, power, hull, crew, morale):
     while giving_orders:
 
         # assign crew to resources
-        fuel_crew, food_crew, power_crew, hull_crew, morale_crew = assign_crew(crew)
+        fuel_crew, food_crew, power_crew, hull_crew, morale_crew = assign_crew()
 
         # Check for valid input and user validation
         if check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, crew):
@@ -290,37 +252,3 @@ def production_phase(fuel, food, power, hull, crew, morale):
     hull, morale = is_capped(hull, morale)
 
     return fuel, food, power, hull, crew, morale
-
-# Beginning Values
-fuel = 100
-food = 100
-power = 100
-hull = 500
-crew = 10
-morale = 100
-distance = 20
-day = 10
-
-
-idel_crew = crew
-fueling = True
-while fueling:
-
-    print("How many crew members will you assign to fuel?")
-    print('')
-    fuel_crew = input()
-
-    if fuel_crew.isdigit():
-    
-        fuel_crew = int(fuel_crew)
-        idel_crew -= fuel_crew
-        break
-
-    else:
-
-        print("Please enter a number.")
-
-print(f"You have {idel_crew} crew remaining")
-print('')
-
-production_phase(fuel, food, power, hull, crew, morale)
