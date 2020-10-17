@@ -81,16 +81,13 @@ def spend_fuel(fuel):
     while fueling:
 
         # get user input
-        print(f"You may spend up to {fuel} units of fuel to travel.")
-        print("This will detrmine how far your ship moves during the travel phase.")
-        print('')
+        print(f"You have {fuel} fuel in your reserve.")
       
-        print("a) Spend 0 fuel and do not move.")
-        print("b) Spend 1 fuel to move 1 distance.")
-        print("c) Spent 3 fuel to move 2 distance.")
-        print("d) Spend 6 fuel to move 3 distance.")
-        print("e) Spent 10 fuel to move 4 distance.")
-        print("f) Spend 15 fuel to move 5 distance.")
+        print("a) Spend 1 fuel to move 1 distance.")
+        print("b) Spent 3 fuel to move 2 distance.")
+        print("c) Spend 6 fuel to move 3 distance.")
+        print("d) Spent 10 fuel to move 4 distance.")
+        print("e) Spend 15 fuel to move 5 distance.")
         print('')
 
         amount = input()
