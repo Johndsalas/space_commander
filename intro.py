@@ -44,6 +44,10 @@ def intro(fuel, food, power, hull, crew, morale):
     print("resources, crew and even the ship itself, have been under considerable strain already. You can ")
     print("only hope that the ship will hold together until you make it back to earth. With a heavy heart")
     print("you raise your eyes to the HUD and examine what remains of your resources.")
+    print("")
+    print("press ENTER to continue")
+    input()
+    print("")
 
     # print("After escaping the Garquackien ships you recive rhe following status report")
     # print(f"Lost crew members: {lost_crew}")
