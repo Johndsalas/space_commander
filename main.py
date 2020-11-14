@@ -105,8 +105,6 @@ def game_loop():
         # Update Day
         day -= 1
 
-
-
 # Display menu and run game loop
 if m.start():
     

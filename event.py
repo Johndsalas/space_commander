@@ -7,26 +7,19 @@ def events(fuel, food, power, hull, crew, morale, distance):
     generate a random event for each day
     '''
 
-    print("Begin Event Phase!")
+    print("Press ENTER to Begin the Event Phase!")
+    input()
     print("")
 
     h.hud(fuel, food, power, hull, crew, morale)
 
-    # creare loss variables
-    lost_fuel = r.randint(1,10)
-    lost_food = r.randint(1,20)
-    lost_power = r.randint(1,5)
-    lost_hull = r.randint(1,3)
-    lost_crew = r.randint(0,3)
-    lost_morale = r.randint(1,20)
+
 
     # set number of events
     event_number = 2
 
     # list of events
     event_list = ["gravitational_force","restock","contamination","navigational_malfunction","lifeform","territory_dispute","ambush","confined","deterioration","asteroid_field","mixed","feast","recreation","worse","relations","syphon","hording","stealing","blockade","decenters","boarded"]
-
-
 
     getting_events = True
 
@@ -46,12 +39,22 @@ def events(fuel, food, power, hull, crew, morale, distance):
 
     for event in this_weeks_events:
 
+        # create loss variables
+        lost_fuel = r.randint(1,10)
+        lost_food = r.randint(1,20)
+        lost_power = r.randint(1,5)
+        lost_hull = r.randint(1,3)
+        lost_crew = r.randint(0,3)
+        lost_morale = r.randint(1,20)
+
         # set resolving event to true
         resolving_event = True
 
         # carryout chosen event (display text, give choice if applocable, modify lost variables, display result text)
         if event == "gravitational_force":
 
+            print(event)
+            print('')
             print("Your ship is passing by a large star and is nearly caught in its gravity well. Through clever ")
             print("piloting you manage to escape the star’s pull, but not without burning through some of your ")
             print("fuel reserves. ")
@@ -61,6 +64,9 @@ def events(fuel, food, power, hull, crew, morale, distance):
 
             print(f"You have lost {lost_fuel} units of fuel.")
             print("")
+            print("Press ENTER to continue")
+            input()
+            print('')
 
         elif event == "restock":
 

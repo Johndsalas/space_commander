@@ -36,7 +36,7 @@ def lose(hull, crew, power, morale, distance_traveled):
     if (hull < 1) or (crew < 1) or (power < 1) or (morale < 1):
 
         print("You are unable to continue your mission and Earth will surely be destroyed!")
-        print("you have lost the game.")
+        print("You have lost the game.")
         print('')
 
         lose = True
@@ -50,9 +50,10 @@ def win(distance):
 
     won = False
 
-    # if distance < 1
+    # if distance < 1 display winning message and return True
+    # if not return False
     if distance <= 0:
-        print("You arrive at Earth in time to warn Earth Force about the impending attack. thanks to your ")
+        print("You arrive at Earth in time to warn Earth Force about the impending attack. Thanks to your ")
         print("efforts Earth Force will be prepared to defend against the Garquackien attack.")
         won = True
 
