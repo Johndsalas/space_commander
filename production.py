@@ -78,7 +78,7 @@ def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_cr
 
             while crew_check:
 
-                # prompt user for verification and get imput
+                # prompt user for verification and get input
                 print("Proceed with the current assignment? (y/n)")
                 print('')
                 acknowledge = input()
@@ -190,7 +190,7 @@ def production_phase(fuel, food, power, hull, crew, morale):
     hull_crew = 0
     morale_crew = 0
 
-    # set additional amount subtracted from morale to produce each resource
+    # set additional amount subtracted from morale during prodiction test
     fuel_pen = 15
     food_pen = 5
     power_pen = 15

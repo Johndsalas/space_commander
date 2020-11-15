@@ -83,43 +83,41 @@ def spend_fuel(fuel):
         # get user input
         print(f"You have {fuel} fuel in your reserve.")
       
-        print("a) Spend 1 fuel to move 1 distance.")
-        print("b) Spent 3 fuel to move 2 distance.")
-        print("c) Spend 6 fuel to move 3 distance.")
-        print("d) Spent 10 fuel to move 4 distance.")
-        print("e) Spend 15 fuel to move 5 distance.")
+        print("Spend 1 fuel to move 1 distance.")
+        print("Spent 3 fuel to move 2 distance.")
+        print("Spend 6 fuel to move 3 distance.")
+        print("Spent 10 fuel to move 4 distance.")
+        print("Spend 15 fuel to move 5 distance.")
         print('')
+        print("How much fuel will you spend")
 
         amount = input()
 
         # if user input is valid set fule_spent and distance_traveled amounts and end loop
         # if not print error message and restart loop
-        if amount == "a":
-            fuel_spent = 0
-            distance_traveled = 0
 
-        elif amount == "b":
+        if amount == 1:
             fuel_spent = 1
             distance_traveled = 1
 
-        elif amount == "c":
+        elif amount == 3:
             fuel_spent = 3
             distance_traveled = 2
 
-        elif amount == "d":
-            fuel_spent = 9
-            distance_traveled = 4      
+        elif amount == 6:
+            fuel_spent = 6
+            distance_traveled = 3    
 
-        elif amount == "e":
+        elif amount == 10:
             fuel_spent = 10
+            distance_traveled = 4
+
+        elif amount == 15:
+            fuel_spent = 15
             distance_traveled = 5
 
-        elif amount == "f":
-            fuel_spent = 15
-            distance_traveled = 6
-
         else:
-            print("command is invalid please input a, b, c, or d.")
+            print("command is invalid please input 1, 3, 6, 10, or 15.")
             print("")
             continue
 
