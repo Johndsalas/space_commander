@@ -97,22 +97,22 @@ def spend_fuel(fuel):
         # if not print error message and restart loop
 
         if amount == 1:
-            fuel_spent = 1
+            fuel_spent = '1'
             distance_traveled = 1
 
-        elif amount == 3:
+        elif amount == '3':
             fuel_spent = 3
             distance_traveled = 2
 
-        elif amount == 6:
+        elif amount == '6':
             fuel_spent = 6
             distance_traveled = 3    
 
-        elif amount == 10:
+        elif amount == '10':
             fuel_spent = 10
             distance_traveled = 4
 
-        elif amount == 15:
+        elif amount == '15':
             fuel_spent = 15
             distance_traveled = 5
 

@@ -39,7 +39,7 @@ def game_loop():
     fuel = 100
     food = 100
     power = 100
-    hull = 500
+    hull = 0
     crew = 10
     morale = 100
     distance = 20
@@ -66,13 +66,7 @@ def game_loop():
         # Check for loss conditions
         if ed.lose(hull, crew, power, morale, distance_traveled):
         
-            if play_again():
-
-                game_loop()
-
-            else:
-
-                break
+            break
 
         # Phase 3: Event Phase
         fuel, food, power, hull, crew, morale, distance = e.events(fuel, food, power, hull, crew, morale, distance)
@@ -80,35 +74,37 @@ def game_loop():
         # Check for loss conditions
         if ed.lose(hull, crew, power, morale, distance_traveled):
             
-            if play_again():
-
-                game_loop()
-
-            else:
-
-                break
+            break
 
         # phase 4: Travel Phase
         distance = t.travel(distance, distance_traveled)
 
         # Check for win conditions
         if ed.win(distance):
-            
-            if play_again():
 
-                game_loop()
-
-            else:
-
-                break
+            break
 
         # Update Day
         day -= 1
 
-# Display menu and run game loop
+# Display menu, run game loop, ask player if they want to play again
 if m.start():
+
+    # begin play again loop
+
+    playing = True
+    while playing == True:
     
-    game_loop()
+        game_loop()
+
+        # Prompt user for play again if true continue loop if false break loop
+        if play_again() == True:
+
+            pass
+        
+        elif play_again() == False:
+
+            break
 
 # Print exit message
 print("You have exited the game. Thank you for playing!")
