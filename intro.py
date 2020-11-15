@@ -9,12 +9,12 @@ def intro(fuel, food, power, hull, crew, morale):
     lost_crew = random.randint(0,3)
     lost_morale = random.randint(20,40)
 
-    fuel -= lost_fuel
-    food -= lost_food
-    power -= lost_power
-    hull -= lost_hull
-    crew -= lost_crew
-    morale -= lost_morale  
+    # fuel -= lost_fuel
+    # food -= lost_food
+    # power -= lost_power
+    # hull -= lost_hull
+    # crew -= lost_crew
+    # morale -= lost_morale  
     
     print("As you arrive within scanning distance of Star Gazer 1, you find only broken metal and empty space")
     print("where a space station should be. To make matters worse, sensors are picking up several Garquackien")
@@ -54,7 +54,7 @@ def intro(fuel, food, power, hull, crew, morale):
     # print(f"Damaged fuel reserves: {lost_fuel} units")
     # print(f"Damaged food reserves: {lost_food} units")
     # print(f"Damaged power crystals: {lost_power}")
-    # print(f"Damage sustained to hull: {lost_hull}")
+    # print(f"Damage to hull: {lost_hull}")
     # print(f"The crew's morale is holding at {morale}%")
 
     return fuel, food, power, hull, crew, morale

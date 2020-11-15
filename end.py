@@ -8,7 +8,7 @@ def lose(hull, crew, power, morale, distance_traveled):
     # display losing message and return True
     # if not return false
 
-    lose = False
+    loss = False
 
     if hull < 1:
         print("You have 0 hull.")
@@ -31,17 +31,20 @@ def lose(hull, crew, power, morale, distance_traveled):
         print('')
 
     if distance_traveled < 1:
-        print()
+        print("You have 0 fuel remaining.")
+        print("Unable to move your ship, you are a sitting duck for your Garquackien pursuers.")
+        print("Your ship is destroyed.")
+        print('')
        
-    if (hull < 1) or (crew < 1) or (power < 1) or (morale < 1):
+    if (hull < 1) or (crew < 1) or (power < 1) or (morale < 1) or (distance_traveled < 1):
 
         print("You are unable to continue your mission and Earth will surely be destroyed!")
         print("You have lost the game.")
         print('')
 
-        lose = True
+        loss = True
 
-    return lose
+    return loss
 
 def win(distance):
     '''

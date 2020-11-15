@@ -2,7 +2,7 @@
 import hud as h
 import random as r
 
-def events(fuel, food, power, hull, crew, morale, distance):
+def events(fuel, food, power, hull, crew, morale):
     '''
     generate a random event for each day
     '''
@@ -37,7 +37,13 @@ def events(fuel, food, power, hull, crew, morale, distance):
 
             continue
 
+
+
     for event in this_weeks_events:
+
+        if (food <= 0) or (power <= 0) or (hull <= 0) or (crew <= 0) or (morale <= 0):
+
+            break
 
         # create loss variables
         lost_fuel = r.randint(1,10)
@@ -696,4 +702,6 @@ def events(fuel, food, power, hull, crew, morale, distance):
             print(f"You lost {lost_crew} crew in during the battle.")
             print("") 
 
-    return fuel, food, power, hull, crew, morale, distance
+        
+
+    return fuel, food, power, hull, crew, morale

@@ -45,12 +45,12 @@ def crystal_burn(power):
 
     burn_rate = 20
 
-    # for each power crystal roll d100 
+    # for each power crystal roll d100
     # if result is equal or less than burn_rate add +1 burned
     # if not add +1 good
-    for b in range(0,int(power)):
+    for b in range(0, int(power)):
 
-        roll = r.randint(1,100)
+        roll = r.randint(1, 100)
 
         if roll <= burn_rate:
 
@@ -60,7 +60,7 @@ def crystal_burn(power):
 
             good += 1
 
-    # set power equal to good 
+    # set power equal to good
     power = good
 
     # print and return results
@@ -89,7 +89,7 @@ def spend_fuel(fuel):
         print("Spent 10 fuel to move 4 distance.")
         print("Spend 15 fuel to move 5 distance.")
         print('')
-        print("How much fuel will you spend")
+        print("How much fuel will you spend?")
 
         amount = input()
 
@@ -147,19 +147,27 @@ def spend(fuel, food, power, hull, crew, morale):
     Spends resources during the spend phase
     '''
 
-    # phase intro message
-    print("Begin Production phase!")
-    print("")
+    # if fuel is zero skip spend phase and proceed to loss message
+    if fuel > 0:
 
-    h.hud(fuel, food, power, hull, crew, morale)
+        # phase intro message
+        print("Begin Production phase!")
+        print("")
 
-    # spend food
-    food, crew = feed_crew(food, crew)
+        # display HUD
+        h.hud(fuel, food, power, hull, crew, morale)
 
-    # check for crystal burnout
-    power = crystal_burn(power)
+        # spend food
+        food, crew = feed_crew(food, crew)
 
-    # spend fuel
-    fuel, distance_traveled = spend_fuel(fuel)
+        # check for crystal burnout
+        power = crystal_burn(power)
+
+        # spend fuel
+        fuel, distance_traveled = spend_fuel(fuel)
+
+    else:
+
+        distance_traveled = 0
 
     return fuel, food, power, hull, crew, morale, distance_traveled
