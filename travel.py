@@ -9,7 +9,8 @@ def travel(distance, distance_traveled):
 
     distance -= distance_traveled
 
-    print("Begin Travel Phase!")
+    print("press ENTER to Begin the Travel Phase!")
+    input()
     print("")
     print(f"You have traveled a distance of {distance_traveled} galactic standard units!")
 

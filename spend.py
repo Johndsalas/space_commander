@@ -134,7 +134,7 @@ def spend_fuel(fuel):
     fuel -= fuel_spent
     
 
-     # print user's choice
+    # print user's choice
     print(f"You have spent {fuel_spent} fuel.")
     print(f"You will travele {distance_traveled} during the travel phase.")  
     print("")
@@ -147,12 +147,13 @@ def spend(fuel, food, power, hull, crew, morale):
     Spends resources during the spend phase
     '''
 
+    # phase intro message
+    print("Press ENTER to begin the Spend Phase!")
+    input()
+    print("")
+
     # if fuel is zero skip spend phase and proceed to loss message
     if fuel > 0:
-
-        # phase intro message
-        print("Begin Production phase!")
-        print("")
 
         # display HUD
         h.hud(fuel, food, power, hull, crew, morale)

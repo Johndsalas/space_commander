@@ -64,9 +64,9 @@ def game_loop():
         fuel, food, power, hull, crew, morale, distance_traveled = s.spend(fuel, food, power, hull, crew, morale)
 
         # Check for loss conditions
-        # if ed.lose(hull, crew, power, morale, distance_traveled):
+        if ed.lose(hull, crew, power, morale, distance_traveled):
         
-        #     break
+            break
 
         # Phase 3: Event Phase
         fuel, food, power, hull, crew, morale = e.events(fuel, food, power, hull, crew, morale)
