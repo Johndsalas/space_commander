@@ -43,19 +43,19 @@ def game_loop():
     crew = 10
     morale = 100
     distance = 20
-    day = 10
+    week = 10
 
     # begin game loop
     running = True
     while running:
 
         # introduction
-        if day == 10:
+        if week == 10:
 
             fuel, food, power, hull, crew, morale = i.intro(fuel, food, power, hull, crew, morale) 
 
         # Display Distance
-        h.status(distance, day)
+        h.status(distance, week)
 
         # Phase 1: Production Phase
         fuel, food, power, hull, crew, morale = p.production_phase(fuel, food, power, hull, crew, morale)
@@ -84,8 +84,8 @@ def game_loop():
 
             break
 
-        # Update Day
-        day -= 1
+        # Update week
+        week -= 1
 
 # Display menu, run game loop, ask player if they want to play again
 if m.start():

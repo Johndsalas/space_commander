@@ -4,7 +4,7 @@ import random as r
 
 def events(fuel, food, power, hull, crew, morale):
     '''
-    generate a random event for each day
+    generate a random event for each week
     '''
 
     print("Press ENTER to begin the Event Phase!")

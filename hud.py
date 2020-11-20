@@ -11,12 +11,12 @@ def hud(fuel, food, power, hull, crew, morale):
     print(" -----------------------------------------------------")
     print("")
 
-def status(distance, day):
+def status(distance, week):
 
     print('')
     print(" _____________________________________")
     print("|{:^37}|".format(" Days Until the Garquackien Invasion"))
-    print("|{:^37}|".format(day))
+    print("|{:^37}|".format(week))
     print(" -------------------------------------")
     print(" _____________________")
     print("|{:^21}|".format("Distance from Earth"))

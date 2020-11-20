@@ -90,7 +90,7 @@ def spend_fuel(fuel):
         print("Spend 15 fuel to move 5 distance.")
         print('')
         print("How much fuel will you spend?")
-
+        print('')
         amount = input()
 
         # if user input is valid set fule_spent and distance_traveled amounts and end loop
@@ -133,7 +133,6 @@ def spend_fuel(fuel):
     # adjust fule and distance totals
     fuel -= fuel_spent
     
-
     # print user's choice
     print(f"You have spent {fuel_spent} fuel.")
     print(f"You will travele {distance_traveled} during the travel phase.")  
