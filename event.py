@@ -76,6 +76,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "restock":
 
+            print(event)
+            print('')
             print("You discover that your food reserves have not been stocked to regulation. Luckily, your ")
             print("scanners have located a habitable planet. You could be use some of your fuel reserves to")
             print("make a detour to the planet to restock your missing food, maintain your current course. ")
@@ -94,6 +96,9 @@ def events(fuel, food, power, hull, crew, morale):
                     fuel -= lost_fuel 
                     print(f"You have lost {lost_fuel} units of fuel.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -101,6 +106,9 @@ def events(fuel, food, power, hull, crew, morale):
                     food -= lost_food
                     print(f"You have lost {lost_food} units of food.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -111,6 +119,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "contamination":
             
+            print(event)
+            print('')
             print("A strange mold, poisons to humans, has been found growing on some of the ship's food.")
             print("You had to destroy some of the food reserves to prevent the mold from spreading.")
             print("")
@@ -119,9 +129,14 @@ def events(fuel, food, power, hull, crew, morale):
 
             print(f"You have lost {lost_food} units of food.")
             print("")
+            print("Press ENTER to continue")
+            input()
+            print('')
 
         elif event == "navigational_malfunction":
 
+            print(event)
+            print('')
             print("The ship’s navigational system is malfunctioning, causing it to recommend a longer travel route ")
             print("than is necessary. You could use some of your power crystals to feed additional power to the ")
             print("navigation system allowing it to reboot and correct the error immediately. Alternatively, you ")
@@ -142,6 +157,9 @@ def events(fuel, food, power, hull, crew, morale):
                     power -= lost_power
                     print(f"You have lost {lost_power} power crystals.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -149,6 +167,9 @@ def events(fuel, food, power, hull, crew, morale):
                     fuel -= lost_fuel
                     print(f"You have lost {lost_fuel} units of fuel.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -159,6 +180,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "lifeform":
 
+            print(event)
+            print('')
             print("Hostel alien life forms are discovered clinging to your ship. They are looking for their next meal.")
             print("You could lure the creatures away by jettisoning some of your food reserves. Alternatively, you ")
             print("could use some of your power crystals to create a power surge strong enough to fry the")
@@ -178,6 +201,9 @@ def events(fuel, food, power, hull, crew, morale):
                     food -= lost_food
                     print(f"You have lost {lost_food} units of food.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -185,6 +211,9 @@ def events(fuel, food, power, hull, crew, morale):
                     power -= lost_power
                     print(f"You have lost {lost_power} power crystals.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -195,6 +224,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "territory_dispute":
 
+            print(event)
+            print('')
             print("Your journey home requires a brief passage through Ya’mean space. The Ya’mean do not like ")
             print("visitors; A fact they make well known by placing space mines throughout their borders. These ")
             print("mines emit a sonic frequency that is known to shatter the power crystals that power most")
@@ -208,6 +239,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "ambush":
 
+            print(event)
+            print('')
             print("Several short range Garquackien ships have dropped out of hyperspace and are preparing to ")
             print("fire on your ship. At your current speed you will soon be out of range, but not without ")
             print("sustaining fire and damaging the ship’s hull. Alternatively, you cold spent some of your fuel ")
@@ -227,6 +260,9 @@ def events(fuel, food, power, hull, crew, morale):
                     hull -= lost_hull
                     print(f"You have sustained {lost_hull} damage to the hull.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -234,6 +270,9 @@ def events(fuel, food, power, hull, crew, morale):
                     fuel -= lost_fuel
                     print(f"You have lost {lost_fuel} units of fuel.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -245,6 +284,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "confined":
 
+            print(event)
+            print('')
             print("The vegetation you are cultivating for the ship’s food supply, is not yielding the expected")
             print("amount. Vegetation of this type grows better in open environments, making the cramped space")
             print("that has been designated for “agricultural purposes” less than ideal. You could do some")
@@ -265,6 +306,9 @@ def events(fuel, food, power, hull, crew, morale):
                     hull -= lost_hull
                     print(f"You have sustained {lost_hull} damage to the hull.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -272,6 +316,9 @@ def events(fuel, food, power, hull, crew, morale):
                     food -= lost_food
                     print(f"You have lost {lost_food} units of food.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -282,6 +329,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "deterioration":
 
+            print(event)
+            print('')
             print("The maintenance system that keeps the hull in good repair has malfunctioned, resulting in ")
             print("damage to the hull. You could choose to fix the damage by using some of the ship’s repair bots. ")
             print("However, you would need to power the bots using some of the ship’s power crystals.")
@@ -301,6 +350,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_power} power crystals.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -309,6 +361,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have sustained {lost_hull} damage to the hull.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -319,6 +374,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "asteroid_field":
 
+            print(event)
+            print('')
             print("Curse that navigation computer, it’s led you straight into an asteroid field. As you begin trying ")
             print("to pilot your way out you can hear the sound of space rocks making an impact on your ship.")
             print("")
@@ -327,9 +384,14 @@ def events(fuel, food, power, hull, crew, morale):
 
             print(f"You have sustained {lost_hull} damage to the hull.")
             print("")
+            print("Press ENTER to continue")
+            input()
+            print('')
 
         elif event == "mixed":
 
+            print(event)
+            print('')
             print("Apparently, someone though it would be funny to mix a stink fluid made from a Scaal sweat")
             print("gland with part or your fuel supply. When the mixed fuel is burned in the ship’s propulsion system,")
             print(" it fills the ship with a smell that is most foul. Having to endure the smell is having a negative")
@@ -351,6 +413,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_fuel} units of fuel.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -359,6 +424,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_morale} morale.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -370,6 +438,8 @@ def events(fuel, food, power, hull, crew, morale):
         
         elif event == "feast":
 
+            print(event)
+            print('')
             print("Despondency is beginning to take hold of your crew. Reflecting upon the sudden loss of Star Gazer 1,")
             print("the space station they called home, their own dire situation, and the fate of the earth if they should")
             print("fail, has been too much to process. You consider holding a small calibration to raise the crew’s")
@@ -393,6 +463,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_food} units of food.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -401,6 +474,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_morale} morale.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -411,6 +487,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "recreation":
 
+            print(event)
+            print('')
             print("Being confined to a small ship is making the crew restless and ill-tempered. As a result, overall ")
             print("morale has begun to drop. You consider opening the ship’s recreation facilities in the hopes ")
             print("that the illusion of open space will do something to combat the crew’s feeling of confinement.")
@@ -432,6 +510,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_power} power crystals.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -440,6 +521,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_morale} morale.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -450,6 +534,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "worse":
 
+            print(event)
+            print('')
             print("After running a diagnostic on the hull of your ship, you discover that much of the damage")
             print("sustained in the attack on Star Gazer 1, is worse than it appears. You could choose to build")
             print("physical fortifications in the ship to prevent the damage from worsening. However, the")
@@ -471,6 +557,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_morale} morale.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
                     
 
@@ -480,6 +569,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You sustained {lost_hull} damage to your hull.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -491,6 +583,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "relations":
 
+            print(event)
+            print('')
             print("‘Relations’ between two senior staff members have soured, turning into open hostility. What’s")
             print("worse is they are encouraging their subornment crew members to take sides. You have done")
             print("what you can to discipline your senior staff. However, there is still a lingering air of disharmony")
@@ -500,9 +594,14 @@ def events(fuel, food, power, hull, crew, morale):
 
             print(f"You have lost {lost_morale} morale.")
             print("")
+            print("Press ENTER to continue")
+            input()
+            print('')
 
         elif event == "syphon":
 
+            print(event)
+            print('')
             print("An Eminore pirate vessel has attaches itself to your ship and is beginning to steal its fuel. You")
             print("could use force to overcome the smaller vessel and prevent the theft. However, doing so would ")
             print("put the lives of your crew at risk.")
@@ -522,6 +621,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_crew} crew.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -530,6 +632,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_fuel} units of fuel.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -540,6 +645,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "stealing":
 
+            print(event)
+            print('')
             print("You have discovered that several power crystals are missing from the ships supply. It is likely,")
             print("that some of the crew have been ‘appropriating’ them for personal use. You could order a ship")
             print("wide search to recover the missing crystals. However, any crewmembers who are caught stealing")
@@ -561,6 +668,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_crew} crew.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -569,6 +679,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_power} power crystals.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -579,6 +692,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "hording":
 
+            print(event)
+            print('')
             print("Persistent rumors of food shortages have prompted some of the crew to begin hording food")
             print("You could order a ship wide search to recover the missing food. However, any crewmembers")
             print("who are caught stealing in a time of crisis would need to be made swift example of, potentially")
@@ -599,6 +714,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_crew} crew.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -607,6 +725,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_food} units of food.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -617,6 +738,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "blockade":
 
+            print(event)
+            print('')
             print("Some of the Garquackiens have gotten ahead of you and set up a blockade. With no way to")
             print("navigate around it, you are forced to confront the blockade head on. You could send fighters to")
             print("clear out the blockade, risking the lives of some of your crew, or ram through the blockade")
@@ -637,6 +760,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_crew} crew.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -645,6 +771,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have sustained {lost_hull} damage to the hull.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -655,6 +784,8 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "decenters":
 
+            print(event)
+            print('')
             print("Fear and despair among the crew has turned into whispers of mutiny from a few them. You")
             print("remain confident that your crew will not betray you. However, such whispering is having a")
             print("negative effect on the crew’s morale. You could conduct a search to round up the whisperers")
@@ -676,6 +807,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_crew} crew.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 elif choice == "b":
@@ -684,6 +818,9 @@ def events(fuel, food, power, hull, crew, morale):
 
                     print(f"You have lost {lost_morale} morale.")
                     print("")
+                    print("Press ENTER to continue")
+                    input()
+                    print('')
                     break
 
                 else:
@@ -694,13 +831,18 @@ def events(fuel, food, power, hull, crew, morale):
 
         elif event == "boarded":
 
+            print(event)
+            print('')
             print("Without warning, several Garquackien soldiers beam aboard your ship in an attempt to")
             print("commandeer it. Your crew manages to dispatch the invaders, but not without a fight.")
             
             crew -= lost_crew
             
             print(f"You lost {lost_crew} crew in during the battle.")
-            print("") 
+            print("")
+            print("Press ENTER to continue")
+            input()
+            print('')
 
         
 
