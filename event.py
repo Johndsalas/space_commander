@@ -32,9 +32,8 @@ def get_event(fuel, food, power, hull, crew, morale):
 
         print(event)
         print('')
-        print("Your ship is passing by a large star and is nearly caught in its gravity well. Through clever ")
-        print("piloting you manage to escape the star’s pull, but not without burning through some of your ")
-        print("fuel reserves. ")
+        print("While passing by a large star your ship is nearly caught in its gravity well.")
+        print("You manage to escape, but not without burning through some of your fuel reserves.")
         print("")
 
         fuel -= lost_fuel
