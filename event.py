@@ -152,10 +152,10 @@ def get_event(fuel, food, power, hull, crew, morale):
 
         print(event)
         print('')
-        print("Hostel alien life forms are discovered clinging to your ship. They are looking for their next meal.")
-        print("You could lure the creatures away by jettisoning some of your food reserves. Alternatively, you ")
-        print("could use some of your power crystals to create a power surge strong enough to fry the")
-        print("invading creatures.")
+        print("Hostel alien life forms are clinging to your ship.")
+        print("You could lure the creatures away by jettisoning some of your food reserves or")
+        print("use some of your power crystals to create a electric discharge strong enough to")
+        print("dislodge them.")
         print("")
 
         while resolving_event:
