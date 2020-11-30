@@ -5,7 +5,7 @@ import random as r
 fuel = 100
 food = 100
 power = 100
-hull = 0
+hull = 100
 crew = 10
 morale = 100
 distance = 20
@@ -28,6 +28,7 @@ def get_event(fuel, food, power, hull, crew, morale):
     event = r.choice(event_list)
 
     # carryout chosen event (display text, give choice if applocable, modify lost variables, display result text)
+    resolving_event = True
     if event == "gravitational_force":
 
         print(event)
@@ -816,6 +817,27 @@ def get_event(fuel, food, power, hull, crew, morale):
     return fuel, food, power, hull, crew, morale
 
 
+def less_than_zero(fuel, food, power, hull, crew, morale):
+
+    if fuel < 0:
+        fuel = 0
+
+    if food < 0:
+        food = 0
+    
+    if power < 0:
+        power = 0
+
+    if hull < 0:
+        hull = 0
+
+    if crew < 0:
+        crew = 0
+
+    if morale < 0:
+        morale = 0
+
+    return fuel, food, power, hull, crew, morale
 
 def event_phase(fuel, food, power, hull, crew, morale):
     '''
@@ -823,7 +845,7 @@ def event_phase(fuel, food, power, hull, crew, morale):
     '''
 
     # set number of events
-    num_events = 1
+    num_events = 2
 
     # display beginning of phase
     print("Press ENTER to begin the Event Phase!")
@@ -837,6 +859,12 @@ def event_phase(fuel, food, power, hull, crew, morale):
     for x in range(0,num_events):
 
         fuel, food, power, hull, crew, morale = get_event(fuel, food, power, hull, crew, morale)
+
+        fuel, food, power, hull, crew, morale = less_than_zero(fuel, food, power, hull, crew, morale)
+
+        if ((fuel == 0) or (food == 0) or (power == 0) or (hull == 0) or (crew == 0) or (morale == 0)):
+
+            break
 
     return fuel, food, power, hull, crew, morale
 
