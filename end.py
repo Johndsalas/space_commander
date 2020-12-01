@@ -1,5 +1,5 @@
 
-def lose(fuel,hull, crew, power, morale, distance_traveled):
+def lose(fuel,hull, crew, power, morale):
     '''
     check for loss conditions
     '''
