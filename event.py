@@ -23,9 +23,9 @@ def get_event(fuel, food, power, hull, crew, morale):
                     "Garquackien Fighters",
                     "Room to Grow",
                     "Deterioration",
-                    "Asteroid Field",
-                    "Mixed",
-                    "Feast",
+                    "Asteroids",
+                    "Stench",
+                    "Despair",
                     "Recreation",
                     "Worse",
                     "Relations",
@@ -362,12 +362,12 @@ def get_event(fuel, food, power, hull, crew, morale):
                 print("")
                 continue
 
-    elif event == "asteroid_field":
+    elif event == "Asteroids":
 
         print(event)
         print('')
-        print("Curse that navigation computer, it’s led you straight into an asteroid field. As you begin trying ")
-        print("to pilot your way out you can hear the sound of space rocks making an impact on your ship.")
+        print("You suddenly find your self in the middle of an asteroid field! As you pilot your")
+        print("way out you can hear the sound of space rocks making an impact on your ship.")
         print("")
 
         hull -= lost_hull
@@ -378,22 +378,21 @@ def get_event(fuel, food, power, hull, crew, morale):
         input()
         print('')
 
-    elif event == "mixed":
+    elif event == "Stench":
 
         print(event)
         print('')
-        print("Apparently, someone though it would be funny to mix a stink fluid made from a Scaal sweat")
-        print("gland with part or your fuel supply. When the mixed fuel is burned in the ship’s propulsion system,")
-        print(" it fills the ship with a smell that is most foul. Having to endure the smell is having a negative")
-        print("impact on the crew’s morale. Will you endure the smell is having a negative impact on the crew’s")
-        print("morale. Will you continue to use the continue to use the “prank” fuel or will you destroy it.")
+        print("Apparently, someone though it would be funny to mix stink fluid with part or your fuel supply.")
+        print("When the mixed fuel is burned in the ship’s propulsion system, it fills the ship with a foul ")
+        print("smelling oder. Endure the stench is having a negative impact on the crew’s morale. You could")
+        print("throw out the 'prank' fuel or endure the stench and the effect it is having crew’s morale.")
         print("")
 
         while resolving_event:
             
             print("What are your orders?")
-            print("a) Jettison the “prank” fuel: lose 1-10 fuel")
-            print("b) Continue to use the “prank” fuel: lose 1-20 morale")
+            print("a) Destroy the “Prank” Fuel: lose 1-10 fuel")
+            print("b) Use the “Prank” Fuel: lose 1-20 morale")
             print("")
             choice = input()
 
@@ -401,7 +400,7 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 fuel -= lost_fuel
 
-                print(f"You have lost {lost_fuel} units of fuel.")
+                print(f"You have lost {lost_fuel} fuel.")
                 print("")
                 print("Press ENTER to continue")
                 input()
@@ -426,23 +425,20 @@ def get_event(fuel, food, power, hull, crew, morale):
                 continue
 
     
-    elif event == "feast":
+    elif event == "Despair":
 
         print(event)
         print('')
-        print("Despondency is beginning to take hold of your crew. Reflecting upon the sudden loss of Star Gazer 1,")
-        print("the space station they called home, their own dire situation, and the fate of the earth if they should")
-        print("fail, has been too much to process. You consider holding a small calibration to raise the crew’s")
-        print("spirits. A few hours of food, song, and dancing will keep crew’s mind off of their struggles for")
-        print("long enough to restore some of their sanity. However, hosting such an event would require")
-        print("dipping into the ship’s food reserve.")
+        print("Despondency is beginning to take hold of your crew. You could spend some of your food reserves")
+        print("to hold a small calibration and raise the crew’s spirits or do nothing and allow the crew's")
+        print("morale to fall.")
         print("")
 
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Hold the celebration: lose food")
-            print("b) Conserve supplies: lose 1-20 morale")
+            print("a) Hold the Celebration: lose 1-20 food")
+            print("b) Don't Hold the Celebration: lose 1-20 morale")
             print("")
             choice = input()
 
@@ -451,7 +447,7 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 food -= lost_food
 
-                print(f"You have lost {lost_food} units of food.")
+                print(f"You have lost {lost_food} food.")
                 print("")
                 print("Press ENTER to continue")
                 input()
