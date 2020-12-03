@@ -2,15 +2,6 @@
 import hud as h
 import random as r
 
-fuel = 100
-food = 100
-power = 100
-hull = 100
-crew = 10
-morale = 100
-distance = 20
-week = 10
-
 def get_event(fuel, food, power, hull, crew, morale):
 
     # list of events
@@ -878,4 +869,3 @@ def event_phase(fuel, food, power, hull, crew, morale):
             break
 
     return fuel, food, power, hull, crew, morale
-    
