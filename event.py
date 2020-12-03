@@ -14,7 +14,27 @@ week = 10
 def get_event(fuel, food, power, hull, crew, morale):
 
     # list of events
-    event_list = ["gravitational_force","restock","contamination","navigational_malfunction","lifeform","territory_dispute","ambush","confined","deterioration","asteroid_field","mixed","feast","recreation","worse","relations","syphon","hording","stealing","blockade","decenters","boarded"]
+    event_list = [  "Gravitational Force",
+                    "Over Rationed",
+                    "Contamination",
+                    "Navigational Malfunction",
+                    "Aliens",
+                    "Territory Dispute",
+                    "Garquackien Fighters",
+                    "Room to Grow",
+                    "Deterioration",
+                    "Asteroid Field",
+                    "Mixed",
+                    "Feast",
+                    "Recreation",
+                    "Worse",
+                    "Relations",
+                    "Syphon",
+                    "Hording",
+                    "Stealing",
+                    "Blockade",
+                    "Decenters",
+                    "Boarded"                     ]
 
     # create loss variables
     lost_fuel = r.randint(1,10)
@@ -29,43 +49,43 @@ def get_event(fuel, food, power, hull, crew, morale):
 
     # carryout chosen event (display text, give choice if applocable, modify lost variables, display result text)
     resolving_event = True
-    if event == "gravitational_force":
+    if event == "Gravitational Force":
 
         print(event)
         print('')
-        print("While passing by a large star your ship is nearly caught in its gravity well.")
+        print("While passing by a large star your ship is caught in its gravitational well.")
         print("You manage to escape, but not without burning through some of your fuel reserves.")
         print("")
 
         fuel -= lost_fuel
 
-        print(f"You have lost {lost_fuel} units of fuel.")
+        print(f"You have lost {lost_fuel} fuel.")
         print("")
         print("Press ENTER to continue")
         input()
         print('')
 
-    elif event == "restock":
+    elif event == "Over Rationed":
 
         print(event)
         print('')
         print("You discover that your food reserves have not been rationed correctly. You could use some of ")
-        print("your fuel to stop at the closest habitable planet and restock the missing food or maintain your ")
-        print("current course and make do with the missing food. ")
+        print("your fuel to stop at a nearby planet and restock the missing food or maintain your current ")
+        print("course and make do with the missing food. ")
         print("")
 
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Detour to planet: loose 1-10 fuel.")
-            print("b) Maintain the course: lose 1-20 food.")
+            print("a) Restock: loose 1-10 fuel.")
+            print("b) Maintain Course: lose 1-20 food.")
             print("")
             choice = input()
 
             if choice == "a":
 
                 fuel -= lost_fuel 
-                print(f"You have lost {lost_fuel} units of fuel.")
+                print(f"You have lost {lost_fuel} fuel.")
                 print("")
                 print("Press ENTER to continue")
                 input()
@@ -75,7 +95,7 @@ def get_event(fuel, food, power, hull, crew, morale):
             elif choice == "b":
 
                 food -= lost_food
-                print(f"You have lost {lost_food} units of food.")
+                print(f"You have lost {lost_food} food.")
                 print("")
                 print("Press ENTER to continue")
                 input()
@@ -88,7 +108,7 @@ def get_event(fuel, food, power, hull, crew, morale):
                 print("")
                 continue
 
-    elif event == "contamination":
+    elif event == "Contamination":
         
         print(event)
         print('')
@@ -98,28 +118,28 @@ def get_event(fuel, food, power, hull, crew, morale):
 
         food -= lost_food
 
-        print(f"You have lost {lost_food} units of food.")
+        print(f"You have lost {lost_food} food.")
         print("")
         print("Press ENTER to continue")
         input()
         print('')
 
-    elif event == "navigational_malfunction":
+    elif event == "Navigational Malfunction":
 
         print(event)
         print('')
-        print("The ship’s navigational system is malfunctioning, causing it to recommend a longer travel route ")
-        print("than is necessary. You could use some of your power crystals to feed additional power to the ")
-        print("navigation system allowing it to reboot and correct the error immediately, or you ")
-        print("could spend some of your fuel reserve to keep the ship on schedule and allow the navigation ")
-        print("system to reboot on its own.")
+        print("The ship’s navigational system is malfunctioning, causing it to recommend a longer ")
+        print("travel route than is necessary. You could spend power crystals to feed additional ")
+        print("power to the navigation system allowing it to reboot and correct the error ")
+        print("immediately, or you could spend fuel to keep the ship on schedule and allow the ")
+        print("navigation system to reboot on its own.")
         print("")
 
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Reboot the system: lose 1-5 power crystals")
-            print("b) Stay the course: lose 1-10 fuel")
+            print("a) Reboot: lose 1-5 power crystals")
+            print("b) Stay the Course: lose 1-10 fuel")
             print("")
             choice = input()
 
@@ -136,7 +156,7 @@ def get_event(fuel, food, power, hull, crew, morale):
             elif choice == "b":
 
                 fuel -= lost_fuel
-                print(f"You have lost {lost_fuel} units of fuel.")
+                print(f"You have lost {lost_fuel} fuel.")
                 print("")
                 print("Press ENTER to continue")
                 input()
@@ -149,28 +169,28 @@ def get_event(fuel, food, power, hull, crew, morale):
                 print("")
                 continue
 
-    elif event == "lifeform":
+    elif event == "Aliens":
 
         print(event)
         print('')
         print("Hostel alien life forms are clinging to your ship disrupting you travel and ")
         print("imperaling your crew. You could lure the creatures away by jettisoning some ")
-        print("of your food reserves or use some of your power crystals to create a electric ")
-        print("discharge strong enough todislodge them.")
+        print("of your food reserves or use power crystals to create a electric discharge")
+        print("strong enough force them off the ship.")
         print("")
 
         while resolving_event:
             
             print("What are your orders?")
-            print("a) Jettison the food: lose 1-20 food")
-            print("b) Create the discharge: lose 1-5 power crystals")
+            print("a) Lure Them Away: lose 1-20 food")
+            print("b) Force Them Off: lose 1-5 power crystals")
             print("")
             choice = input()
 
             if choice == "a":
 
                 food -= lost_food
-                print(f"You have lost {lost_food} units of food.")
+                print(f"You have lost {lost_food} food.")
                 print("")
                 print("Press ENTER to continue")
                 input()
@@ -193,37 +213,36 @@ def get_event(fuel, food, power, hull, crew, morale):
                 print("")
                 continue
 
-    elif event == "territory_dispute":
+    elif event == "Space Pirates":
 
         print(event)
         print('')
-        print("Your journey requires passage through a hostile region of space. The powers")
-        print("controlling in this region have placed space mines throughout their borders to deter")
-        print("trespassers. These mines emit a sonic frequency that is known to shatter the power ")
-        print("crystals that power most spaceships. Having no time to reach out diplomatically, you ")
-        print("plot a course that should get you in and out with at least some of your power crystals")
-        print("intact.")
+        print("Your journey requires passage through a hostile region of space. Space Pirates")
+        print("controlling this region have placed capture mines throughout the region in the hopes")
+        print("of commandeering any ship that happens to blunder into them. These mines emit a sonic")
+        print("frequency that shatters power crystals while leaving the rest of the ship intact.")
+        print("You manage to avoid most of the mines, but not all of them...")
+        print('')
 
         power -= lost_power
 
         print(f"You lose {lost_power} power crystals")
         print("")
 
-    elif event == "ambush":
+    elif event == "Garquackien Fighters":
 
         print(event)
         print('')
         print("Several Garquackien fighter ships have dropped out of hyperspace and are preparing ")
         print("fire on your ship. You cold spent some of your fuel reserves to engage in evasive ")
         print("maneuvers and avoid taking fire or you could maintain your current course which will ")
-        print("soon take you out of their range, but not without sustaining fire and damaging the ")
-        print("ship’s hull")
+        print("soon take you out of their range, but not without sustaining some fire.")
         print('')
 
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Maintain current heading: lose 1-3 hull")
+            print("a) Maintain Heading: lose 1-3 hull")
             print("b) Evasive Maneuvers: lose 1-10 fuel ")
             print("")
             choice=input()
@@ -241,7 +260,7 @@ def get_event(fuel, food, power, hull, crew, morale):
             elif choice == "b":
 
                 fuel -= lost_fuel
-                print(f"You have lost {lost_fuel} units of fuel.")
+                print(f"You have lost {lost_fuel} fuel.")
                 print("")
                 print("Press ENTER to continue")
                 input()
@@ -255,20 +274,20 @@ def get_event(fuel, food, power, hull, crew, morale):
                 continue
         
 
-    elif event == "confined":
+    elif event == "Room to Grow":
 
         print(event)
         print('')
         print("The vegetation you are cultivating for the ship’s food supply, is not yielding the expected")
-        print("amount. You could do nothing and make do with the less food or you could renovate the ship, ")
-        print("clearing out our more space for growing food and weakening the ship’s hull.")
+        print("amount. You could renovate the ship, clearing out our more space for growing food and weakening")
+        print("the ship’s hull or you could do nothing and make do with the less food.")
         print("")
 
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Order the renovation: lose 1-3 hull")
-            print("b) Preserve the ship: lose 1-20 food")
+            print("a) Renovate: lose 1-3 hull")
+            print("b) Don't Renovate: lose 1-20 food")
             print("")
             choice = input()
 
@@ -285,7 +304,7 @@ def get_event(fuel, food, power, hull, crew, morale):
             elif choice == "b":
 
                 food -= lost_food
-                print(f"You have lost {lost_food} units of food.")
+                print(f"You have lost {lost_food} food.")
                 print("")
                 print("Press ENTER to continue")
                 input()
@@ -298,20 +317,20 @@ def get_event(fuel, food, power, hull, crew, morale):
                 print("")
                 continue
 
-    elif event == "deterioration":
+    elif event == "Deterioration":
 
         print(event)
         print('')
-        print("The maintenance system that keeps the hull in good repair has malfunctioned. You could use")
-        print("some of the power crystals to fix the damage by powering up some of the ship’s repair bots or")
-        print("you could allow the hull to become damaged.")
+        print("The maintenance system that keeps the hull in good repair has malfunctioned. You could use ")
+        print("some of your power crystals to fix the damage by powering up some of the ship’s repair bots ")
+        print("or you could allow the hull to become damaged.")
         print("")
         
         while resolving_event:
 
             print("What are your orders?")
             print("a) Repair the ship: lose 1-5 power crystals")
-            print("b) It’ll hold together: lose 1-3 hull")
+            print("b) Save the Crystals: lose 1-3 hull")
             print("")
             choice = input()
 
