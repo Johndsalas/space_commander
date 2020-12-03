@@ -70,8 +70,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         print(event)
         print('')
         print("You discover that your food reserves have not been rationed correctly. You could use some of ")
-        print("your fuel to stop at a nearby planet and restock the missing food or maintain your current ")
-        print("course and make do with the missing food. ")
+        print("your fuel to stop at a nearby planet and restock the missing food or maintain your current course.")
         print("")
 
         while resolving_event:
@@ -129,7 +128,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         print(event)
         print('')
         print("The ship’s navigational system is malfunctioning, causing it to recommend a longer ")
-        print("travel route than is necessary. You could spend power crystals to feed additional ")
+        print("travel route than is necessary. You could use power crystals to feed additional ")
         print("power to the navigation system allowing it to reboot and correct the error ")
         print("immediately, or you could spend fuel to keep the ship on schedule and allow the ")
         print("navigation system to reboot on its own.")
@@ -218,7 +217,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         print(event)
         print('')
         print("Your journey requires passage through a hostile region of space. Space Pirates")
-        print("controlling this region have placed capture mines throughout the region in the hopes")
+        print("controlling this region have placed capture mines throughout it, in the hopes")
         print("of commandeering any ship that happens to blunder into them. These mines emit a sonic")
         print("frequency that shatters power crystals while leaving the rest of the ship intact.")
         print("You manage to avoid most of the mines, but not all of them...")
@@ -234,16 +233,16 @@ def get_event(fuel, food, power, hull, crew, morale):
         print(event)
         print('')
         print("Several Garquackien fighter ships have dropped out of hyperspace and are preparing ")
-        print("fire on your ship. You cold spent some of your fuel reserves to engage in evasive ")
-        print("maneuvers and avoid taking fire or you could maintain your current course which will ")
-        print("soon take you out of their range, but not without sustaining some fire.")
+        print("fire on your ship. You cold spent some fuel to engage in evasive maneuvers and avoid")
+        print("taking fire or you could maintain your current course which will take you out of their")
+        print("range, but not without sustaining some fire.")
         print('')
 
         while resolving_event:
 
             print("What are your orders?")
             print("a) Maintain Heading: lose 1-3 hull")
-            print("b) Evasive Maneuvers: lose 1-10 fuel ")
+            print("b) Evasive Maneuvers: lose 1-10 fuel")
             print("")
             choice=input()
 
@@ -280,7 +279,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         print('')
         print("The vegetation you are cultivating for the ship’s food supply, is not yielding the expected")
         print("amount. You could renovate the ship, clearing out our more space for growing food and weakening")
-        print("the ship’s hull or you could do nothing and make do with the less food.")
+        print("the ship’s hull or you could do nothing and make do with less food.")
         print("")
 
         while resolving_event:
@@ -366,8 +365,8 @@ def get_event(fuel, food, power, hull, crew, morale):
 
         print(event)
         print('')
-        print("You suddenly find your self in the middle of an asteroid field! As you pilot your")
-        print("way out you can hear the sound of space rocks making an impact on your ship.")
+        print("You find your self in the middle of an asteroid field. As you pilot your")
+        print("way out you can hear the sound of space rocks making impacts on your ship.")
         print("")
 
         hull -= lost_hull
@@ -384,15 +383,15 @@ def get_event(fuel, food, power, hull, crew, morale):
         print('')
         print("Apparently, someone though it would be funny to mix stink fluid with part or your fuel supply.")
         print("When the mixed fuel is burned in the ship’s propulsion system, it fills the ship with a foul ")
-        print("smelling odor. Endure the stench is having a negative impact on the crew’s morale. You could")
-        print("throw out the 'prank' fuel or endure the stench and the effect it is having crew’s morale.")
+        print("smelling odor. You could throw out the 'prank' fuel or endure the stench and the effect it's")
+        print("having on the crew’s morale.")
         print("")
 
         while resolving_event:
             
             print("What are your orders?")
-            print("a) Destroy the “Prank” Fuel: lose 1-10 fuel")
-            print("b) Use the “Prank” Fuel: lose 1-20 morale")
+            print("a) Destroy the 'Prank' Fuel: lose 1-10 fuel")
+            print("b) Use the 'Prank' Fuel: lose 1-20 morale")
             print("")
             choice = input()
 
@@ -569,9 +568,9 @@ def get_event(fuel, food, power, hull, crew, morale):
         print(event)
         print('')
         print("‘Relations’ between two of your senior staff members have soured, turning into open hostility.")
-        print("What’s worse is they are encouraging their subornment crew members to take sides. You have done")
-        print("what you can to discipline your senior staff. However, there is still a lingering air of")
-        print("disharmony and resentment among many of the crew.")
+        print("What’s worse is they are encouraging their subornments to take sides. You have done what you can")
+        print("to discipline your senior staff. However, there is still a lingering air of disharmony andresentment")
+        print("among many of the crew.")
 
         morale -= lost_morale
 
@@ -585,9 +584,9 @@ def get_event(fuel, food, power, hull, crew, morale):
 
         print(event)
         print('')
-        print("A space pirate vessel is attempting to attached itself to your ship and syphon off some of its")
-        print("fuel. You could use force to overcome the smaller vessel and prevent the theft. However, doing")
-        print("so would put the lives of your crew at risk.")
+        print("A space pirate vessel is attempting to syphon off some of your ships fule. You could")
+        print("use force to overcome the smaller vessel and prevent the theft. However, doing so would")
+        print("put the lives of your crew at risk.")
         print("")
 
         while resolving_event:
@@ -632,9 +631,9 @@ def get_event(fuel, food, power, hull, crew, morale):
         print('')
         print("You have discovered that several power crystals are missing from the ships supply. It is likely,")
         print("that some of the crew have been ‘appropriating’ them for personal use. You could order a ship")
-        print("wide search to recover the missing crystals. However, any crew members who are caught stealing")
-        print("in a time of crisis would need to be made swift example of, potentially reducing the number of")
-        print("remaining crew. ")
+        print("wide search to recover the missing crystals. However, any crew who are caught stealing in a ")
+        print("time of crisis would need to be made swift example of, potentially reducing the number of")
+        print("remaining crew.")
         print("")
 
         while resolving_event:
@@ -678,9 +677,9 @@ def get_event(fuel, food, power, hull, crew, morale):
         print(event)
         print('')
         print("Persistent rumors of food shortages have prompted some of the crew to begin hording food")
-        print("You could order a ship wide search to recover the missing food. However, any crewmembers")
-        print("who are caught stealing in a time of crisis would need to be made swift example of, potentially")
-        print("reducing the number of remaining crewmembers.")
+        print("You could order a ship wide search to recover the missing food. However, any crew who are")
+        print("caught stealing in a time of crisis would need to be made swift example of, potentially")
+        print("reducing the number of remaining crew.")
         print("")
 
         while resolving_event:
@@ -769,10 +768,10 @@ def get_event(fuel, food, power, hull, crew, morale):
 
         print(event)
         print('')
-        print("Fear and despair among the crew has turned into whispers of mutiny from a few them.")
-        print("You could conduct a search for the source of those whisperers and make an example of them.")
-        print("This would put a stop to their whispering and restore morale. However, this will potentially")
-        print("reduce the number of remaining crew.")
+        print("Fear and despair among the crew has turned into whispers of dissent in a few of them.")
+        print("You could conduct a search for the source of those whispers, make an example of them,")
+        print("and put a stop to the negetive effect the are having on the crew's moral. However, ")
+        print("this will potentially reduce your number of remaining crew.")
         print("")
 
         while resolving_event:
@@ -879,9 +878,4 @@ def event_phase(fuel, food, power, hull, crew, morale):
             break
 
     return fuel, food, power, hull, crew, morale
-
-event_phase(fuel, food, power, hull, crew, morale)
-
-
-
     
