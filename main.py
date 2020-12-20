@@ -61,7 +61,7 @@ def game_loop():
         fuel, food, power, hull, crew, morale = p.production_phase(fuel, food, power, hull, crew, morale)
 
         # Phase 2: Spend Phase
-        fuel, food, power, hull, crew, morale, distance_traveled = s.spend(fuel, food, power, hull, crew, morale)
+        fuel, food, power, hull, crew, morale, distance_traveled = s.spend_phase(fuel, food, power, hull, crew, morale)
 
         # Check for loss conditions
         if ed.lose(fuel, hull, crew, power, morale):
@@ -69,7 +69,7 @@ def game_loop():
             break
 
         # Phase 3: Event Phase
-        fuel, food, power, hull, crew, morale = e.events(fuel, food, power, hull, crew, morale)
+        fuel, food, power, hull, crew, morale = e.event_phase(fuel, food, power, hull, crew, morale)
 
         # Check for loss conditions
         if ed.lose(fuel, hull, crew, power, morale):
@@ -77,7 +77,7 @@ def game_loop():
             break
 
         # phase 4: Travel Phase
-        distance = t.travel(distance, distance_traveled)
+        distance = t.travel_phase(distance, distance_traveled)
 
         # Check for win conditions
         if ed.win(distance):

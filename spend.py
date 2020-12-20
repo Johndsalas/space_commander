@@ -96,8 +96,8 @@ def spend_fuel(fuel):
         # if user input is valid set fule_spent and distance_traveled amounts and end loop
         # if not print error message and restart loop
 
-        if amount == 1:
-            fuel_spent = '1'
+        if amount == '1':
+            fuel_spent = 1
             distance_traveled = 1
 
         elif amount == '3':
@@ -141,7 +141,7 @@ def spend_fuel(fuel):
     return fuel, distance_traveled
 
 
-def spend(fuel, food, power, hull, crew, morale):
+def spend_phase(fuel, food, power, hull, crew, morale):
     '''
     Spends resources during the spend phase
     '''

@@ -2,7 +2,7 @@
 travel phase
 '''
 
-def travel(distance, distance_traveled):
+def travel_phase(distance, distance_traveled):
     '''
     moves ship and gives output to user
     '''

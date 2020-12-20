@@ -7,26 +7,31 @@ def assign_crew():
     print("How many crew members will you assign to fuel?")
     
     fuel_crew = input()
+    print(fuel_crew)
 
     # get imput for crew assigned to food
     print("How many crew members will you assign to food?")
     
     food_crew = input()
+    print(food_crew)
 
     # get imput for crew assigned to power
     print("How many crew members will you assign to power crystals?")
     
     power_crew = input()
+    print(power_crew)
 
     # get imput for crew assigned to hull
     print("How many crew members will you assign to hull?")
 
     hull_crew = input()
+    print(hull_crew)
 
     # get imput for crew assigned to morale
     print("How many crew members will you assign to morale?")
     
     morale_crew = input()
+    print(morale_crew)
 
     # print space between next block of text
     print('')
