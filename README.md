@@ -20,7 +20,7 @@ It would have taken an enormous armada to mount this kind of attack, and the app
 
 ### Winning and Losing
 
-In space commander, your goal is to travel to Earth and warn the United Earth Federation about the impending Garquackien attack. During the game, you will see the distance you still need to travel displayed as distance from Earth. If this distance reaches 0, your ship had made it to Earth and you have won!
+In space commander, your goal is to travel to Earth and warn the United Earth Federation about the impending Garquackien attack. During the game, you will see the distance you still need to travel displayed as DISTANCE FROM EARTH. If this distance reaches 0, your ship had made it to Earth and you have won!
 
 You will also see how far the Garquackians are from Earth (WEEKS UNTILL THE GARQUACKIEN INVASION). If the Garquackiens reach Earth before you do, they will begin their attack before the United Earth Federation has a chance to ready its defenses. If this is allowed to happen Earth will be destroyed and you will lose the game.
 
@@ -28,15 +28,15 @@ During play, you will need to carefully manage your ship’s resources. If your 
 
 ### Game Phases
 
-Space Commander takes place over four phases which repeat in order until the game is either won or lost. Each repitition represents one week of time.
+Space Commander takes place over four phases which repeat in order until the game is either won or lost. Each set of phases represents one week of time.
 
-PRODUCTION PHASE: During the production phase you will assign members of your crew to produce resources your ship needs to continue its mission. Each of your assigned crew will have a chance to produce the resource its assigned to. That chance is equal to the crew’s morale minus the difficulty of producing that resource. If successful, the amount produced will vary by resource. (See in game information for details during the production phase.) 
+PRODUCTION PHASE: During the production phase you will assign members of your crew to produce resources your ship needs to continue on its mission. Each crew you assign to a resource will have a chance to produce that resource equal to the crew’s morale minus the difficulty of producing that resource. If successful, the amount produced will vary by resource. (See in game information for details during the production phase.) 
 
-SPEND PHASE: The spend phase is when you spend reasoeces on your ships weekly needs. This takes place over three steps. First you will spend food to feed each of your crew. Each of your crew will consume one food reducing the number of food from your supply by the number of crew on your ship. If you do not have enough food to feed all of your crew, the ones that are not fed will starve and die, reducing the number of crew in your ship by the number of unfed crew. Second you will check to see if any of you power crystals burned out during the previous week. Each crystal has a small chance of burning out each week. If all of your power crystals burn out at once your ship will be left without power and you will lose the game. Third you will decide on the amount of fuel you will spend on traveling that week. The more fuel you spend the greater distance you will travel during the travel phase. This reduces your distance from Earth and bring you closer to winning the game.
+SPEND PHASE: The spend phase is when you spend resources on your ships weekly needs. First you will spend food to feed each of your crew. Each of your crew will consume one food reducing the number of food from your supply by the number of crew on your ship. If you do not have enough food to feed all of your crew, the ones that are not fed will starve and die, reducing the number of crew in your ship by the number of unfed crew. Second you will check to see if any of you power crystals burn out. Each crystal has a small chance of burning out each week. Third you will decide on the amount of fuel you will spend on traveling that week. The more fuel you spend the greater distance you will travel during the travel phase. (See in game information for specific fuel to movement ratios)
 
 EVENT PHASE: The hazards of space travel are many and varied. During the event phase you will encounter a number of events that will tax your resources. The resources taxed will depend on the decisions you make during those events.
 
-TRAVEL PHASE: During the travel phase your ship will move closer to Earth and a you will be closer to winning the game. The amount you move is determined by the amount of fuel you spent during the spend phase for movement. If your distance from Earth reaches zero you have arrived at Earth and have won the game.
+TRAVEL PHASE: During the travel phase your ship will move closer to Earth and a you will be closer to winning the game. The amount you move is determined by the amount of fuel you spent during the spend phase for movement. If your distance from Earth reaches zero you have arrived at Earth and have won the game. If you do not win the game during the travel phase, the Garquackiens will move one step closer to invading Earth. WEEKS UNTILL THE GARQUCKIEN INVATION will reduce by 1.
 
 ### Game Terms
 
