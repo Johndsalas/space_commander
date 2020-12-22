@@ -57,7 +57,9 @@ def win(distance):
     if distance <= 0:
         print("You arrive at Earth in time to warn Earth Force about the impending attack. Thanks to your ")
         print("efforts Earth Force will be prepared to defend against the Garquackien attack.")
-        print("You have lost the game.")
+        print('')
+        print("You have won the game.")
+        print('')
         won = True
 
     return won

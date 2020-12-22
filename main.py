@@ -39,10 +39,10 @@ def game_loop():
     fuel = 100
     food = 100
     power = 100
-    hull = 0
+    hull = 100
     crew = 10
     morale = 100
-    distance = 20
+    distance = 0
     week = 10
 
     # begin game loop
