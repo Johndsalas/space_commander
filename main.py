@@ -36,10 +36,10 @@ def play_again():
 def game_loop():
 
     # Beginning Values
-    fuel = 100
-    food = 100
-    power = 100
-    hull = 100
+    fuel = 50
+    food = 50
+    power = 20
+    hull = 6
     crew = 10
     morale = 100
     distance = 0
