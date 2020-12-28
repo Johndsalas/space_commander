@@ -164,9 +164,20 @@ def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel_chan
     return fuel_gen, food_gen, power_gen, hull_gen, morale_gen
 
 
-def is_capped(hull, morale):
+def is_capped(fuel, food, hull, power, morale):
 
      # Check for resource caps
+    if fuel > 40:
+
+        print("You can only store up to 40 fuel")
+        print('')
+        fuel = 40
+
+    if food > 50:
+
+        print("You can only store up to 50 food")
+        print('')
+        food = 50
 
     if hull > 5:
 
@@ -174,13 +185,19 @@ def is_capped(hull, morale):
         print('')
         hull = 5
 
+    if power > 15:
+
+        print("You can only store up to 15 power crystals")
+        print('')
+        hull = 15
+
     if morale > 100:
 
         print("morale cannot exceed 100")
         print('')
         morale = 100
 
-    return hull, morale
+    return fuel, food, hull, power, morale
 
 
 def production_phase(fuel, food, power, hull, crew, morale):
@@ -197,10 +214,10 @@ def production_phase(fuel, food, power, hull, crew, morale):
 
     # set additional amount subtracted from morale during prodiction test
     fuel_pen = 15
-    food_pen = 5
-    power_pen = 15
+    food_pen = 0
+    power_pen = 10
     hull_pen = 25
-    morale_pen = 5
+    morale_pen = 0
 
     # chance to produce each reasorce
     fuel_chance = (morale - fuel_pen)
@@ -210,9 +227,9 @@ def production_phase(fuel, food, power, hull, crew, morale):
     morale_chance = (morale - morale_pen)
 
     # number of resorces produced on success
-    fuel_prod = 3
+    fuel_prod = 2
     food_prod = 5
-    power_prod = 2
+    power_prod = 3
     hull_prod = 1
     morale_prod = 5
 
@@ -255,6 +272,6 @@ def production_phase(fuel, food, power, hull, crew, morale):
     morale += morale_gen
 
     # check for capped resources
-    hull, morale = is_capped(hull, morale)
+    fuel, food, hull, power, morale = is_capped(fuel, food, hull, power, morale)
 
     return fuel, food, power, hull, crew, morale

@@ -28,8 +28,8 @@ def get_event(fuel, food, power, hull, crew, morale):
                     "Boarded"                   ]
 
     # create loss variables
-    lost_fuel = r.randint(1,10)
-    lost_food = r.randint(1,20)
+    lost_fuel = r.randint(1,5)
+    lost_food = r.randint(1,10)
     lost_power = r.randint(1,5)
     lost_hull = r.randint(1,3)
     lost_crew = r.randint(0,3)
