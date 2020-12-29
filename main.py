@@ -41,30 +41,30 @@ def game_loop():
     power = 10
     hull = 6
     crew = 10
-    morale = 80
+    morale = 60
     distance = 25
-    week = 10
+    g_dist = 25
 
     # begin game loop
     running = True
     while running:
 
         # introduction
-        if week == 10:
+        if g_dist == 25:
 
             fuel, food, power, hull, crew, morale = i.intro(fuel, food, power, hull, crew, morale) 
 
         # Display Distance
-        h.status(distance, week)
+        h.status(distance, g_dist)
 
         # Phase 1: Production Phase
         fuel, food, power, hull, crew, morale = p.production_phase(fuel, food, power, hull, crew, morale)
 
         # Phase 2: Spend Phase
-        fuel, food, power, hull, crew, morale, distance_traveled = s.spend_phase(fuel, food, power, hull, crew, morale)
+        fuel, food, power, hull, crew, morale, distance_traveled = s.spend_phase(fuel, food, power, hull, crew, morale, g_dist, distance)
 
         # Check for loss conditions
-        if ed.lose(fuel, hull, crew, power, morale):
+        if ed.lose(fuel, food, power, hull, crew, morale):
         
             break
 
@@ -72,7 +72,7 @@ def game_loop():
         fuel, food, power, hull, crew, morale = e.event_phase(fuel, food, power, hull, crew, morale)
 
         # Check for loss conditions
-        if ed.lose(fuel, hull, crew, power, morale):
+        if ed.lose(fuel, food, power, hull, crew, morale):
             
             break
 
@@ -85,7 +85,7 @@ def game_loop():
             break
 
         # Update week
-        week -= 1
+        g_dist -= random.randint(1,3)
 
 # Display menu, run game loop, ask player if they want to play again
 if m.start():

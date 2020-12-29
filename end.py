@@ -1,5 +1,5 @@
 
-def lose(fuel,hull, crew, power, morale):
+def lose(fuel, food, power, hull, crew, morale):
     '''
     check for loss conditions
     '''
@@ -13,6 +13,11 @@ def lose(fuel,hull, crew, power, morale):
     if fuel < 1:
         print("You have zero fuel")
         print("Your ship’s engines overheat and explode!")
+        print('')
+
+    if food < 1:
+        print("You have insufficient food to feed your crew.")
+        print("Rioting breaks out over what little food remains!")
         print('')
 
     if hull < 1:
@@ -35,7 +40,7 @@ def lose(fuel,hull, crew, power, morale):
         print("Your crew has mutinied and taken over the ship!")
         print('')
        
-    if (fuel < 1) or (hull < 1) or (crew < 1) or (power < 1) or (morale < 1):
+    if (fuel < 1) or (food < 1) or (hull < 1) or (crew < 1) or (power < 1) or (morale < 1):
 
         print("You are unable to continue your mission and Earth will surely be destroyed!")
         print("You have lost the game.")

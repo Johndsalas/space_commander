@@ -562,6 +562,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         print("What’s worse is they are encouraging their subornments to take sides. You have done what you can")
         print("to discipline your senior staff. However, there is still a lingering air of disharmony andresentment")
         print("among many of the crew.")
+        print("")
 
         morale -= lost_morale
 

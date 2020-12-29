@@ -4,35 +4,22 @@ import random as r
 
 def feed_crew(food, crew):
     '''
-    Feed crew if possible. If not remove starved crew members
+    Feed crew
     '''
 
     # set food_consumed equal to number of crew
     food_consumed = crew
 
-    # if there is enough food to feed the crew, remove the food consumed from the supply and display results
-    if food_consumed <= food:
+    # remove the food consumed from the supply and display results
+    food -= food_consumed
 
-        food -= food_consumed
-
-        print(f"Your crew consumes {food_consumed} units of food.")
-        print(f'You have {food} units of food remaining.')
-        print("")
+    print(f"Your crew consumes {food_consumed} units of food.")
+    print(f'You have {food} units of food remaining.')
+    print("")
 
     # if there is not enough food to feed the crew, remove all food from the supply and remove starved crew and dislpay results
-    elif food_consumed > food:
 
-        crew_starved = crew - food
-
-        crew -= crew_starved
-
-        print(f"You only had enough food to feed {food} of your crew.")
-        print(f"{crew_starved} of your crew have starved.")
-        print("")
-
-        food = 0
-
-    return food, crew
+    return food
 
 
 def crystal_burn(power):
@@ -141,7 +128,7 @@ def spend_fuel(fuel):
     return fuel, distance_traveled
 
 
-def spend_phase(fuel, food, power, hull, crew, morale):
+def spend_phase(fuel, food, power, hull, crew, morale, week, distance):
     '''
     Spends resources during the spend phase
     '''
@@ -151,14 +138,17 @@ def spend_phase(fuel, food, power, hull, crew, morale):
     input()
     print("")
 
-    # if fuel is zero skip spend phase and proceed to loss message
-    if fuel > 0:
+    # if loss condition present skip spend phase and proceed loss message
+    if (fuel > 0) and (food > crew) and (power > 0):
 
         # display HUD
         h.hud(fuel, food, power, hull, crew, morale)
 
+        # display distance
+        h.status(distance, g_dist)
+
         # spend food
-        food, crew = feed_crew(food, crew)
+        food = feed_crew(food, crew)
 
         # check for crystal burnout
         power = crystal_burn(power)
@@ -166,7 +156,7 @@ def spend_phase(fuel, food, power, hull, crew, morale):
         # spend fuel
         fuel, distance_traveled = spend_fuel(fuel)
 
-    else:
+    if fuel < 1:
 
         distance_traveled = 0
 

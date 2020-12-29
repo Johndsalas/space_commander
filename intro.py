@@ -4,18 +4,18 @@ import  random
 def intro(fuel, food, power, hull, crew, morale):
 
     lost_fuel = random.randint(1,10)
-    lost_food = random.randint(1,10) + random.randint(1,10)
+    lost_food = random.randint(1,10)
     lost_power = random.randint(1,6)
-    lost_hull = random.randint(0,3)
-    lost_crew = random.randint(0,3)
-    lost_morale = random.randint(20,40)
+    lost_hull = random.randint(0,2)
+    lost_crew = random.randint(0,2)
+    lost_morale = 0
 
     fuel -= lost_fuel
     food -= lost_food
     power -= lost_power
     hull -= lost_hull
     crew -= lost_crew
-    morale -= lost_morale  
+    morale -= lost_morale
 
     print("The Story Continues…")
     print("")
