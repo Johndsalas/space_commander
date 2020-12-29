@@ -82,14 +82,14 @@ def spend_fuel(fuel):
 
         # get user input
         print(f"You have {fuel} fuel in your reserve.")
-      
+        print('')
+        print("How much fuel will you spend?")
+        print('')
         print("Spend 1 fuel to move 1 distance.")
         print("Spent 3 fuel to move 2 distance.")
         print("Spend 6 fuel to move 3 distance.")
         print("Spent 10 fuel to move 4 distance.")
         print("Spend 15 fuel to move 5 distance.")
-        print('')
-        print("How much fuel will you spend?")
         print('')
         amount = input()
 
