@@ -5,21 +5,21 @@ def hud(fuel, food, power, hull, crew, morale):
     Heads up display for game stats
     '''
 
-    print(" _____________________________________________________")
-    print("|{:^6}|{:^6}|{:^16}|{:^6}|{:^6}|{:^8}|".format("Fuel", "Food", "Power Crystals", "Hull", "Crew", "Morale"))
-    print("|{:^6}|{:^6}|{:^16}|{:^6}|{:^6}|{:^8}|".format(fuel, food, power, str(hull)+'/5', crew, str(morale)+'%'))
-    print(" -----------------------------------------------------")
+    print(" ________________________________________________________")
+    print("|{:^7}|{:^7}|{:^16}|{:^7}|{:^6}|{:^8}|".format("Fuel", "Food", "Power Crystals", "Hull", "Crew", "Morale"))
+    print("|{:^7}|{:^7}|{:^16}|{:^7}|{:^6}|{:^8}|".format(str(fuel)+'/40', str(food)+'/60', str(power)+'/15', str(hull)+'/5', crew, str(morale)+'%'))
+    print(" --------------------------------------------------------")
     print("")
 
 def status(distance, week):
 
     print('')
-    print(" _____________________________________")
-    print("|{:^37}|".format(" Days Until the Garquackien Invasion"))
-    print("|{:^37}|".format(week))
-    print(" -------------------------------------")
-    print(" _____________________")
-    print("|{:^21}|".format("Distance from Earth"))
-    print("|{:^21}|".format(distance))
-    print(" ---------------------")
+    print(" __________________________________")
+    print("|{:^34}|".format("Garquackians distance from Earth"))
+    print("|{:^34}|".format(week))
+    print(" ----------------------------------")
+    print(" __________________________")
+    print("|{:^26}|".format("Your distance from Earth"))
+    print("|{:^26}|".format(distance))
+    print(" --------------------------")
     print("")
