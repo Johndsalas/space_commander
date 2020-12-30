@@ -128,7 +128,7 @@ def spend_fuel(fuel):
     return fuel, distance_traveled
 
 
-def spend_phase(fuel, food, power, hull, crew, morale, week, distance):
+def spend_phase(fuel, food, power, hull, crew, morale, g_dist, distance):
     '''
     Spends resources during the spend phase
     '''

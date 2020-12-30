@@ -77,15 +77,17 @@ def game_loop():
             break
 
         # phase 4: Travel Phase
-        distance = t.travel_phase(distance, distance_traveled)
+
+        distance, g_dist = t.travel_phase(distance, distance_traveled)
+
+        h.status(distance, g_dist)
 
         # Check for win conditions
         if ed.win(distance):
 
             break
 
-        # Update week
-        g_dist -= random.randint(1,3)
+        
 
 # Display menu, run game loop, ask player if they want to play again
 if m.start():

@@ -189,7 +189,7 @@ def is_capped(fuel, food, hull, power, morale):
 
         print("You can only store up to 15 power crystals")
         print('')
-        hull = 15
+        power = 15
 
     if morale > 100:
 
@@ -216,7 +216,7 @@ def production_phase(fuel, food, power, hull, crew, morale):
     fuel_pen = 15
     food_pen = 0
     power_pen = 10
-    hull_pen = 25
+    hull_pen = 20
     morale_pen = 0
 
     # chance to produce each reasorce
@@ -243,7 +243,7 @@ def production_phase(fuel, food, power, hull, crew, morale):
     print(f"You mas assign {crew} crew members to produce resources")
     print('')
     print(f"Each crew assigned to fuel has a {fuel_chance}% chance to produce {fuel_prod} fuel.")
-    print(f"Each crew assigned to fuel has a {food_chance}% chance to produce {food_prod} food.")
+    print(f"Each crew assigned to food has a {food_chance}% chance to produce {food_prod} food.")
     print(f"Each crew assigned to power has a {power_chance}% chance to produce {power_prod} power crystals.")
     print(f"Each crew assigned to hull has a {hull_chance}% chance to repair {hull_prod} damage to the hull.")
     print(f"Each crew assigned to morale has a {morale_chance}% chance to improve the crew's morale by {morale_prod}%.")

@@ -808,6 +808,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         print('')
         print("Without warning, several Garquackien soldiers beam aboard your ship in an attempt to")
         print("commandeer it. Your crew manages to dispatch the invaders, but not without a fight.")
+        print('')
         
         crew -= lost_crew
         

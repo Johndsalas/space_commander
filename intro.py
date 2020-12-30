@@ -30,7 +30,7 @@ def intro(fuel, food, power, hull, crew, morale):
     input()
     print("")
 
-    print("After escaping the Garquackien ships you recive rhe following status report:")
+    print("After escaping the Garquackien ships you receive the following status report:")
     print("")
     print(f"Lost crew members: {lost_crew}")
     print("")
