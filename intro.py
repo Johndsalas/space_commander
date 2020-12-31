@@ -5,7 +5,7 @@ def intro(fuel, food, power, hull, crew, morale):
 
     lost_fuel = random.randint(1,10)
     lost_food = random.randint(1,10)
-    lost_power = random.randint(1,6)
+    lost_power = random.randint(1,5)
     lost_hull = random.randint(0,2)
     lost_crew = random.randint(0,2)
     lost_morale = 0

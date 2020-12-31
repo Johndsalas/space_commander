@@ -25,10 +25,10 @@ def get_event(fuel, food, power, hull, crew, morale):
                     "Stealing",
                     "Blockade",
                     "Dissenters",
-                    "Boarded"                   ]
+                    "Boarded"                  ]
 
     # create loss variables
-    lost_fuel = r.randint(1,5)
+    lost_fuel = r.randint(1,10)
     lost_food = r.randint(1,10)
     lost_power = r.randint(1,5)
     lost_hull = r.randint(1,3)
@@ -52,9 +52,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
         print(f"You have lost {lost_fuel} fuel.")
         print("")
-        print("Press ENTER to continue")
-        input()
-        print('')
 
     elif event == "Over Rationed":
 
@@ -68,7 +65,7 @@ def get_event(fuel, food, power, hull, crew, morale):
 
             print("What are your orders?")
             print("a) Restock: loose 1-10 fuel.")
-            print("b) Maintain Course: lose 1-20 food.")
+            print("b) Maintain Course: lose 1-10 food.")
             print("")
             choice = input()
 
@@ -77,9 +74,6 @@ def get_event(fuel, food, power, hull, crew, morale):
                 fuel -= lost_fuel 
                 print(f"You have lost {lost_fuel} fuel.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -87,9 +81,6 @@ def get_event(fuel, food, power, hull, crew, morale):
                 food -= lost_food
                 print(f"You have lost {lost_food} food.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -110,9 +101,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
         print(f"You have lost {lost_food} food.")
         print("")
-        print("Press ENTER to continue")
-        input()
-        print('')
 
     elif event == "Navigational Malfunction":
 
@@ -128,7 +116,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Reboot: lose 1-5 power crystals")
+            print("a) Reboot: lose power 1-5 crystals")
             print("b) Stay the Course: lose 1-10 fuel")
             print("")
             choice = input()
@@ -138,9 +126,6 @@ def get_event(fuel, food, power, hull, crew, morale):
                 power -= lost_power
                 print(f"You have lost {lost_power} power crystals.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -148,9 +133,6 @@ def get_event(fuel, food, power, hull, crew, morale):
                 fuel -= lost_fuel
                 print(f"You have lost {lost_fuel} fuel.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -172,7 +154,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         while resolving_event:
             
             print("What are your orders?")
-            print("a) Lure Them Away: lose 1-20 food")
+            print("a) Lure Them Away: lose 1-10 food")
             print("b) Force Them Off: lose 1-5 power crystals")
             print("")
             choice = input()
@@ -182,9 +164,6 @@ def get_event(fuel, food, power, hull, crew, morale):
                 food -= lost_food
                 print(f"You have lost {lost_food} food.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -192,9 +171,6 @@ def get_event(fuel, food, power, hull, crew, morale):
                 power -= lost_power
                 print(f"You have lost {lost_power} power crystals.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -242,9 +218,6 @@ def get_event(fuel, food, power, hull, crew, morale):
                 hull -= lost_hull
                 print(f"You have sustained {lost_hull} damage to the hull.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -252,9 +225,6 @@ def get_event(fuel, food, power, hull, crew, morale):
                 fuel -= lost_fuel
                 print(f"You have lost {lost_fuel} fuel.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -277,7 +247,7 @@ def get_event(fuel, food, power, hull, crew, morale):
 
             print("What are your orders?")
             print("a) Renovate: lose 1-3 hull")
-            print("b) Don't Renovate: lose 1-20 food")
+            print("b) Don't Renovate: lose 1-10 food")
             print("")
             choice = input()
 
@@ -286,9 +256,6 @@ def get_event(fuel, food, power, hull, crew, morale):
                 hull -= lost_hull
                 print(f"You have sustained {lost_hull} damage to the hull.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -296,9 +263,6 @@ def get_event(fuel, food, power, hull, crew, morale):
                 food -= lost_food
                 print(f"You have lost {lost_food} food.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -330,9 +294,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_power} power crystals.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -341,9 +302,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have sustained {lost_hull} damage to the hull.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -364,9 +322,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
         print(f"You have sustained {lost_hull} damage to the hull.")
         print("")
-        print("Press ENTER to continue")
-        input()
-        print('')
 
     elif event == "Stench":
 
@@ -392,9 +347,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_fuel} fuel.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -403,9 +355,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_morale} morale.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -427,7 +376,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Hold the Celebration: lose 1-20 food")
+            print("a) Hold the Celebration: lose 1-10 food")
             print("b) Don't Hold the Celebration: lose 1-20 morale")
             print("")
             choice = input()
@@ -439,9 +388,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_food} food.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -450,9 +396,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_morale} morale.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -485,9 +428,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_power} power crystals.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -496,9 +436,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_morale} morale.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -531,9 +468,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_morale} morale.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
                 
 
@@ -543,9 +477,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You sustained {lost_hull} damage to your hull.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -568,9 +499,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
         print(f"You have lost {lost_morale} morale.")
         print("")
-        print("Press ENTER to continue")
-        input()
-        print('')
 
     elif event == "Defueling":
 
@@ -584,7 +512,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Remove the Pirates by Force: lose 0-3 crew")
+            print("a) Remove the Pirates by Force: lose 0-2 crew")
             print("b) Surrender the Fuel: lose 1-10 fuel")
             print("")
             choice = input()
@@ -595,9 +523,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_crew} crew.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -606,9 +531,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_fuel} units of fuel.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -631,7 +553,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Search the ship: lose 0-3 crew")
+            print("a) Search the ship: lose 0-2 crew")
             print("b) Ignore the Missing Crystals: lose 1-5 power crystals")
             print("")
             choice = input()
@@ -642,9 +564,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_crew} crew.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -653,9 +572,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_power} power crystals.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -677,8 +593,8 @@ def get_event(fuel, food, power, hull, crew, morale):
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Search the Ship: lose 0-3 crew")
-            print("b) Ignore the Missing Food: lose 1-20 food")
+            print("a) Search the Ship: lose 0-2 crew")
+            print("b) Ignore the Missing Food: lose 1-10 food")
             print("")
             choice = input()
 
@@ -688,9 +604,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_crew} crew.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -699,9 +612,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_food} food.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -723,7 +633,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Deploy the fighters: lose 0-3 crew")
+            print("a) Deploy the fighters: lose 0-2 crew")
             print("b) Ram Through the Blockade: lose 1-3 hull")
             print("")
             choice = input()
@@ -734,9 +644,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_crew} crew.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -745,9 +652,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have sustained {lost_hull} damage to the hull.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -769,8 +673,8 @@ def get_event(fuel, food, power, hull, crew, morale):
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Make an Example: lose crew")
-            print("b) Ignore the Whispers: lose morale")
+            print("a) Make an Example: lose 0-2 crew")
+            print("b) Ignore the Whispers: lose 1-20 morale")
             print("")
             choice = input()
 
@@ -780,9 +684,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_crew} crew.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             elif choice == "b":
@@ -791,9 +692,6 @@ def get_event(fuel, food, power, hull, crew, morale):
 
                 print(f"You have lost {lost_morale} morale.")
                 print("")
-                print("Press ENTER to continue")
-                input()
-                print('')
                 break
 
             else:
@@ -809,14 +707,12 @@ def get_event(fuel, food, power, hull, crew, morale):
         print("Without warning, several Garquackien soldiers beam aboard your ship in an attempt to")
         print("commandeer it. Your crew manages to dispatch the invaders, but not without a fight.")
         print('')
-        
+
         crew -= lost_crew
         
         print(f"You lost {lost_crew} crew.")
         print("")
-        print("Press ENTER to continue")
-        input()
-        print('')
+       
 
     return fuel, food, power, hull, crew, morale
 
@@ -865,6 +761,13 @@ def event_phase(fuel, food, power, hull, crew, morale):
         fuel, food, power, hull, crew, morale = get_event(fuel, food, power, hull, crew, morale)
 
         fuel, food, power, hull, crew, morale = less_than_zero(fuel, food, power, hull, crew, morale)
+
+        # if x is not the last event press enter to get next event otherwise go to the next phase
+        if x != num_events:
+
+            print("Press ENTER to continue")
+            input()
+            print('')
 
         if ((fuel == 0) or (food == 0) or (power == 0) or (hull == 0) or (crew == 0) or (morale == 0)):
 

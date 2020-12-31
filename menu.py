@@ -29,7 +29,6 @@ def start():
             running = True
             break
         
-        
         # if 2 stop menu loop and begin game loop
         elif selection == 'b':
             running = False
