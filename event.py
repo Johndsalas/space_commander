@@ -3,6 +3,9 @@ import hud as h
 import random as r
 
 def get_event(fuel, food, power, hull, crew, morale):
+    '''
+    Resolve an event during the event phase
+    '''
 
     # list of events
     event_list = [  "Gravitational Force",
@@ -35,10 +38,10 @@ def get_event(fuel, food, power, hull, crew, morale):
     lost_crew = r.randint(0,2)
     lost_morale = r.randint(1,20)
 
-    # get random event
+    # get random event from list
     event = r.choice(event_list)
 
-    # carryout chosen event (display text, give choice if applocable, modify lost variables, display result text)
+    # carryout chosen event (display text, give choice if applicable, modify lost variables, display result text)
     resolving_event = True
     if event == "Gravitational Force":
 
@@ -718,6 +721,9 @@ def get_event(fuel, food, power, hull, crew, morale):
 
 
 def less_than_zero(fuel, food, power, hull, crew, morale):
+    '''
+    Set values that are less than zero to zero
+    '''
 
     if fuel < 0:
         fuel = 0
@@ -741,7 +747,7 @@ def less_than_zero(fuel, food, power, hull, crew, morale):
 
 def event_phase(fuel, food, power, hull, crew, morale):
     '''
-    
+    Resolve event phase
     '''
 
     # set number of events
@@ -752,14 +758,16 @@ def event_phase(fuel, food, power, hull, crew, morale):
     input()
     print("")
 
-    # display hud
-    h.hud(fuel, food, power, hull, crew, morale)
-
     # get events
     for x in range(0,num_events):
 
+        # display hud
+        h.hud(fuel, food, power, hull, crew, morale)
+
+        # resolve event
         fuel, food, power, hull, crew, morale = get_event(fuel, food, power, hull, crew, morale)
 
+        # set values that are less than 0 to 0
         fuel, food, power, hull, crew, morale = less_than_zero(fuel, food, power, hull, crew, morale)
 
         # if x is not the last event press enter to get next event otherwise go to the next phase
@@ -769,6 +777,7 @@ def event_phase(fuel, food, power, hull, crew, morale):
             input()
             print('')
 
+        # if any resource value is 0 stop event loop and proceed to losing message 
         if ((fuel == 0) or (food == 0) or (power == 0) or (hull == 0) or (crew == 0) or (morale == 0)):
 
             break
