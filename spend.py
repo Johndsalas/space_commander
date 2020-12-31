@@ -14,7 +14,6 @@ def feed_crew(food, crew):
     food -= food_consumed
 
     print(f"Your crew consumes {food_consumed} units of food.")
-    print(f'You have {food} units of food remaining.')
     print("")
 
     # if there is not enough food to feed the crew, remove all food from the supply and remove starved crew and dislpay results
@@ -52,7 +51,6 @@ def crystal_burn(power):
 
     # print and return results
     print(f"{str(burned)} of your power crystals have burned out!")
-    print(f"You have {str(power)} crystals remaning.")
     print('')
 
     return power
@@ -141,17 +139,17 @@ def spend_phase(fuel, food, power, hull, crew, morale, g_dist, distance):
     # if loss condition present skip spend phase and proceed loss message
     if (fuel > 0) and (food > crew) and (power > 0):
 
-        # display HUD
-        h.hud(fuel, food, power, hull, crew, morale)
-
-        # display distance
-        h.status(distance, g_dist)
-
         # spend food
         food = feed_crew(food, crew)
 
         # check for crystal burnout
         power = crystal_burn(power)
+
+        # display HUD
+        h.hud(fuel, food, power, hull, crew, morale)
+
+        # display distance
+        h.status(distance, g_dist)
 
         # spend fuel
         fuel, distance_traveled = spend_fuel(fuel)
