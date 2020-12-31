@@ -1,8 +1,16 @@
+'''
+Handels the games introduction sequence
+'''
+
 import  random
 
 
 def intro(fuel, food, power, hull, crew, morale):
+    '''
+    Handels the games introduction sequence
+    '''
 
+    # create loss veriables and get them to a range of random integers
     lost_fuel = random.randint(1,10)
     lost_food = random.randint(1,10)
     lost_power = random.randint(1,5)
@@ -10,6 +18,7 @@ def intro(fuel, food, power, hull, crew, morale):
     lost_crew = random.randint(0,2)
     lost_morale = 0
 
+    # remove loss veriables form total values
     fuel -= lost_fuel
     food -= lost_food
     power -= lost_power
@@ -17,6 +26,7 @@ def intro(fuel, food, power, hull, crew, morale):
     crew -= lost_crew
     morale -= lost_morale
 
+    # display story text
     print("The Story Continues…")
     print("")
     print("You manage to elude or destroy all of the attacking ships, but not without sustaining damage of")
@@ -30,6 +40,7 @@ def intro(fuel, food, power, hull, crew, morale):
     input()
     print("")
 
+    # display resources lost during intro
     print("After escaping the Garquackien ships you receive the following status report:")
     print("")
     print(f"Lost crew members: {lost_crew}")

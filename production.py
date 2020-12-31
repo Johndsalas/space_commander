@@ -1,7 +1,14 @@
+'''
+Handels Production phase
+'''
+
 import hud as h
 import random as r
 
 def assign_crew():
+    '''
+    Prompt user for crew assignment and take input
+    '''
 
     # get input for crew assigned to fuel
     print("How many crew members will you assign to fuel?")
@@ -40,6 +47,9 @@ def assign_crew():
 
 
 def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, crew):
+    '''
+    Check that crew is assigned properly
+    '''
 
     # Check for non-numeric input
     if not (fuel_crew.isdigit() and food_crew.isdigit() and power_crew.isdigit() and hull_crew.isdigit() and morale_crew.isdigit()):
@@ -49,63 +59,64 @@ def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_cr
         print("")
         return False
 
+    # get total of assigned crew
+    assigned = int(fuel_crew) + int(food_crew) + int(power_crew) + int(hull_crew) + int(morale_crew)
+
+    # if assigned crew > crew prompt user and return false
+    if assigned > crew:
+
+        print("You assigned too many crew members.")
+        print("")
+        return False
+
+    # if assigned crew <= crew
     else:
 
-        # get total of assigned crew
-        assigned = int(fuel_crew) + int(food_crew) + int(power_crew) + int(hull_crew) + int(morale_crew)
+        # display crew assignments
+        print(f"You have assigned {fuel_crew} crew to fuel.") 
+        print(f"You have assigned {food_crew} crew to food.")
+        print(f"You have assigned {power_crew} crew to power.")
+        print(f"You have assigned {hull_crew} crew to hull.")
+        print(f"You have assigned {morale_crew} crew to morale.")
+        print('')
 
-        # if assigned crew > crew prompt user and return false
-        if assigned > crew:
+        # if assigned crew < crew display warning
+        if assigned < crew:
 
-            print("You assigned too many crew members.")
-            print("")
-            return False
-
-        # if assigned crew <= crew 
-        else:
-
-            # display crew assignments
-            print(f"You have assigned {fuel_crew} crew to fuel.") 
-            print(f"You have assigned {food_crew} crew to food.")
-            print(f"You have assigned {power_crew} crew to power.")
-            print(f"You have assigned {hull_crew} crew to hull.")
-            print(f"You have assigned {morale_crew} crew to morale.")
+            print("You have not assigned all of your crew members!!!")
             print('')
 
-            # if assigned crew < crew display warning
-            if assigned < crew:
+        # create loop to ask if user wishes to proceed with the current selection
+        crew_check = True
 
-                print("You have not assigned all of your crew members!!!")
+        while crew_check:
+
+            # prompt user for verification and get input
+            print("Proceed with the current assignment? (y/n)")
+            print('')
+            acknowledge = input()
+
+            # if input is not valid restart the loop
+            if acknowledge not in('y', 'n'):
+
+                print("Invalid command please type 'y' or 'n")
                 print('')
+                continue
 
-            # create loop to ask if user wishes to proceed with the current selection
-            crew_check = True
+            # if y return True
+            if acknowledge == 'y':
 
-            while crew_check:
+                return True
 
-                # prompt user for verification and get input
-                print("Proceed with the current assignment? (y/n)")
-                print('')
-                acknowledge = input()
+            # if n return False
+            elif acknowledge == 'n':
 
-                # if input is not valid restart the loop
-                if acknowledge not in('y', 'n'):
-
-                    print("Invalid command please type 'y' or 'n")
-                    print('')
-                    continue
-
-                # if y return True
-                if acknowledge == 'y':
-
-                    return True
-
-                # if n return False
-                elif acknowledge == 'n':
-
-                    return False
+                return False
 
 def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel_chance, food_chance, power_chance, hull_chance, morale_chance, fuel_prod, food_prod, power_prod, hull_prod, morale_prod):
+    '''
+    Generate resources based on crew assignment
+    '''
 
     # define resources generated
     fuel_gen = 0
@@ -165,6 +176,9 @@ def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel_chan
 
 
 def is_capped(fuel, food, hull, power, morale):
+    '''
+    Check that each resource is under its resource cap if it is not set the value of that resource to its resource cap
+    '''
 
      # Check for resource caps
     if fuel > 40:

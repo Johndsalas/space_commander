@@ -1,4 +1,6 @@
-''' Space Commander '''
+''' 
+Main game file for 'Space Commander' game 
+'''
 
 # imports
 import menu as m

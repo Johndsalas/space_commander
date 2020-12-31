@@ -1,15 +1,20 @@
+'''
+Main menu 
+'''
 
 def start():
+    '''
+    Display opening menu and propt user to begin game or exit program
+    '''
 
+    # display opening menue
     print("Welcome to space commander.")
     print("Press ENTER to continue.")
     print('')
-
     input()
 
-    starting = True
-
     # begin loop for menu
+    starting = True
     while starting:
 
         # display choices
