@@ -1,4 +1,6 @@
-
+'''
+Handels Spend phase
+'''
 import hud as h
 import random as r
 
@@ -16,32 +18,29 @@ def feed_crew(food, crew):
     print(f"Your crew consumes {food_consumed} units of food.")
     print("")
 
-    # if there is not enough food to feed the crew, remove all food from the supply and remove starved crew and dislpay results
-
     return food
-
 
 def crystal_burn(power):
     '''
     Check for crystal burnout
     '''
 
+    # create variables good, burned, and burn_rate
     good = 0
     burned = 0
-
     burn_rate = 20
 
-    # for each power crystal roll d100
-    # if result is equal or less than burn_rate add +1 burned
-    # if not add +1 good
+    # for each power crystal roll d100 
     for b in range(0, int(power)):
 
         roll = r.randint(1, 100)
 
+         # if result is equal or less than burn_rate add +1 burned
         if roll <= burn_rate:
 
             burned += 1
 
+        # if not add +1 good
         elif roll > burn_rate:
 
             good += 1
@@ -60,9 +59,9 @@ def spend_fuel(fuel):
     '''
     Spend fuel and move ship
     '''
-    fueling = True
 
     # begin fueling loop
+    fueling = True
     while fueling:
 
         # get user input
@@ -76,9 +75,7 @@ def spend_fuel(fuel):
         print('')
         amount = input()
 
-        # if user input is valid set fule_spent and distance_traveled amounts and end loop
-        # if not print error message and restart loop
-
+        # if user input is valid set fule_spent and distance_traveled amounts 
         if amount == '1':
             fuel_spent = 1
             distance_traveled = 1
@@ -99,17 +96,20 @@ def spend_fuel(fuel):
             fuel_spent = 15
             distance_traveled = 5
 
+        # if input is not valid print error message and restart loop
         else:
             print("command is invalid please input 1, 3, 6, 10, or 15.")
             print("")
             continue
 
+        # if fuel spent is greater than fuel restart loop
         if fuel_spent > fuel:
 
             print("You do not have that much fuel.")
             print('')
             continue
 
+        # if fuel spent is not greater than fuel restart break loop
         else:
 
             break
@@ -152,6 +152,7 @@ def spend_phase(fuel, food, power, hull, crew, morale, g_dist, distance):
         # spend fuel
         fuel, distance_traveled = spend_fuel(fuel)
 
+    # if player has no fuel set distance traveled to zero
     if fuel < 1:
 
         distance_traveled = 0

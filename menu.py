@@ -1,5 +1,5 @@
 '''
-Main menu 
+Handels the Main menu
 '''
 
 def start():

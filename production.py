@@ -142,21 +142,21 @@ def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel_chan
         if r.randint(1,100) <= food_chance:
 
             food_gen += food_prod
-            
+
     # Power
     for c in range(0, int(power_crew)):
 
         if r.randint(1,100) <= power_chance:
 
             power_gen += power_prod
-            
+
     # Hull
     for c in range(0, int(hull_crew)):
 
         if r.randint(1,100) <= hull_chance:
 
             hull_gen += hull_prod
-            
+
     # Morale
     for c in range(0, int(morale_crew)):
 
@@ -180,7 +180,6 @@ def is_capped(fuel, food, hull, power, morale):
     Check that each resource is under its resource cap if it is not set the value of that resource to its resource cap
     '''
 
-     # Check for resource caps
     if fuel > 40:
 
         print("You can only store up to 40 fuel")
@@ -216,7 +215,7 @@ def is_capped(fuel, food, hull, power, morale):
 
 def production_phase(fuel, food, power, hull, crew, morale):
     '''
-    Generate resources
+    Main function for production phase
     '''
 
     # number of crew assigned to each resource
@@ -252,8 +251,10 @@ def production_phase(fuel, food, power, hull, crew, morale):
     input()
     print('')
 
+    # display resourse table
     h.hud(fuel, food, power, hull, crew, morale)
 
+    # display chance for success when attempting to produce each resource type
     print(f"You mas assign {crew} crew members to produce resources")
     print('')
     print(f"Each crew assigned to fuel has a {fuel_chance}% chance to produce {fuel_prod} fuel.")
@@ -265,13 +266,14 @@ def production_phase(fuel, food, power, hull, crew, morale):
 
     # create loop for assigning crew
     giving_orders = True
-
     while giving_orders:
 
         # assign crew to resources
         fuel_crew, food_crew, power_crew, hull_crew, morale_crew = assign_crew()
 
-        # Check for valid input and user validation
+        # Check for valid input and user validation 
+        # If input is valid and validated break loop
+        # otherwise restart loop and reassign crew 
         if check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, crew):
             break
     

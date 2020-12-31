@@ -1,15 +1,15 @@
+'''
+contains functions that check for willing and losing conditions
+'''
 
 def lose(fuel, food, power, hull, crew, morale, g_dist):
     '''
     check for loss conditions
     '''
 
-    # if hull, crew, power, or morale is less than 1
-    # display losing message and return True
-    # if not return false
-
     loss = False
 
+    # if hull, crew, power, or morale is less than 1 display part one of losing message
     if fuel < 1:
         print("You have zero fuel")
         print("Your ship’s engines overheat and explode!")
@@ -40,6 +40,8 @@ def lose(fuel, food, power, hull, crew, morale, g_dist):
         print("Your crew has mutinied and taken over the ship!")
         print('')
        
+    # if hull, crew, power, or morale is less than 1 display part two of losing message
+    # and set loss to True
     if (fuel < 1) or (food < 1) or (hull < 1) or (crew < 1) or (power < 1) or (morale < 1):
 
         print("You are unable to continue your mission and Earth will surely be destroyed!")
@@ -48,6 +50,8 @@ def lose(fuel, food, power, hull, crew, morale, g_dist):
 
         loss = True
 
+    # if garquackiens reach Earth first (g_dist is less than 0) display losing message
+    # and set loss to True
     if g_dist < 1:
 
         print("The Garquackian Armada arrived before you could give warning and Earth")

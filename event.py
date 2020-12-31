@@ -1,4 +1,7 @@
-
+'''
+Handels event phase
+'''
+# imports
 import hud as h
 import random as r
 
@@ -30,7 +33,7 @@ def get_event(fuel, food, power, hull, crew, morale):
                     "Dissenters",
                     "Boarded"                  ]
 
-    # create loss variables
+    # create loss variables and set them to a random number for each event
     lost_fuel = r.randint(1,10)
     lost_food = r.randint(1,10)
     lost_power = r.randint(1,5)
@@ -42,12 +45,11 @@ def get_event(fuel, food, power, hull, crew, morale):
     event = r.choice(event_list)
 
     # carryout chosen event (display text, give choice if applicable, modify lost variables, display result text)
-    resolving_event = True
     if event == "Gravitational Force":
 
         print(event)
         print('')
-        print("While passing by a large star your ship is caught in its gravitational well.")
+        print("While passing by a large star, your ship is caught in its gravitational well.")
         print("You manage to escape, but not without burning through some of your fuel reserves.")
         print("")
 
@@ -60,8 +62,8 @@ def get_event(fuel, food, power, hull, crew, morale):
 
         print(event)
         print('')
-        print("You discover that your food reserves have not been rationed correctly. You could use some of ")
-        print("your fuel to stop at a nearby planet and restock the missing food or maintain your current course.")
+        print("You discover that your food reserves have not been rationed correctly. You could use some")
+        print("fuel to stop at a nearby planet and restock the missing food or maintain your current course.")
         print("")
 
         while resolving_event:
@@ -777,7 +779,7 @@ def event_phase(fuel, food, power, hull, crew, morale):
             input()
             print('')
 
-        # if any resource value is 0 stop event loop and proceed to losing message 
+        # if any resource value is 0 stop event loop and proceed to losing message
         if ((fuel == 0) or (food == 0) or (power == 0) or (hull == 0) or (crew == 0) or (morale == 0)):
 
             break
