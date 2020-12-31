@@ -1,5 +1,4 @@
 
-
 def start():
 
     print("Welcome to space commander.")

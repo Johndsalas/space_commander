@@ -69,7 +69,7 @@ def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_cr
             print(f"You have assigned {food_crew} crew to food.")
             print(f"You have assigned {power_crew} crew to power.")
             print(f"You have assigned {hull_crew} crew to hull.")
-            print(f"You have assigned {morale_crew} crew to fuel.")
+            print(f"You have assigned {morale_crew} crew to morale.")
             print('')
 
             # if assigned crew < crew display warning
@@ -227,7 +227,7 @@ def production_phase(fuel, food, power, hull, crew, morale):
     morale_chance = (morale - morale_pen)
 
     # number of resorces produced on success
-    fuel_prod = 2
+    fuel_prod = 3
     food_prod = 5
     power_prod = 3
     hull_prod = 1

@@ -32,7 +32,7 @@ def get_event(fuel, food, power, hull, crew, morale):
     lost_food = r.randint(1,10)
     lost_power = r.randint(1,5)
     lost_hull = r.randint(1,3)
-    lost_crew = r.randint(0,3)
+    lost_crew = r.randint(0,2)
     lost_morale = r.randint(1,20)
 
     # get random event
@@ -763,7 +763,7 @@ def event_phase(fuel, food, power, hull, crew, morale):
         fuel, food, power, hull, crew, morale = less_than_zero(fuel, food, power, hull, crew, morale)
 
         # if x is not the last event press enter to get next event otherwise go to the next phase
-        if x != num_events:
+        if x != num_events-1:
 
             print("Press ENTER to continue")
             input()

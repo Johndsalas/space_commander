@@ -47,12 +47,15 @@ def game_loop():
 
     # begin game loop
     running = True
+    starting = True
     while running:
 
         # introduction
-        if g_dist == 25:
+        if starting:
 
-            fuel, food, power, hull, crew, morale = i.intro(fuel, food, power, hull, crew, morale) 
+            fuel, food, power, hull, crew, morale = i.intro(fuel, food, power, hull, crew, morale)
+
+            starting = False
 
         # Display Distance
         h.status(distance, g_dist)
@@ -78,16 +81,12 @@ def game_loop():
 
         # phase 4: Travel Phase
 
-        distance, g_dist = t.travel_phase(distance, distance_traveled)
-
-        h.status(distance, g_dist)
+        distance, g_dist = t.travel_phase(distance, distance_traveled, g_dist)
 
         # Check for win conditions
         if ed.win(distance):
 
             break
-
-        
 
 # Display menu, run game loop, ask player if they want to play again
 if m.start():

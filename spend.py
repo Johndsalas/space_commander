@@ -66,8 +66,6 @@ def spend_fuel(fuel):
     while fueling:
 
         # get user input
-        print(f"You have {fuel} fuel in your reserve.")
-        print('')
         print("How much fuel will you spend?")
         print('')
         print("Spend 1 fuel to move 1 distance.")
