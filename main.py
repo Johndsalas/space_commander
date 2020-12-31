@@ -12,28 +12,41 @@ import end as ed
 import random
 
 def play_again():
+    '''
+    Ask user if the would like to play again 
+    If yes restart game
+    If no end program
+    '''
 
+    # begin question loop
     try_again = True
     while try_again:
     
+        # give prompt and get user input
         print("Would you like to play again? y/n")
         print("")
         again = input()
 
+        # if y return True
         if again == "y":
 
             return True
 
+        # if n return False
         elif again == "n":
 
             return False
 
+        # if not y or n re ask question
         else:
 
             print("invalid input. Please enter y or n.")
             print('')
 
 def game_loop():
+    '''
+    Main game loop
+    '''
 
     # Beginning Values
     fuel = 30
@@ -50,7 +63,7 @@ def game_loop():
     starting = True
     while running:
 
-        # introduction
+        # give introduction if this is the first round of play
         if starting:
 
             fuel, food, power, hull, crew, morale = i.intro(fuel, food, power, hull, crew, morale)
@@ -67,7 +80,7 @@ def game_loop():
         fuel, food, power, hull, crew, morale, distance_traveled = s.spend_phase(fuel, food, power, hull, crew, morale, g_dist, distance)
 
         # Check for loss conditions
-        if ed.lose(fuel, food, power, hull, crew, morale):
+        if ed.lose(fuel, food, power, hull, crew, morale, g_dist):
         
             break
 
@@ -75,17 +88,21 @@ def game_loop():
         fuel, food, power, hull, crew, morale = e.event_phase(fuel, food, power, hull, crew, morale)
 
         # Check for loss conditions
-        if ed.lose(fuel, food, power, hull, crew, morale):
-            
+        if ed.lose(fuel, food, power, hull, crew, morale, g_dist):
+        
             break
 
         # phase 4: Travel Phase
-
         distance, g_dist = t.travel_phase(distance, distance_traveled, g_dist)
 
         # Check for win conditions
         if ed.win(distance):
 
+            break
+
+        # Check for loss conditions
+        if ed.lose(fuel, food, power, hull, crew, morale, g_dist):
+        
             break
 
 # Display menu, run game loop, ask player if they want to play again

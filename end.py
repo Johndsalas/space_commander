@@ -1,5 +1,5 @@
 
-def lose(fuel, food, power, hull, crew, morale):
+def lose(fuel, food, power, hull, crew, morale, g_dist):
     '''
     check for loss conditions
     '''
@@ -45,6 +45,13 @@ def lose(fuel, food, power, hull, crew, morale):
         print("You are unable to continue your mission and Earth will surely be destroyed!")
         print("You have lost the game.")
         print('')
+
+        loss = True
+
+    if g_dist < 1:
+
+        print("The Garquackian Armada arrived before you could give warning and Earth")
+        print("will surely be destroyed. You have lost the game.")
 
         loss = True
 
