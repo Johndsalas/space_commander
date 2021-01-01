@@ -5,38 +5,37 @@ In this text-based, resource management game, you will take on the role of a sta
 
 # What you Need to Play
 
-You will need a python environment with access to the random library to play this game.
-To begin clone this repository and run the main.py file in your python environment.
-
-(Don’t do this just yet. This game is still actively being worked on and may not run in its current state.)
+You will need a python environment with access to the random library to play this game. To begin clone this repository and run the main.py file in your python environment. main.py is dependent upon the other files in the repository to run. You will need all of the files in the repository to play.
 
 # The Story so Far...
 
-The year is 202020, and Space Force Captain, *Chough-Chough* (That’s you!) is returning to base after another successful mission. Star Gazer 1, an Earth outpost, has been the captain’s home away from home for some time now. The Garquackien threat necessitated a round-the-clock vigil, and Space Force Captain *Chough-Chough* had been tasked with maintaining that vigil throughout the neutral space separating the United Earth Force from the Garquackien Empire and its quest for galactic domination. As the captain’s ship approached Star gazer 1, the captain was looking forward to some well-deserved R&R when suddenly...Several Garquackien attack ships appeared out of nowhere. To make matters worse, the ship’s scanners indicated only broken metal and empty space where the Star Gazer outpost should have been. 
+The year is 202020, and Earth Force Captain, *Chough-Chough* (That’s you!) is returning to base after another successful mission. Star Gazer 1, an Earth outpost, has been the captain’s home away from home for some time now. The Garquackien threat necessitated a round-the-clock vigil, and Earth Force Captain *Chough-Chough* had been tasked with maintaining that vigil throughout the neutral space separating the United Earth Force from the Garquackien Empire. As the ship approached Star Gazer 1, the captain smiled and leaned back, looking forward to some well-deserved R&R when suddenly...
 
-It would have taken an enormous armada to mount this kind of attack, and the approaching vessels left no mystery as to who had gathered such a force. A attack of this magnitude could mean only one thing. The Garquackiens were launching an all-out attack, and thier final target would be Earth. If caught unprepared, Earth would likely suffer the same fate as the fallen space station. However, if Earth could be warned before the attack, and muster its defenses the battle would likely turn in Earth’s favor. Though the captain’s crew and resources are already taxed, their new mission was clear: Escape the attacking ships and make it back to Earth in time to raise the alarm about the Garquackien attack!
+Several Garquackien attack ships appeared out of nowhere. To make matters worse, the ship’s scanners indicated only broken metal and empty space where the Star Gazer outpost should have been. It would have taken an enormous armada to mount this kind of attack, and the approaching vessels left no mystery as to the culprit. An attack of this magnitude could mean only one thing. The Garquackiens were launching an all-out attack, and their target would be Earth. If caught unprepared, Earth would likely suffer the same fate as the fallen space station. However, if Earth could be warned before the attack, and muster its defenses the battle would likely turn in Earth’s favor. Though the captain’s crew and resources were already taxed, the new mission was clear: Escape the attacking ships and make it back to Earth in time to raise an alarm about the Garquackien attack!
 
 # Rules
 
 ### Winning and Losing
 
-In space commander, your goal is to travel to Earth and warn the United Earth Federation about the impending Garquackien attack. During the game, you will see the distance you still need to travel displayed as DISTANCE FROM EARTH. If this distance reaches 0, your ship had made it to Earth and you have won!
+In space commander, your goal is to travel to Earth and warn the United Earth Federation about the impending Garquackien attack. During the game, you will see the distance you still need to travel displayed as YOUR DISTANCE FROM EARTH. If this distance reaches 0, your ship had made it to Earth, and you have won!
 
-You will also see how far the Garquackians are from invading Earth. If the Garquackiens reach Earth before you do, (WEEKS UNTILL THE GARQUACKIEN INVASION reaches 0), they will begin their attack before the United Earth Federation has a chance to ready its defenses. If this is allowed to happen Earth will be destroyed and you will lose the game.
 
-During play, you will need to carefully manage your ship’s resources. If your ship's crew, power, hull, fuel, or morale ever fall to zero you will lose the game.
+You will also see how far the Garquackians are from invading Earth. This will be displayed as GARQUACKIEN DISTANCE FROM EARTH. If this number ever reaches 0, the Garquackiens have made it to Earth before you and you were not able to warn Earth in time. If this happens you have lost the game.
+
+During play, you will need to carefully manage your ship’s resources. If your ship's fuel, food, power, hull, crew, or morale ever fall to zero you will lose the game.
 
 ### Game Phases
 
-Space Commander takes place over a number of rounds each representing one week of time. Each round has four phases the PRODUCTION PHASE, SPEND PHASE, EVENT PHASE, and the TRAVEL PHASE. Rounds and phases will repeat in order until the game is either won or lost. 
+Space Commander takes place over a number of rounds each representing one week of time. Each round has four phases the PRODUCTION PHASE, SPEND PHASE, EVENT PHASE, and the TRAVEL PHASE. Rounds will continue and phases will repeat in order until the game is either won or lost.
 
-PRODUCTION PHASE: During the production phase you will assign members of your crew to produce the resources your ship needs to continue on its mission. Each crew ssigned to a resource will have a chance to produce that resource equal to the crew’s morale minus the difficulty of producing that resource. If successful, the amount produced will vary by resource. (See in game information for details during the production phase.) 
+PRODUCTION PHASE: During the production phase you will assign members of your crew to produce resources your ship needs to continue on its mission. Each crew assigned to a resource will have a chance to produce that resource equal to the crew’s morale minus the difficulty of producing that resource. If successful, the amount produced will vary by resource. (See in game information for details during the production phase.) 
 
-SPEND PHASE: The spend phase is when you spend resources on your ships weekly needs. First you will spend food to feed each of your crew. Each of your crew will consume one food reducing the number of food from your supply by the number of crew on your ship. If you do not have enough food to feed all of your crew, the ones that are not fed will starve and die, reducing the number of crew in your ship by the number of unfed crew. Second you will check to see if any of you power crystals burn out. Each crystal has a small chance of burning out each week. Third you will decide on the amount of fuel you will spend on traveling that week. The more fuel you spend the greater distance you will travel during the travel phase. (See in game information for specific fuel to movement ratios)
+SPEND PHASE: The spend phase is when you spend resources on your ship’s weekly needs. First, you will spend food to feed each of your crew. Each of your crew will consume one food reducing the number of food from your supply by the number of crew on your ship. If you do not have enough food to feed all of your crew rioting will break out on your ship and you will lose the game. Second, you will check to see if any of you power crystals have burned out. Each crystal has a 20% chance of burning out each round. If all of your remaining power crystals burn out, your ship will lose power and you will lose the game. Third, you will decide on the amount of fuel you will spend on traveling that week. You must spend a minimum of one fuel to move each round. The more fuel you spend the greater distance you will travel during the travel phase. (See in game information for specific fuel to movement ratios)
 
-EVENT PHASE: The hazards of space travel are many and varied. During the event phase you will encounter a number of events that will tax your resources. The resources taxed will depend on the decisions you make during those events.
+EVENT PHASE: The hazards of space travel are many and varied. During the event phase you will encounter two of events that will tax your resources. The resources taxed will depend on the decisions you make during those events.
 
-TRAVEL PHASE: During the travel phase your ship will move closer to Earth and a you will be closer to winning the game. The amount you move is determined by the amount of fuel you spent during the spend phase. If your distance from Earth reaches zero you have arrived at Earth and have won the game. If you do not win the game during the travel phase, the Garquackiens will move one step closer to invading Earth. WEEKS UNTILL THE GARQUCKIEN INVATION will reduce by 1.
+TRAVEL PHASE: During the travel phase your ship will move closer to Earth. The amount of movement is determined by the amount of fuel spent during the spend phase and will reduce YOUR DISTANCE FROM EARTH. During this phase the Garquackiens will also move closer to earth. The Garquackiens will move between 1 and 4 distance toward Earth reducing GARQUACKIEN DISTANCE FROM EARTH by an equal amount. If GARQUACKIEN DISTANCE FROM EARTH reaches zero, the Garquackiens have made it to Earth before you and you were not able to warn Earth in time. If this happens you have lost the game.
+
 
 ### Game Terms
 
@@ -59,4 +58,5 @@ MORALE: Represents the crew’s resolve and effects how likely they are to produ
 
 DISTANCE FROM EARTH: Shows the total remaining distance your ship must traveled in order to reach Earth.
 If distance reaches 0 you arrive on Earth and win the game.
+
 
