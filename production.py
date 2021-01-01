@@ -244,7 +244,7 @@ def production_phase(fuel, food, power, hull, crew, morale):
     food_prod = 5
     power_prod = 3
     hull_prod = 1
-    morale_prod = 5
+    morale_prod = 4
 
     # display information for the beginning of the production phase
     print("Press ENTER to begin the Production Phase!")
@@ -255,7 +255,7 @@ def production_phase(fuel, food, power, hull, crew, morale):
     h.hud(fuel, food, power, hull, crew, morale)
 
     # display chance for success when attempting to produce each resource type
-    print(f"You mas assign {crew} crew members to produce resources")
+    print(f"You may assign {crew} crew members to produce resources")
     print('')
     print(f"Each crew assigned to fuel has a {fuel_chance}% chance to produce {fuel_prod} fuel.")
     print(f"Each crew assigned to food has a {food_chance}% chance to produce {food_prod} food.")
@@ -271,9 +271,9 @@ def production_phase(fuel, food, power, hull, crew, morale):
         # assign crew to resources
         fuel_crew, food_crew, power_crew, hull_crew, morale_crew = assign_crew()
 
-        # Check for valid input and user validation 
+        # Check for valid input and user validation
         # If input is valid and validated break loop
-        # otherwise restart loop and reassign crew 
+        # otherwise restart loop and reassign crew
         if check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, crew):
             break
     

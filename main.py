@@ -1,5 +1,5 @@
-''' 
-Main game file for 'Space Commander' game 
+'''
+Main game file for 'Space Commander' game
 '''
 
 # imports
@@ -15,7 +15,7 @@ import random
 
 def play_again():
     '''
-    Ask user if the would like to play again 
+    Ask user if the would like to play again
     If yes restart game
     If no end program
     '''
@@ -56,9 +56,9 @@ def game_loop():
     power = 10
     hull = 6
     crew = 10
-    morale = 60
+    morale = 100
     distance = 25
-    g_dist = 25
+    g_dist = 20
 
     # begin game loop
     running = True
@@ -77,6 +77,9 @@ def game_loop():
 
         # Phase 1: Production Phase
         fuel, food, power, hull, crew, morale = p.production_phase(fuel, food, power, hull, crew, morale)
+
+        # Display Resources
+        h.hud(fuel, food, power, hull, crew, morale)
 
         # Phase 2: Spend Phase
         fuel, food, power, hull, crew, morale, distance_traveled = s.spend_phase(fuel, food, power, hull, crew, morale, g_dist, distance)

@@ -16,7 +16,7 @@ def get_event(fuel, food, power, hull, crew, morale):
                     "Contamination",
                     "Navigational Malfunction",
                     "Aliens",
-                    "Territory Dispute",
+                    "Space Pirates",
                     "Garquackien Fighters",
                     "Room to Grow",
                     "Deterioration",
@@ -36,15 +36,17 @@ def get_event(fuel, food, power, hull, crew, morale):
     # create loss variables and set them to a random number for each event
     lost_fuel = r.randint(1,10)
     lost_food = r.randint(1,10)
-    lost_power = r.randint(1,5)
+    lost_power = r.randint(1,4)
     lost_hull = r.randint(1,3)
     lost_crew = r.randint(0,2)
-    lost_morale = r.randint(1,20)
+    lost_morale = r.randint(1,10)
 
     # get random event from list
     event = r.choice(event_list)
 
     # carryout chosen event (display text, give choice if applicable, modify lost variables, display result text)
+    resolving_event = True
+
     if event == "Gravitational Force":
 
         print(event)
@@ -69,7 +71,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Restock: loose 1-10 fuel.")
+            print("a) Restock: lose 1-10 fuel.")
             print("b) Maintain Course: lose 1-10 food.")
             print("")
             choice = input()
@@ -342,7 +344,7 @@ def get_event(fuel, food, power, hull, crew, morale):
             
             print("What are your orders?")
             print("a) Destroy the 'Prank' Fuel: lose 1-10 fuel")
-            print("b) Use the 'Prank' Fuel: lose 1-20 morale")
+            print("b) Use the 'Prank' Fuel: lose 1-10 morale")
             print("")
             choice = input()
 
@@ -382,7 +384,7 @@ def get_event(fuel, food, power, hull, crew, morale):
 
             print("What are your orders?")
             print("a) Hold the Celebration: lose 1-10 food")
-            print("b) Don't Hold the Celebration: lose 1-20 morale")
+            print("b) Don't Hold the Celebration: lose 1-10 morale")
             print("")
             choice = input()
 
@@ -423,7 +425,8 @@ def get_event(fuel, food, power, hull, crew, morale):
 
             print("What are your orders?")
             print("a) Open the Recreation Facilities: lose 1-5 power crystals")
-            print("b) Conserve Power: lose 1-20 morale")
+            print("b) Conserve Power: lose 1-10 morale")
+            print("")
             choice = input()
 
 
@@ -462,7 +465,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         while resolving_event:
 
             print("What are your orders?")
-            print("a) Fortify the Ship: lose 1-20 morale")
+            print("a) Fortify the Ship: lose 1-10 morale")
             print("b) Don't Fortify the Ship: lose 1-3 hull")
             print("")
             choice = input()
@@ -475,7 +478,6 @@ def get_event(fuel, food, power, hull, crew, morale):
                 print("")
                 break
                 
-
             elif choice == "b":
 
                 hull -= lost_hull
@@ -496,7 +498,7 @@ def get_event(fuel, food, power, hull, crew, morale):
         print('')
         print("‘Relations’ between two of your senior staff members have soured, turning into open hostility.")
         print("What’s worse is they are encouraging their subornments to take sides. You have done what you can")
-        print("to discipline your senior staff. However, there is still a lingering air of disharmony andresentment")
+        print("to discipline your senior staff. However, there is still a lingering air of disharmony and resentment")
         print("among many of the crew.")
         print("")
 
@@ -679,7 +681,7 @@ def get_event(fuel, food, power, hull, crew, morale):
 
             print("What are your orders?")
             print("a) Make an Example: lose 0-2 crew")
-            print("b) Ignore the Whispers: lose 1-20 morale")
+            print("b) Ignore the Whispers: lose 1-10 morale")
             print("")
             choice = input()
 

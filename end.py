@@ -56,6 +56,7 @@ def lose(fuel, food, power, hull, crew, morale, g_dist):
 
         print("The Garquackian Armada arrived before you could give warning and Earth")
         print("will surely be destroyed. You have lost the game.")
+        print('')
 
         loss = True
 
@@ -71,8 +72,8 @@ def win(distance):
     # if distance < 1 display winning message and return True
     # if not return False
     if distance <= 0:
-        print("You arrive at Earth in time to warn Earth Force about the impending attack. Thanks to your ")
-        print("efforts Earth Force will be prepared to defend against the Garquackien attack.")
+        print("You arrive at Earth in time to warn Earth Force about the impending attack.")
+        print("Thanks to your efforts Earth Force will be prepared to defend against the Garquackien attack.")
         print('')
         print("You have won the game.")
         print('')
