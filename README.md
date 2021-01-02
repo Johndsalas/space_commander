@@ -17,9 +17,9 @@ Several Garquackien attack ships appeared out of nowhere. To make matters worse,
 
 ### Winning and Losing
 
-In space commander, your goal is to travel to Earth and warn the United Earth Federation about the impending Garquackien attack. During the game, you will see the distance you still need to travel displayed as YOUR DISTANCE FROM EARTH. If this distance reaches 0, your ship has made it to Earth, and you have won!
+In space commander, your goal is to travel to Earth and warn the United Earth Federation about the impending Garquackien attack. During the game, you will see the distance you still need to travel displayed as your distance from Earth. If this distance reaches 0, your ship has made it to Earth, and you have won!
 
-You will also see how far the Garquackians are from invading Earth. This will be displayed as GARQUACKIEN DISTANCE FROM EARTH. If this number ever reaches 0, the Garquackiens have made it to Earth before you and you were not able to warn Earth in time. If this happens you have lost the game.
+You will also see how far the Garquackians are from invading Earth. This will be displayed as Garquackien distance from Earth. If this number ever reaches 0, the Garquackiens have made it to Earth before you and you were not able to warn Earth in time. If this happens you have lost the game.
 
 You will need to carefully manage your ship’s resources. If, at any time, your ship's fuel, food, power, hull, crew, or morale ever fall to zero you will lose the game.
 
@@ -33,7 +33,7 @@ SPEND PHASE: The spend phase is when you spend resources on your ship’s weekly
 
 EVENT PHASE: The hazards of space travel are many and varied. During the event phase you will encounter two of events that will tax your resources. The resources taxed will depend on the decisions you make during those events.
 
-TRAVEL PHASE: During the travel phase your ship will move closer to Earth. The amount of movement is determined by the amount of fuel spent during the spend phase and will reduce your distance from Eart. During this phase the Garquackiens will also move closer to Earth. The Garquackiens will move between 1 and 4 distance toward Earth reducing Garquackien distance from Earth by an equal amount. If Garquackien distance from Earth reaches zero, the Garquackiens have made it to Earth before you and you were not able to warn Earth in time. If this happens you have lost the game.
+TRAVEL PHASE: During the travel phase your ship will move closer to Earth. The amount of movement is determined by the amount of fuel spent during the spend phase and will reduce your distance from Earth. During this phase the Garquackiens will also move closer to Earth. The Garquackiens will move between 1 and 4 distance toward Earth reducing Garquackien distance from Earth by an equal amount. If Garquackien distance from Earth reaches zero, the Garquackiens have made it to Earth before you and you were not able to warn Earth in time. If this happens you have lost the game.
 
 ### Game Terms
 
@@ -60,5 +60,3 @@ Resource Caps: Most of the resources for your ship are displayed as current Numb
 Event Specifics: There are 21 different events in the game each will either tax one specific resource or tax your choice of two different resources. Each resource or resource paring has an equal likelihood of being encountered and you may encounter the same event in a given round (Though this is unlikely). The amount that each resource will be taxed will very within a given range. The range for each resource is the same across all events.
 
 ## Good luck, and thank you for playing!
-
-
