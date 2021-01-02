@@ -18,14 +18,16 @@ def status(distance, g_dist):
     '''
     display for distances
     '''
-    # display garquackian's current distance from Earth
-    print(" __________________________________")
-    print("|{:^34}|".format("Garquackian's distance from Earth"))
-    print("|{:^34}|".format(g_dist))
-    print(" ----------------------------------")
-    # display player's current distance from Earth
+     # display player's current distance from Earth
     print(" __________________________")
     print("|{:^26}|".format("Your distance from Earth"))
     print("|{:^26}|".format(distance))
     print(" --------------------------")
     print("")
+    
+    # display garquackian's current distance from Earth
+    print(" __________________________________")
+    print("|{:^34}|".format("Garquackian's distance from Earth"))
+    print("|{:^34}|".format(g_dist))
+    print(" ----------------------------------")
+   
