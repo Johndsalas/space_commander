@@ -33,7 +33,7 @@ SPEND PHASE: The spend phase is when you spend resources on your ship’s weekly
 
 EVENT PHASE: The hazards of space travel are many and varied. During the event phase you will encounter two of events that will tax your resources. The resources taxed will depend on the decisions you make during those events.
 
-TRAVEL PHASE: During the travel phase your ship will move closer to Earth. The amount of movement is determined by the amount of fuel spent during the spend phase and will reduce YOUR DISTANCE FROM EARTH. During this phase the Garquackiens will also move closer to Earth. The Garquackiens will move between 1 and 4 distance toward Earth reducing GARQUACKIEN DISTANCE FROM EARTH by an equal amount. If GARQUACKIEN DISTANCE FROM EARTH reaches zero, the Garquackiens have made it to Earth before you and you were not able to warn Earth in time. If this happens you have lost the game.
+TRAVEL PHASE: During the travel phase your ship will move closer to Earth. The amount of movement is determined by the amount of fuel spent during the spend phase and will reduce your distance from Eart. During this phase the Garquackiens will also move closer to Earth. The Garquackiens will move between 1 and 4 distance toward Earth reducing Garquackien distance from Earth by an equal amount. If Garquackien distance from Earth reaches zero, the Garquackiens have made it to Earth before you and you were not able to warn Earth in time. If this happens you have lost the game.
 
 ### Game Terms
 
@@ -57,7 +57,7 @@ MORALE: Represents the crew’s resolve and effects how likely they are to produ
 
 Resource Caps: Most of the resources for your ship are displayed as current Number / maximum number on your display. current number represents the current number of that resource in your reserve. Maximum number represents the maximum number of that resource your ship can hold. Resources produced in excess of this number are lost. Morale id displayed as a percentage and cannot be raised above 100%.
 
-Event Specifics: There are 21 different events in the game each will either tax one specific resource or tax your choice of two different resources. Each resource or resource paring has an equal likelihood of being encountered and you may encounter the same event in a given round (Though this is unlikely). The amount that each resource will be taxed will very within a given range. the range for each resource is the same across all events.
+Event Specifics: There are 21 different events in the game each will either tax one specific resource or tax your choice of two different resources. Each resource or resource paring has an equal likelihood of being encountered and you may encounter the same event in a given round (Though this is unlikely). The amount that each resource will be taxed will very within a given range. The range for each resource is the same across all events.
 
 ## Good luck, and thank you for playing!
 

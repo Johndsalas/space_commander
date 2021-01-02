@@ -11,7 +11,7 @@ def lose(fuel, food, power, hull, crew, morale, g_dist):
 
     # if hull, crew, power, or morale is less than 1 display part one of losing message
     if fuel < 1:
-        print("You have zero fuel")
+        print("You have zero fuel.")
         print("Your ship’s engines overheat and explode!")
         print('')
 
@@ -54,8 +54,9 @@ def lose(fuel, food, power, hull, crew, morale, g_dist):
     # and set loss to True
     if g_dist < 1:
 
-        print("The Garquackian Armada arrived before you could give warning and Earth")
-        print("will surely be destroyed. You have lost the game.")
+        print("The Garquackians made it to Earth before you did.")
+        print("You were unable to warn anyone and Earth will surely be destroyed.")
+        print("You have lost the game.")
         print('')
 
         loss = True
