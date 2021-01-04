@@ -15,8 +15,12 @@ def feed_crew(food, crew):
     # remove the food consumed from the supply and display results
     food -= food_consumed
 
-    print(f"Your crew consumes {food_consumed} units of food.")
-    print("")
+    # if the player has food remaining after feeding the crew display food consumed 
+    # otherwise skip to loss on food end of game message
+    if food > 0:
+
+        print(f"Your crew consumes {food_consumed} units of food.")
+        print("")
 
     return food
 
@@ -75,7 +79,7 @@ def spend_fuel(fuel):
         print('')
         amount = input()
 
-        # if user input is valid set fule_spent and distance_traveled amounts 
+        # if user input is valid set fule_spent and distance_traveled amounts
         if amount == '1':
             fuel_spent = 1
             distance_traveled = 1
@@ -118,7 +122,7 @@ def spend_fuel(fuel):
     
     # print user's choice
     print(f"You have spent {fuel_spent} fuel.")
-    print(f"You will travele {distance_traveled} during the travel phase.")  
+    print(f"You will travel {distance_traveled} during the travel phase.")  
     print("")
 
     return fuel, distance_traveled
@@ -134,27 +138,35 @@ def spend_phase(fuel, food, power, hull, crew, morale, g_dist, distance):
     input()
     print("")
 
-    # if loss condition present skip spend phase and proceed loss message
-    if (fuel > 0) and (food > crew) and (power > 0):
+    # spend food
+    food = feed_crew(food, crew)
 
-        # spend food
-        food = feed_crew(food, crew)
+    if food > 0:
 
         # check for crystal burnout
         power = crystal_burn(power)
 
-        # display HUD
-        h.hud(fuel, food, power, hull, crew, morale)
+    if (food > 0) and (power > 0) and (fuel > 0):
 
-        # display distance
-        h.status(distance, g_dist)
+            # display HUD
+            h.hud(fuel, food, power, hull, crew, morale)
 
-        # spend fuel
-        fuel, distance_traveled = spend_fuel(fuel)
+            # display distance
+            h.status(distance, g_dist)
 
-    # if player has no fuel set distance traveled to zero
-    if fuel < 1:
+            # spend fuel
+            fuel, distance_traveled = spend_fuel(fuel)
 
-        distance_traveled = 0
+    # if player has fuel set distance traveled to 1 to avoid out of fuel loss message
+    # if player has no fuel
+    else:
+
+            if fuel > 0:
+
+                distance_traveled = 1
+
+            else:
+
+                distance_traveled = 0
 
     return fuel, food, power, hull, crew, morale, distance_traveled
