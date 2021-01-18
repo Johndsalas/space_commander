@@ -12,7 +12,6 @@ def travel_phase(distance, distance_traveled, g_dist):
     # display beginning of phase message
     print("press ENTER to Begin the Travel Phase!")
     input()
-    print("")
 
     # display distance the player has traveled this turn
     print(f"You have traveled a distance of {distance_traveled}!")

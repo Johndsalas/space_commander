@@ -760,7 +760,6 @@ def event_phase(fuel, food, power, hull, crew, morale):
     # display beginning of phase
     print("Press ENTER to begin the Event Phase!")
     input()
-    print("")
 
     # get events
     for x in range(0,num_events):

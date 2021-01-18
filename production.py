@@ -14,31 +14,31 @@ def assign_crew():
     print("How many crew members will you assign to fuel?")
     
     fuel_crew = input()
-    print(fuel_crew)
+    
 
     # get imput for crew assigned to food
+    print("")
     print("How many crew members will you assign to food?")
     
     food_crew = input()
-    print(food_crew)
 
     # get imput for crew assigned to power
+    print("")
     print("How many crew members will you assign to power crystals?")
     
     power_crew = input()
-    print(power_crew)
 
     # get imput for crew assigned to hull
+    print("")
     print("How many crew members will you assign to hull?")
 
     hull_crew = input()
-    print(hull_crew)
 
     # get imput for crew assigned to morale
+    print("")
     print("How many crew members will you assign to morale?")
     
     morale_crew = input()
-    print(morale_crew)
 
     # print space between next block of text
     print('')
@@ -93,8 +93,8 @@ def check_crew_assignment(fuel_crew, food_crew, power_crew, hull_crew, morale_cr
 
             # prompt user for verification and get input
             print("Proceed with the current assignment? (y/n)")
-            print('')
             acknowledge = input()
+            print('')
 
             # if input is not valid restart the loop
             if acknowledge not in('y', 'n'):
@@ -165,6 +165,7 @@ def generate(fuel_crew, food_crew, power_crew, hull_crew, morale_crew, fuel_chan
             morale_gen += morale_prod
 
     # display generated resources
+    print("")
     print(f"Fuel generated: {fuel_gen} ")
     print(f"Food generated: {food_gen}")
     print(f"Power Crystals generated: {power_gen}")
@@ -249,7 +250,6 @@ def production_phase(fuel, food, power, hull, crew, morale):
     # display information for the beginning of the production phase
     print("Press ENTER to begin the Production Phase!")
     input()
-    print('')
 
     # display resourse table
     h.hud(fuel, food, power, hull, crew, morale)

@@ -27,6 +27,7 @@ def intro(fuel, food, power, hull, crew, morale):
     morale -= lost_morale
 
     # display story text
+    print("")
     print("The Story Continues…")
     print("")
     print("You manage to elude or destroy all of the attacking ships, but not without sustaining damage of")

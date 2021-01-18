@@ -30,4 +30,4 @@ def status(distance, g_dist):
     print("|{:^34}|".format("Garquackian's distance from Earth"))
     print("|{:^34}|".format(g_dist))
     print(" ----------------------------------")
-   
+    print("")

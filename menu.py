@@ -8,9 +8,9 @@ def start():
     '''
 
     # display opening menue
+    print("")
     print("Welcome to space commander.")
     print("Press ENTER to continue.")
-    print('')
     input()
 
     # begin loop for menu

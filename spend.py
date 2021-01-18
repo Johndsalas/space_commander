@@ -121,6 +121,7 @@ def spend_fuel(fuel):
     fuel -= fuel_spent
     
     # print user's choice
+    print("")
     print(f"You have spent {fuel_spent} fuel.")
     print(f"You will travel {distance_traveled} during the travel phase.")  
     print("")
@@ -136,7 +137,6 @@ def spend_phase(fuel, food, power, hull, crew, morale, g_dist, distance):
     # phase intro message
     print("Press ENTER to begin the Spend Phase!")
     input()
-    print("")
 
     # spend food
     food = feed_crew(food, crew)
