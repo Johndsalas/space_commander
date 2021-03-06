@@ -12,3 +12,5 @@ AllCards.json
 *.xlsx
 .gitignore
 _pycache_
+dist
+build
